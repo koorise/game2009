@@ -1,0 +1,6 @@
+#labels Featured
+增加Cookies操作类。
+功能：
+1.添加/删除/修改Cookies
+2.查找Cookies
+3.MD5加密
