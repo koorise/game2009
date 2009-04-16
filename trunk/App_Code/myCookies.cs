@@ -16,7 +16,7 @@ public class Cookies
     /// <param name="ExpireDay">过期时间，0表示跟随浏览器状态，-1 注销Cookies</param>
     public void addCookies(string cookiesName, string cookiesValue, int ExpireDay)
     {
-        var aCookies = new HttpCookie(cookiesName);
+        HttpCookie aCookies = new HttpCookie(cookiesName);
         aCookies.Value = HttpUtility.UrlEncode(cookiesValue);
         if (ExpireDay != 0)
         {
