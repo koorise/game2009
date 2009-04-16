@@ -7,6 +7,7 @@ using System.Web.Security;
 /// </summary>
 public class Cookies
 {
+    public static string CookiesKey = "eGame2009";
     #region void addCookies(string cookiesName, string cookiesValue, int ExpireDay)增加Cookies
     /// <summary>
     /// 增加Cookies
