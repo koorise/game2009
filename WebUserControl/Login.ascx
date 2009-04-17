@@ -78,7 +78,9 @@
                         <asp:HyperLink ID="HyperLink1" NavigateUrl="~/Reg.aspx"  runat="server">还没有游戏易站账号？</asp:HyperLink></td>
                   </tr>
                   <tr>
-                    <td height="38" colspan="2" align="center"><img src="images/login_qkreg.gif" width="125" height="33" /></td>
+                    <td height="38" colspan="2" align="center">
+                        <asp:HyperLink ID="HyperLink2" runat="server" 
+                            ImageUrl="~/images/login_qkreg.gif" NavigateUrl="~/Reg.aspx"></asp:HyperLink></td>
                   </tr>
                 </table>
               </td>

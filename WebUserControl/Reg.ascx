@@ -1,5 +1,7 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="Reg.ascx.cs" Inherits="WebUserControl_Reg" %>
 <%@ Register assembly="AjaxControlToolkit" namespace="AjaxControlToolkit" tagprefix="cc1" %>
+<asp:Panel ID="Panel1" runat="server">
+
 <div class="main">
 			<asp:ScriptManagerProxy ID="ScriptManagerProxy1" runat="server">
             </asp:ScriptManagerProxy>
@@ -345,3 +347,47 @@
 <cc1:ValidatorCalloutExtender ID="ValidatorCalloutExtender10" runat="server" 
     TargetControlID="RegularExpressionValidator2">
 </cc1:ValidatorCalloutExtender>
+</asp:Panel>
+<asp:Panel ID="Panel2" Visible="false" runat="server">
+		<div class="main">
+			<!--start left part-->
+			<div class="mleft">
+				<dl class="reg_step">
+					<dt><img src="images/reg_step_top.gif" /></dt>
+					<dd>
+						<div class="regstep2">
+							<img src="images/reg_step_ico10.gif" width="40" height="57" hspace="20" vspace="20" align="left" />
+							<p>第一步：<br />填写注册信息
+							</p>
+					  </div>
+						<div class="regstep1">
+							<img src="images/reg_step_ico20.gif" width="59" height="45" hspace="10" vspace="30" align="left" />
+							<p>第二步：<br />完成</p>
+				      </div>
+					</dd>
+				</dl>
+			</div>
+			<!--end left part-->
+			
+			
+			<!--right part start-->
+			<div class="mright">
+				<h3>完成</h3>
+				
+				<div class="box done">
+				  <div class="donetitle">恭喜您：<asp:Label ID="lbUsername" runat="server" Text=""></asp:Label>！</div>
+				  <div class="donecontet">
+				    <p>您的账号已经被成功激活，返回首页开始您的易站之旅</p>
+				    <p>&nbsp;</p>
+				    <p>&nbsp;</p>
+				    <p>&nbsp;</p>
+				  </div>
+				  <div class="donebtn"><img src="images/btn_regdone.gif" width="237" height="38" /> </div>
+			  </div>
+				
+				
+			</div>
+			<!--right part end-->
+			
+		</div>
+</asp:Panel>

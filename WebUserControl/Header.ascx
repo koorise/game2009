@@ -19,7 +19,7 @@
 					<a href="#"><img src="images/btn_myinfo.gif" width="91" height="21" border="0" /></a>
 				</div>
 				<div class="myinfo">
-					您好，欢迎来到游戏易站  [<a href="#">免费注册</a>] [<a href="#">登录</a>]				
+					您好，欢迎来到游戏易站  [<asp:HyperLink ID="HyperLink1" NavigateUrl="~/reg.aspx" runat="server">免费注册</asp:HyperLink>] [<asp:HyperLink ID="HyperLink2" NavigateUrl="~/login.aspx" runat="server">登录</asp:HyperLink>]				
 				</div>
 			</div>
 		</div>
