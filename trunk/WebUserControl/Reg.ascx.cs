@@ -31,6 +31,8 @@ public partial class WebUserControl_Reg : System.Web.UI.UserControl
             {
                 GUserInfo.Insert(tbUserName.Text, tbPassWD1.Text, int.Parse(ddlQuestion.SelectedValue), tbAnswer1.Text,
                              tbEmail1.Text, Request.UserHostAddress, DateTime.Now);
+                Panel1.Visible = false;
+                Panel2.Visible = true;
             }
             else
             {
