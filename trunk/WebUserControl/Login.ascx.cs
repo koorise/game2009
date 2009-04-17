@@ -14,12 +14,13 @@ public partial class WebUserControl_Login : System.Web.UI.UserControl
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        
     }
     protected void imgBtnLogin_Click(object sender, ImageClickEventArgs e)
     {
         if(Session["chkCode"].ToString()== tbCode.Text)
         {
+            
             Query q = new Query("gUserInfo");
             q.AddWhere("userName", tbUserName.Text);
             q.AddWhere("passWD", tbPassWD.Text);
@@ -35,9 +36,18 @@ public partial class WebUserControl_Login : System.Web.UI.UserControl
                 aCookies.addCookies("cuID", dr["uID"].ToString(), exp);
                 aCookies.addCookies("cUserName",dr["username"].ToString(),exp);
                 aCookies.addCookies("cKey",aCookies.md5(dr["uID"].ToString()+dr["username"].ToString()+Cookies.CookiesKey),exp);
-
+                Response.Redirect("~/Mine/Main.aspx");
             }
-           
+            else
+            {
+                tbCode.Text = "";
+                lblErr.Text = "用户名或密码错误.";
+            }
+        }
+        else
+        {
+            tbCode.Text = "";
+            lblErr.Text = "验证码错误.";
         }
     }
     protected void lBTNCode_Click(object sender, EventArgs e)

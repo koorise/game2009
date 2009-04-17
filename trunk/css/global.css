@@ -16,3 +16,11 @@ body,div,p,dl,dt,dd,ul,li,form{ margin:0px; padding:0px;font-size: 12px;text-dec
 .main{ margin-top:20px; clear:both;}
 .bottom{ border-top:2px solid #B0B0B0; text-align:center; line-height:24px; padding-top:5px; color:#333333;}
 .bottom a{ color:#004FE0; text-decoration:none;}
+
+
+/* SlideShow styles [Koorise]*/
+
+.validatorCalloutHighlight
+{
+    background-color: lemonchiffon;
+}
