@@ -32,3 +32,107 @@
 	.donetitle{ line-height:30px; font-size:14px; margin-bottom:10px;}
 	.donecontet{ text-indent:24px; line-height:24px;}
 	.donebtn{ text-align:center;}
+	
+/************ PasswordStrength Related Styles ***********************/
+.TextIndicator_TextBox1
+{
+     background-color:White;
+     color:White;
+     font-family:Arial;
+     font-size:x-small;
+     
+     padding: 10px 10px 10px 10px;
+}
+
+.BarIndicator_TextBox2
+{
+    color:Blue;
+    background-color:Blue;
+}
+
+.BarBorder_TextBox2
+{
+    border-style:solid;
+    border-width:1px;
+    width:200px;
+    vertical-align:middle;
+}
+
+.TextIndicator_TextBox3
+{
+     background-color:Blue;
+     color:Yellow;
+     font-size:small;
+     font-variant:small-caps;
+     padding: 10px 10px 10px 10px;
+}
+
+.TextIndicator_TextBox3_Handle
+{
+	width:16px;
+	height:14px;
+	background-image:url(images/Question.png);
+	overflow:hidden;
+	cursor:help;
+}
+
+.TextIndicator_TextBox1_Strength1
+{
+     color:Gray;
+     font-family:Arial;
+     font-size:x-small;
+     padding: 10px 10px 10px 10px;
+}
+.TextIndicator_TextBox1_Strength2
+{
+     color:blue;
+     font-family:Arial;
+     font-size:x-small;
+     padding: 10px 10px 10px 10px;
+}
+.TextIndicator_TextBox1_Strength3
+{
+     color:Orange;
+     font-family:Arial;
+     font-size:x-small;
+     
+     padding: 10px 10px 10px 10px;
+}
+.TextIndicator_TextBox1_Strength4
+{
+     color:Green;
+     font-family:Arial;
+     font-size:x-small;
+     padding: 10px 10px 10px 10px;
+}
+.TextIndicator_TextBox1_Strength5
+{
+     color:Green;
+     font-family:Arial;
+     font-size:x-small;
+     padding: 10px 10px 10px 10px;
+}
+
+
+
+.dynamicPopulate_Normal
+{
+	border:silver 1px inset;
+	padding:2px;
+	text-align:center;
+	height:2em;
+	margin:5px;
+	width:200px;
+}
+
+.dynamicPopulate_Updating 
+{
+	background-image:url(images/loading.gif);
+	background-repeat:no-repeat;
+	border:silver 1px inset;
+	text-align:center;
+	padding:2px;
+	height:2em;
+	margin:5px;
+	width:200px;
+}
