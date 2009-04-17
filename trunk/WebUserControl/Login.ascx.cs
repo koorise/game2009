@@ -32,10 +32,9 @@ public partial class WebUserControl_Login : System.Web.UI.UserControl
                 {
                     exp = 365;
                 }
-                Cookies aCookies = new Cookies();
-                aCookies.addCookies("cuID", dr["uID"].ToString(), exp);
-                aCookies.addCookies("cUserName",dr["username"].ToString(),exp);
-                aCookies.addCookies("cKey",aCookies.md5(dr["uID"].ToString()+dr["username"].ToString()+Cookies.CookiesKey),exp);
+                Cookies.addCookies("cuID", dr["uID"].ToString(), exp);
+                Cookies.addCookies("cUserName",dr["username"].ToString(),exp);
+                Cookies.addCookies("cKey",Cookies.md5(dr["uID"].ToString()+dr["username"].ToString()+Cookies.CookiesKey),exp);
                 Response.Redirect("~/Mine/Main.aspx");
             }
             else

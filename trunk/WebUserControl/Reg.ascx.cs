@@ -33,6 +33,7 @@ public partial class WebUserControl_Reg : System.Web.UI.UserControl
                              tbEmail1.Text, Request.UserHostAddress, DateTime.Now);
                 Panel1.Visible = false;
                 Panel2.Visible = true;
+                lbUsername.Text = tbUserName.Text;
             }
             else
             {
