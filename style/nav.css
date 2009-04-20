@@ -18,10 +18,6 @@
 .nav dl dd ul li.haschild li a{ text-decoration:none; color:#004BA6;}
 
 
-.cont{ width:770px; float:right;}
-.cont h1{ line-height:32px; height:32px; background:url(../images/h1_dot.gif) no-repeat left; border-bottom:1px solid #ACD0F1; font-size:14px; text-indent:10px;}
-.cont .tips{ border:1px dashed  #ACD0F1; padding:6px 16px 6px 16px; color:#F96900; line-height:20px;}
-.cont .bsbox{ border:1px solid #ACD0F1; padding:6px; margin-top:8px;}
 
 .blue{ color:#004BA6; text-decoration:none;}
 .orange{ color:#E32D03; text-decoration:none;}
