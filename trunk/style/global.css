@@ -14,29 +14,5 @@ body,div,p,dl,dt,dd,ul,li,form{ margin:0px; padding:0px;font-size: 12px;text-dec
 		.myinfo{ line-height:24px; text-align:right; color:#001D71;}
 			.myinfo a{ text-decoration:none; color:#001D71;}
 .main{ margin-top:20px; clear:both;}
-.bottom{ border-top:2px solid #B0B0B0; text-align:center; line-height:24px; padding-top:5px; color:#333333;}
+.bottom{ border-top:2px solid #B0B0B0; text-align:center; line-height:24px; padding-top:5px; color:#333333; margin-top:10px;}
 .bottom a{ color:#004FE0; text-decoration:none;}
-
-
-/* SlideShow styles [Koorise]*/
-
-.validatorCalloutHighlight
-{
-    background-color: lemonchiffon;
-}
-
-/*Textbox Watermark*/
-
-.unwatermarked {
-	height:18px;
-	width:148px;
-}
-
-.watermarked {
-	height:20px;
-	width:150px;
-	padding:2px 0 0 2px;
-	border:1px solid #BEBEBE;
-	background-color:#F0F8FF;
-	color:gray;
-}	

@@ -1,0 +1,7 @@
+/* CSS Document */
+.orgbox{ border:1px solid #FAD8AC; background:#FFF4DC; padding:5px; line-height:22px; text-indent:10px;}
+.bluebox{ border:1px solid #AAD9FD;}
+.red{color:#E32D03;font-style: normal; text-decoration:none;}
+.view{ margin-top:8px;}
+.cont{ width:560px; float:left; margin-left:8px;}
+.view table table td{ line-height:20px;}
