@@ -1,5 +1,8 @@
 /* CSS Document */
+.cont{ width:770px; float:right;}
+.cont h1{ line-height:32px; height:32px; background:url(../images/h1_dot.gif) no-repeat left; border-bottom:1px solid #ACD0F1; font-size:14px; text-indent:10px;}
 
+.cont .bsbox{ border:1px solid #ACD0F1; padding:6px; margin-top:8px;}
 	.searchform form{ padding:0px; margin:0px;}
 	.searchform #simplesearch{ padding:6px; text-align:center;}
 	.searchform #advancedsearch{ padding:6px; text-align:center;}
