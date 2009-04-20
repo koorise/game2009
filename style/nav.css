@@ -1,0 +1,28 @@
+/* CSS Document */
+
+.header{ border:none;}
+.main { clear:both; margin-top:0px;}
+.pos{ height:28px; line-height:28px; background:url(../images/pos_bg.gif) repeat-x; text-indent:10px; margin-bottom:6px;}
+.nav{ background:#F2F2F2; width:180px; float:left;}
+.nav dl{ margin:0px 0px 1px 0px; padding:0px;}
+.nav dl dt{ background:url(../images/lm_dt.gif) no-repeat; height:29px; width:179px; overflow:hidden; line-height:34px; font-weight:bold; color:#FFFFFF; text-indent:16px; cursor:pointer;}
+.nav dl dd{}
+.nav dl dd ul{ margin:0px 4px 0px 4px; padding:0px; list-style:none;}
+.nav dl dd ul li{ line-height:32px; height:32px; border-bottom:1px solid #FFFFFF; background:url(../images/lm_dot.gif) no-repeat; background-position:10px 11px; text-indent:20px;}
+.nav dl dd ul li a{ text-decoration:none; color:#004BA6;}
+.nav dl dd ul li.noborder{ border:none;}
+.nav dl dd ul li.haschild{ color:#E32D03; height:auto;}
+.nav dl dd ul li.haschild a{ color:#E32D03; text-decoration:none;}
+.nav dl dd ul li.haschild ul{ margin:0px; padding:0px;}
+.nav dl dd ul li.haschild li{ background:url(../images/lm_dot2.gif) no-repeat; background-position:20px 11px;text-indent:30px; border-top:1px solid #FFFFFF; border-bottom:none;}
+.nav dl dd ul li.haschild li a{ text-decoration:none; color:#004BA6;}
+
+
+.cont{ width:770px; float:right;}
+.cont h1{ line-height:32px; height:32px; background:url(../images/h1_dot.gif) no-repeat left; border-bottom:1px solid #ACD0F1; font-size:14px; text-indent:10px;}
+.cont .tips{ border:1px dashed  #ACD0F1; padding:6px 16px 6px 16px; color:#F96900; line-height:20px;}
+.cont .bsbox{ border:1px solid #ACD0F1; padding:6px; margin-top:8px;}
+
+.blue{ color:#004BA6; text-decoration:none;}
+.orange{ color:#E32D03; text-decoration:none;}
+.red{ color:#FF0000; text-decoration:none;}
