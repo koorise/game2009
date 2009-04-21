@@ -13,30 +13,6 @@ public partial class User_UnDeal : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        if(!IsPostBack)
-        {
-            Tools.FillDropDownList(ddlGameID,"sysGame","0","请选择游戏");
-            Tools.FillDropDownList(ddlDealStatus,"sysOrderType","0","不限制");
-        }
 
-    }
-    protected void lbtnSearchMore_Click(object sender, EventArgs e)
-    {
-        if(Panel1.Visible)
-        {
-            Panel1.Visible = false;
-            lbtnSearchMore.Text = "高级搜索选项";
-        }
-        else
-        {
-            Panel1.Visible = true;
-            lbtnSearchMore.Text = "精简搜索选项";
-        }
-        
-    }
-    protected void ddlGameID_SelectedIndexChanged(object sender, EventArgs e)
-    {
-        ddlServerID.Items.Clear();
-        Tools.FillDropDownList(ddlServerID, "sysServer", "0", "请选择服务器","GameID",ddlGameID.SelectedValue);
     }
 }
