@@ -1,0 +1,21 @@
+/* CSS Document */
+a{ color:#004BA6;}
+
+.cont{ width:770px; float:right;}
+.cont h1{width:770px; line-height:32px; height:32px; background:url(../images/h1_dot.gif) no-repeat left; border-bottom:2px solid #ACD0F1; font-size:14px; text-indent:10px; margin:0px; margin-bottom:6px; clear:both;}
+.notes{ border:1px solid #FFDDAD; background:#FFFFE7; line-height:24px; color:#535353; padding:20px;}
+.notes img{ float:left;}
+.notes .ncont{ padding-left:24px;}
+
+
+.pf{ border:1px solid #E5E5E5;}
+.pf th{ background:#F2F2F2; color:#757575; font-weight:normal; line-height:30px; height:30px; text-align:left; text-indent:12px;}
+.mark{ margin:0px; padding:0px; list-style:none}
+.mark li{ display:block; width:18px; height:19px; background:url(../images/ico_pf0.gif) no-repeat; margin-right:6px; float:left; line-height:19px; cursor:pointer;}
+.mark li.focus{background:url(../images/ico_pf1.gif) no-repeat;}
+#tip{ border:1px solid #CCC; padding:0px 10px 0px 10px; line-height:24px; position:absolute; left:557px; top:233px; background:#FFFFFF; display:none;}
+#tip dl{ float:left; margin:0px; padding:0px; width:170px;}
+#tip dl dt{ color:#FD880A;}
+#tip dl dd{ line-height:20px; text-align:left; word-break:break-all; color:#757575;}
+
+#spmark1,#spmark2,.hui{color:#757575;}

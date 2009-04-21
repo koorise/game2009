@@ -1,0 +1,38 @@
+/* CSS Document */
+a{ color:#004BA6;}
+
+.cont{ width:770px; float:right;}
+.cont h1{ line-height:32px; height:32px; background:url(../images/h1_dot.gif) no-repeat left; border-bottom:1px solid #ACD0F1; font-size:14px; text-indent:10px;}
+
+.cont .bsbox{ border:1px solid #ACD0F1; padding:6px; margin-top:8px;}
+	.searchform form{ padding:0px; margin:0px;}
+	.searchform #simplesearch{ padding:6px; text-align:left; }
+	.searchform #advancedsearch{ padding:6px; text-align:left; }
+	.searchform #advancedsearch div{ width:100%; text-align:left;}
+	.searchform .lable{ display:inline; width:80px; float:left; text-align:right; height:30px; line-height:30px;}
+	.searchform select{ width:100px;}
+	.searchform .input{ border:1px solid #D6D6D6; height:16px; line-height:16px; padding:2px; color:#8F8F8F;}
+	.searchform .btns{ padding:6px; text-align:center;}
+	.searchform .btns a{ color:#004BA6; text-decoration:none;}
+	
+	.list{ margin-top:8px;}
+	.list{ border-top:1px solid #ACD0F1; border-left:1px solid #ACD0F1;}
+	.list thead th{ background:#CBE5FA;font-weight:normal;  border-bottom:1px solid #ACD0F1; border-right:1px solid #ACD0F1; text-align:left; }
+	.list thead th table,.list thead th td{ background:none; border:none; line-height:22px; }
+	.list thead th td a span{ display:block; cursor:pointer; float:left;background:#FFFFFF; border:1px solid #ACD0F1; height:22px;padding:0px 10px 0px 10px; text-indent:0px; color:#464646; text-decoration:none; }
+	.list thead td{ background:#CBE5FA; border-bottom:1px solid #ACD0F1; border-right:1px solid #FFFFFF; border-top:1px solid #FFFFFF; line-height:18px;}
+	.list thead td.lastd{ border-right:1px solid  #ACD0F1;}
+	.list tbody td{ background:#FFFFFF; border-bottom:1px solid #ACD0F1; border-right:1px solid #ACD0F1; line-height:24px;}
+	.list tbody .tip{ color:#004BA6; text-decoration:none;}
+	.list tbody .org{ color:#FC7D00; text-decoration:none;}
+	.list tbody .icotype{ width:24px; float:left;}
+	.list tbody em{color:#FF0000;font-style: normal;font-weight:bold;}
+	.list tbody .msg{ float:left;}
+	.list tfoot td{ background:#FFFFFF; border-bottom:1px solid #ACD0F1; border-right:1px solid #ACD0F1; height:30px;}
+	.list tfoot td td{ border:none;}
+	.pages a{ width:17px; height:19px; background:#FFFFFF; color:#0044DD; text-decoration:none; font-size:12px; line-height:20px; border:1px solid #000; float:left; text-align:center; margin:2px;}
+	.pages a.focus{ color:#FF6600; background:#EEEEEE;}
+	
+	.greenn{ color:#168800; text-decoration:none;}
+	.red{ text-decoration:none;}
+
