@@ -1,0 +1,10 @@
+/* CSS Document */
+a{ color:#004BA6;}
+
+.cont{ width:770px; float:right;}
+.cont h1{width:770px; line-height:32px; height:32px; background:url(../images/h1_dot.gif) no-repeat left; border-bottom:2px solid #ACD0F1; font-size:14px; text-indent:10px; margin:0px; margin-bottom:6px; clear:both;}
+.notes{ border:1px solid #FFDDAD; background:#FFFFE7; line-height:24px; color:#535353; padding:20px;}
+.notes img{ float:left;}
+.notes .ncont{ padding-left:24px;}
+
+.success{ line-height:60px; color:#009715; font-weight:bold; font-size:14px;}
