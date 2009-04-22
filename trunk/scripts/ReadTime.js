@@ -35,6 +35,5 @@ function btnAccept()
 
 function btnRefuse()
 {
-    //
     history.back();
 }
