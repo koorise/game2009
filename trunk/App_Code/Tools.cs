@@ -48,4 +48,16 @@ public class Tools
             ddl.Items.Add(li);
         }
     }
+
+    /// <summary>
+    /// 检验登陆状态，返回Boolean
+    /// </summary>
+    /// <returns></returns>
+    public static bool ChkStatus()
+    {
+        string uID = Cookies.getCookies("cUID");
+        string userName = Cookies.getCookies("cUserName");
+        string ip = HttpContext.Current.Request.UserHostName;
+        return Cookies.ChkCook(uID + userName + ip + Cookies.CookiesKey, Cookies.getCookies("cMD5"));
+    }
 }

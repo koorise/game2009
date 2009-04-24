@@ -18,7 +18,7 @@ public class Cookies
     /// <returns>bool</returns>
     public static bool ChkCook(string str,string md5)
     {
-        string _md5 = Cookies.md5(str + CookiesKey);
+        string _md5 = Cookies.md5(str);
         return _md5==md5;
     }
     #region void addCookies(string cookiesName, string cookiesValue, int ExpireDay)增加Cookies
