@@ -34,7 +34,10 @@ public partial class WebUserControl_Login : System.Web.UI.UserControl
                 }
                 Cookies.addCookies("cuID", dr["uID"].ToString(), exp);
                 Cookies.addCookies("cUserName",dr["username"].ToString(),exp);
-                Cookies.addCookies("cKey",Cookies.md5(dr["uID"].ToString()+dr["username"].ToString()+Cookies.CookiesKey),exp);
+                Cookies.addCookies("cMD5",
+                                   Cookies.md5(dr["uID"] + dr["username"].ToString() + Request.UserHostAddress +
+                                               Cookies.CookiesKey),
+                                   exp);
                 Response.Redirect("~/Mine/Main.aspx");
             }
             else
