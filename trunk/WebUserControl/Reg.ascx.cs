@@ -30,7 +30,7 @@ public partial class WebUserControl_Reg : System.Web.UI.UserControl
             if(q.GetRecordCount()==0)
             {
                 GUserInfo.Insert(tbUserName.Text, tbPassWD1.Text, int.Parse(ddlQuestion.SelectedValue), tbAnswer1.Text,
-                             tbEmail1.Text, Request.UserHostAddress, DateTime.Now);
+                             tbEmail1.Text, Request.UserHostAddress,0,0, DateTime.Now);
                 Panel1.Visible = false;
                 Panel2.Visible = true;
                 lbUsername.Text = tbUserName.Text;
