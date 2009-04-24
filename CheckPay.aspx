@@ -3,7 +3,6 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
     <link href="css/pay.css" rel="stylesheet" type="text/css" />
-    <script type="text/javascript" src="scripts/ReadTime.js"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     <uc1:CheckPay runat="server" />
