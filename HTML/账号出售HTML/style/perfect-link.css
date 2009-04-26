@@ -1,0 +1,7 @@
+/* CSS Document */
+a{ color:#004BA6;}
+.pos{ font-size:14px; color:#000000; text-indent:20px; line-height:32px;}
+.formtable{ border:1px solid #BED7EB; width:760px; margin:10px auto;}
+.formtable th{ background:#EAF5FD; padding-right:20px;}
+.formtable td{ padding-left:20px;}
+.formtable .border{ border-bottom:1px solid #BED7EB;}

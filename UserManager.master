@@ -1,14 +1,15 @@
 ﻿<%@ Master Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="false" CodeFile="UserManager.master.cs" Inherits="UserManager" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
-<link href="style/unclosed.css" rel="stylesheet" type="text/css" />
+    <link href="style/unclosed.css" rel="stylesheet" type="text/css" />
 <link href="style/nav.css" rel="stylesheet" type="text/css" />
 <link href="style/global.css" rel="stylesheet" type="text/css" />
+<link href="style/pm1.css" rel="stylesheet" type="text/css" />
 <script language="javascript" src="scripts/jquery.js"></script>
 <script language="javascript" src="scripts/nav.js"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-<div class="main">
+    <div class="main">
 			<div class="pos">您的位置：首页>>我的游戏易站>>(仍)未成交的</div>
 			<div class="nav">
 				<dl>

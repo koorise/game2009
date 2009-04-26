@@ -30,6 +30,7 @@ public class Tools
     /// <param name="whereStr">查询条件:1维 字段名;2维 字段值</param>
     public static void FillDropDownList(DropDownList ddl,string table,string condition,string indexOption,params string[] whereStr)
     {
+        ddl.Items.Clear();
         Query q = new Query(table);
         if(whereStr.Length !=0)
         {
@@ -48,6 +49,7 @@ public class Tools
             ddl.Items.Add(li);
         }
     }
+
 
     /// <summary>
     /// 检验登陆状态，返回Boolean
