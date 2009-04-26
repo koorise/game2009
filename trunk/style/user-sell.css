@@ -1,0 +1,9 @@
+/* CSS Document */
+a{ color:#004BA6;}
+
+.cont{ width:770px; float:right;}
+.cont h1{width:770px; line-height:32px; height:32px; background:url(../images/h1_dot.gif) no-repeat left; border-bottom:2px solid #ACD0F1; font-size:14px; text-indent:10px; margin:0px; margin-bottom:6px; clear:both;}
+.bluebox{ border:1px solid #AAD9FD;}
+.orgbox{ border:1px solid #F8E4BF; background:#FFF9E3; margin-top:8px;}
+.s14{ font-size:14px;}
+.txts{ line-height:20px;}
