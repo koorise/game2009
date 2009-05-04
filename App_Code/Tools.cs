@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Data;
 using System.Configuration;
+using System.IO;
 using System.Web;
 using System.Web.Security;
 using System.Web.UI;
@@ -9,7 +10,7 @@ using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using SubSonic;
 /// <summary>
-///Tools 的摘要说明
+///Tools
 /// </summary>
 public class Tools
 {
@@ -49,8 +50,6 @@ public class Tools
             ddl.Items.Add(li);
         }
     }
-
-
     /// <summary>
     /// 检验登陆状态，返回Boolean
     /// </summary>
@@ -61,5 +60,36 @@ public class Tools
         string userName = Cookies.getCookies("cUserName");
         string ip = HttpContext.Current.Request.UserHostName;
         return Cookies.ChkCook(uID + userName + ip + Cookies.CookiesKey, Cookies.getCookies("cMD5"));
+    }
+    /// <summary>
+        /// FileUpload上传文件函数
+    /// </summary>
+    /// <param name="f">FileUpLoad控件名</param>
+    /// <param name="path">相对路径,例如~/Upload/</param>
+    /// <param name="tp">可选参数,合法文件后缀名,例如jpg</param>
+    /// <returns>返回文件路径.返回0，则该文件不合法</returns>
+    public static string UpLoadImagesURL(FileUpload f,string path, params string[] tp)
+    {
+        string filename = f.PostedFile.FileName;
+        if (filename != "")
+        {
+            int i = filename.IndexOf('.');
+            string ex = filename.Substring(i, filename.Length - i);
+            string _filename = DateTime.Now.ToString("yyyyMMddHHmmssfff") + Cookies.getCookies("cUID") + ex;
+            string _path = HttpContext.Current.Server.MapPath(path + _filename);
+            if(!File.Exists(_path))
+            {
+                Directory.CreateDirectory(_path);
+            }
+            foreach (string s in tp)
+            {
+                if (ex == "." + s)
+                {
+                    f.PostedFile.SaveAs(_path);
+                    return path + _filename;
+                }
+            }
+        }
+        return "0";
     }
 }
