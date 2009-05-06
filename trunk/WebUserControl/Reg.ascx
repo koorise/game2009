@@ -191,7 +191,7 @@
                             <td width="200" valign="top"><p>
                                 <asp:TextBox ID="tbCode" Width="50px" CssClass="input_short" runat="server"></asp:TextBox><asp:RequiredFieldValidator
                                     ID="RequiredFieldValidator5" runat="server" ControlToValidate="tbCode" ErrorMessage="必填项" Display="None" ValidationGroup="RR"></asp:RequiredFieldValidator>
-                                <asp:Image ID="Image1" ImageAlign="AbsMiddle" height="22"  width="66" ImageUrl="~/CheckCode.aspx" runat="server" /> <asp:LinkButton ID="lBTNCode" runat="server" 
+                                <asp:Image ID="Image1" ImageAlign="AbsMiddle" height="22"  width="66" ImageUrl="~/CheckCode.aspx?sName=regCode" runat="server" /> <asp:LinkButton ID="lBTNCode" runat="server" 
                             onclick="lBTNCode_Click">换张图片</asp:LinkButton></p></td>
                             <td>请输入验证码</td>
                           </tr>

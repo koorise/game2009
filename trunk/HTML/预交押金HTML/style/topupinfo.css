@@ -1,0 +1,45 @@
+/* CSS Document */
+a{ color:#004BA6;}
+
+.cont{ width:770px; float:right;}
+.cont h1{width:770px; line-height:32px; height:32px; background:url(../images/h1_dot.gif) no-repeat left; border-bottom:2px solid #ACD0F1; font-size:14px; text-indent:10px; margin:0px; margin-bottom:6px; clear:both;}
+
+.cont .bsbox{ border:1px solid #ACD0F1; padding:6px; margin-top:8px;}
+.orgbox{ border:1px solid #FAD8AC; background:#FFF4DC; padding:5px; line-height:22px; text-indent:10px;}
+.bluebox{ border:1px solid #AAD9FD;}
+.bluedotbox{ border:1px dashed #AAD9FD; width:620px; margin:0px auto; padding:20px; text-align:left;}
+.red{color:#E32D03;font-style: normal; text-decoration:none;}
+.view{ margin-top:8px;}
+
+.center{ width:560px; float:left; margin-right:8px;}
+.view{ margin-bottom:8px;}
+.view table table td{ line-height:20px;}
+
+
+
+.viewtd3{ border-bottom:1px solid #AAD9FD; line-height:22px; vertical-align:top;}
+.viewtd4{line-height:22px; vertical-align:top;}
+.viewtd-blue{ background:#D7ECFF; color:#004BA6;}
+
+.btn{ border:none; background:#1697D3; height:26px; color:#FFFFFF; font-weight:bold; margin:6px;}
+.backlist{float:left; text-align:center; width:560px; margin-top:20px; margin-bottom:20px;}
+.service{ width:200px; float:right; line-height:18px;}
+.hui{color:#757575;}
+
+.pages a{ width:17px; height:19px; background:#FFFFFF; color:#0044DD; text-decoration:none; font-size:12px; line-height:20px; border:1px solid #000; float:left; text-align:center; margin:2px;}
+	.pages a.focus{ color:#FF6600; background:#EEEEEE;}
+.pgbox{ width:30px; height:18px; border:1px solid #ccc; line-height:18px;}
+.green{ color:#08A000;}
+.f14,f14 p{ font-size:14px;}
+.input{ height:16px; line-height:16px; border:1px solid #CCC;}
+
+.alert{ border:1px solid #0375AD; background:#8AC6E9; position:absolute; top:275px; left:549px; width:412px; height:203px;}
+.alert .td{ background:#2F90D4;}
+.alert .txt{ color:#FFFFFF; font-size:14px;}
+
+.tabs{ border-bottom:1px solid #9CCAEB; height:29px; list-style:none;}
+.tabs li{ display:block; background:url(../images/tab_blur.gif); width:58px; height:29px; line-height:29px;  float:left; margin-left:10px; font-weight:bold; position:relative; top:1px; text-align:center;}
+.tabs li a{text-decoration:none;}
+.tabs li.focus{ background:url(../images/tab_focus.gif); font-size:14px;}
+.tabs li.focus a{text-decoration:none; color:#FF6000; font-size:14px;}
+

@@ -59,7 +59,8 @@ public class Tools
         string uID = Cookies.getCookies("cUID");
         string userName = Cookies.getCookies("cUserName");
         string ip = HttpContext.Current.Request.UserHostName;
-        return Cookies.ChkCook(uID + userName + ip + Cookies.CookiesKey, Cookies.getCookies("cMD5"));
+        string isblock = Cookies.getCookies("cisblock");
+        return Cookies.ChkCook(uID + userName + isblock + ip + Cookies.CookiesKey, Cookies.getCookies("cMD5"));
     }
     /// <summary>
         /// FileUpload上传文件函数
@@ -91,5 +92,28 @@ public class Tools
             }
         }
         return "0";
+    }
+    /// <summary>
+    /// 计算分页页数
+    /// </summary>
+    /// <param name="count">记录总数</param>
+    /// <param name="pagesize">页面大小</param>
+    /// <returns>页数</returns>
+    public  static int GetPageCount(int count, int pagesize)
+    {
+        int n = count/pagesize;
+        int y = count%pagesize;
+        if (y != 0)
+            y = 1;
+        return n + y;
+    }
+
+    public static string Error(string err)
+    {
+        return "<script language=javascript>alert('" + err + "');</script>";
+    }
+    public static string jsRedirect(string url)
+    {
+        return "<script lanuage=javascript>this.location.href('"+ url +"');</script>";
     }
 }

@@ -1,0 +1,14 @@
+body,div,p,dl,dt,dd,ul,li,form{ margin:0px; padding:0px;font-size: 12px;text-decoration: none;}
+.fl{float:left}
+.fr{float:right}
+.clear{ clear:both;}
+
+.wrap{ width:960px; margin:0px auto;}
+
+.header{ height:110px; border-bottom:1px solid #E0E0E0;}
+
+.main{ margin-top:20px; clear:both; width:960px;}
+.bottom{ border-top:2px solid #B0B0B0; text-align:center; line-height:24px; padding-top:5px; color:#333333; margin-top:10px;}
+.bottom a{ color:#004FE0; text-decoration:none;}
+
+

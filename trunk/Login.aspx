@@ -3,6 +3,8 @@
 <%@ Register src="WebUserControl/Login.ascx" tagname="Login" tagprefix="uc1" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+<link href="css/global.css" rel="stylesheet" type="text/css" />
+
 <link href="css/login.css" rel="stylesheet" type="text/css" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">

@@ -16,11 +16,11 @@ public partial class CheckCode : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        this.CreateCheckCodeImage(GenerateCheckCode());
-
+       
+      this.CreateCheckCodeImage(GenerateCheckCode(Request["sName"]));
     }
 
-    private string GenerateCheckCode()
+    private string GenerateCheckCode( string sName)
     {
         int number;
         char code;
@@ -39,9 +39,8 @@ public partial class CheckCode : System.Web.UI.Page
 
             checkCode += code.ToString();
         }
-
-        Session["chkCode"] = checkCode;
-
+        
+            Session[sName] = checkCode;
         return checkCode;
     }
 
@@ -50,7 +49,7 @@ public partial class CheckCode : System.Web.UI.Page
         if (checkCode == null || checkCode.Trim() == String.Empty)
             return;
 
-        System.Drawing.Bitmap image = new System.Drawing.Bitmap((int)Math.Ceiling((checkCode.Length * 12.5)), 22);
+        System.Drawing.Bitmap image = new System.Drawing.Bitmap((int)Math.Ceiling((checkCode.Length * 13.5)), 22);
         Graphics g = Graphics.FromImage(image);
 
         try

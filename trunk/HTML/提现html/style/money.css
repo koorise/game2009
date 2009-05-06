@@ -1,0 +1,19 @@
+/* CSS Document */
+a{ color:#004BA6;}
+
+.cont{ width:770px; float:right;}
+.cont h1{width:770px; line-height:32px; height:32px; background:url(../images/h1_dot.gif) no-repeat left; border-bottom:2px solid #ACD0F1; font-size:14px; text-indent:10px; margin:0px; margin-bottom:6px; clear:both;}
+.hui{color:#757575;}
+.tabsdd{ border:1px solid #82B1DD; float:left; clear:both; width:100%; margin-top:10px;}
+.f14{ font-size:14px;}
+.greenbox{ background:#F3FFDF; border:1px solid #C0E880;}
+.bluebox{ border:1px solid #C5E0F8; background:#F0F8FF;}
+.step{ width:100%; }
+.step ul{ padding:0px; margin:20px;_margin:20px 10px; width:730px;background:#F2F2F2; border-bottom:1px solid #D7D7D7; height:32px; line-height:32px; list-style:none; float:left; clear:both;}
+.step ul li{ float:left; margin:0px; padding:0px 20px;;border-right:1px solid #D7D7D7;_margin-top:6px; }
+.step ul li.focus{ font-weight:bold; color:#FA0000;}
+.stepcont{ margin:20px;_margin:20px 10px; width:730px;}
+.dotline{ border-bottom:1px dashed #65BAE6;}
+.box1{ border:1px solid #E5E5E5; background:#F4F4F4;}
+.box2{ border:1px solid #B8E0FC;}
+.txcg{	font-size: 24px;	font-weight: bold; color:red;}
