@@ -17,8 +17,16 @@ public partial class AccountControl_AccountAdd : System.Web.UI.UserControl
     {
         if(!IsPostBack)
         {
-            lblPNKID.Text = DateTime.Now.ToString("yyyyMMddhhmmss")+Cookies.getCookies("cUID").PadLeft(6,'0');
+            lblPNKID.Text = DateTime.Now.ToString("yyyyMMddHHmmss")+Cookies.getCookies("cUID").PadLeft(6,'0');
             Tools.FillDropDownList(ddlGame, "sysGame", "", "请选择游戏");
+            
+            //加价幅度增加 1-50元
+            ddlPriceStep.Items.Clear();
+            for(int i=1;i<=50;i++)
+            {
+                ListItem li=new ListItem(i+"元",i.ToString());
+                ddlPriceStep.Items.Add(li);
+            }
         }
         PanelShow();
     }
@@ -146,26 +154,28 @@ public partial class AccountControl_AccountAdd : System.Web.UI.UserControl
         string saleMethod = rdBtnSaleMethod.SelectedValue.ToString();
 
         GProduct g = new GProduct();
-                        g.Pnkid = decimal.Parse(lblPNKID.Text);
-                        g.GameID = int.Parse(ddlGame.SelectedValue);
-                        g.ServerID = int.Parse(ddlServer.SelectedValue);
-                        g.JobID = int.Parse(ddlJob.SelectedValue);
-                        g.RaceID = int.Parse(ddlRace.SelectedValue);
-                        g.FlagID = int.Parse(ddlLevel.SelectedValue);
-                        g.UserID = int.Parse(Cookies.getCookies("cUID"));
-                        g.PTitle = tbTitle.Text;
-                        g.SaleMethodID = int.Parse(saleMethod);
-                        g.SaleTypeID = int.Parse(saleType);
-                        g.StatusID = 1;
-                        g.PDetails = tbProductDetail.Text;
-                        g.PTimeStart = DateTime.Now;
-                        g.PTimeEnd = DateTime.Now.AddHours(double.Parse(tbHours.Text));
-                        g.PPriceBase = decimal.Parse(tbPriceBase.Text);
-                        g.PPriceTop = decimal.Parse(tbPriceTop.Text);
-                        g.PFixedStatues = bool.Parse(rdBtnChengXin.SelectedValue);
-                        g.PFastKey = tbFastKey1.Text;
-                        g.CustomerServiceID = 0;
-
+        g.Pnkid = decimal.Parse(lblPNKID.Text);
+        g.GameID = int.Parse(ddlGame.SelectedValue);
+        g.ServerID = int.Parse(ddlServer.SelectedValue);
+        g.JobID = int.Parse(ddlJob.SelectedValue);
+        g.RaceID = int.Parse(ddlRace.SelectedValue);
+        g.FlagID = int.Parse(ddlLevel.SelectedValue);
+        g.UserID = int.Parse(Cookies.getCookies("cUID"));
+        g.PTitle = tbTitle.Text;
+        g.SaleMethodID = int.Parse(saleMethod);
+        g.SaleTypeID = int.Parse(saleType);
+        g.StatusID = 1;
+        g.PDetails = tbProductDetail.Text;
+        g.PTimeStart = DateTime.Now;
+        g.PTimeEnd = DateTime.Now.AddHours(double.Parse(tbHours.Text));
+        g.PPriceBase = decimal.Parse(tbPriceBase.Text);
+        g.PPriceTop = decimal.Parse(tbPriceTop.Text);
+        g.PPriceStep = int.Parse(ddlPriceStep.SelectedValue);
+        g.PPromise = bool.Parse(rdBtnChengXin.Text);
+        g.PFastKey = tbFastKey1.Text;
+        g.CustomerServiceID = 0;
+        g.IsHits = 0;
+        g.ProductsPromise = tbPromise.Text;
         switch (saleType)
         {
 
@@ -196,7 +206,10 @@ public partial class AccountControl_AccountAdd : System.Web.UI.UserControl
                         ga.AccountMailPassWD = tbAccountMailPassWD2.Text;
                         ga.AccountMailInfo = tbAccountMailInfo2.Text;
                         ga.AccountYellowPage = bool.Parse(rBTNAccountYellowPage2.SelectedValue);
-                        ga.AccountYellowPageURL = "";
+                        if (bool.Parse(rBTNAccountYellowPage2.SelectedValue))
+                        {
+                            ga.AccountYellowPageURL = Tools.UpLoadImagesURL(FileUpload2,"~/Upload/","jpg","gif","jpeg");
+                        }
                         ga.AccountisDisplay = 0;
                         break;
                     case "2"://担保
@@ -223,7 +236,10 @@ public partial class AccountControl_AccountAdd : System.Web.UI.UserControl
                         ga.AccountMailPassWD = tbAccountMailPassWD2.Text;
                         ga.AccountMailInfo = tbAccountMailInfo2.Text;
                         ga.AccountYellowPage = bool.Parse(rBTNAccountYellowPage2.SelectedValue);
-                        ga.AccountYellowPageURL = "";
+                        if (bool.Parse(rBTNAccountYellowPage2.SelectedValue))
+                        {
+                            ga.AccountYellowPageURL = Tools.UpLoadImagesURL(FileUpload2, "~/Upload/", "jpg", "gif", "jpeg");
+                        }
                         ga.AccountisDisplay = 0;
                         break;
                 }
@@ -250,6 +266,6 @@ public partial class AccountControl_AccountAdd : System.Web.UI.UserControl
                 break;
         }
         g.Save();
-        Response.Redirect("~/AccountAddDone.aspx?pID=" + lblPNKID.Text);
+        Response.Redirect("~/AccountAddDone.aspx?pNKID=" + lblPNKID.Text);
     }
 }

@@ -23,14 +23,25 @@ public partial class WebUserControl_Reg : System.Web.UI.UserControl
     }
     protected void btnConfirm_Click(object sender, EventArgs e)
     {
-        if(Session["chkCode"].ToString()==tbCode.Text)
+        if(Session["regCode"].ToString()==tbCode.Text)
         {
             Query q = new Query("gUserInfo");
             q.AddWhere("username", tbUserName.Text).OR("uMail",tbEmail1.Text);
             if(q.GetRecordCount()==0)
             {
-                GUserInfo.Insert(tbUserName.Text, tbPassWD1.Text, int.Parse(ddlQuestion.SelectedValue), tbAnswer1.Text,
-                             tbEmail1.Text, Request.UserHostAddress,0,0, DateTime.Now);
+                GUserInfo g = new GUserInfo();
+                g.UserName = tbUserName.Text;
+                g.PassWD = tbPassWD1.Text;
+                g.QuestionType = int.Parse(ddlQuestion.SelectedValue);
+                g.MyKey = tbAnswer1.Text;
+                g.UMail = tbEmail1.Text;
+                g.InIP = Request.UserHostAddress;
+                g.IsBuyerScores = 0;
+                g.IsBuyerPer = 1;
+                g.IsSalerScores = 0;
+                g.IsSalerPer = 1;
+                g.IsBlock = 0;
+                g.Save();
                 Panel1.Visible = false;
                 Panel2.Visible = true;
                 lbUsername.Text = tbUserName.Text;

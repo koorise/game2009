@@ -1,0 +1,28 @@
+body,div,p,dl,dt,dd,ul,li,form{ margin:0px; padding:0px;font-size: 12px;text-decoration: none;}
+
+.clear{ clear:both;}
+
+.wrap{ width:960px; margin:0px auto;}
+
+.header{ height:110px; border-bottom:1px solid #E0E0E0;}
+	.logo{ width:220px; float:left;}
+	.tools{ width:720px; float:right;}
+		.menu{ line-height:30px; height:30px; text-align:right; margin-top:10px; color:#001D71;}
+			.menu a{ text-decoration:none; color:#001D71;}
+		.btns{ text-align:right; line-height:30px; height:30px;}
+			.btns img{ margin-left:4px;}
+		.myinfo{ line-height:24px; text-align:right; color:#001D71;}
+			.myinfo a{ text-decoration:none; color:#001D71;}
+.main{ margin-top:20px; clear:both;}
+.bottom{ border-top:2px solid #B0B0B0; text-align:center; line-height:24px; padding-top:5px; color:#333333; margin-top:10px;}
+.bottom a{ color:#004FE0; text-decoration:none;}
+
+.tips{ border:1px dashed  #ACD0F1; padding:6px 16px 6px 16px; color:#F96900; line-height:20px;}
+
+
+.pop{ background:#CCCCCC;filter:alpha(opacity=50);-moz-opacity:0.5;opacity: 0.5; position:absolute; width:100%; height:100%; left:0px; top:0px;}
+.pop *{filter:alpha(opacity=100);-moz-opacity:1;opacity: 1; }
+.pop .win{ width:710px; height:460px; padding:6px; position:relative; top:40px; margin:0px auto; background:#FFFFFF;}
+.pop .win .title{ background:url(../images/line.gif) repeat-y left; height:30px; line-height:30px; text-indent:10px;_padding-top:6px;_height:24px;}
+.pop .win .cont{ line-height:24px; padding:30px;}
+

@@ -44,7 +44,7 @@
                                     HighlightCssClass="validatorCalloutHighlight" 
                                     TargetControlID="RequiredFieldValidator3">
                                 </cc1:ValidatorCalloutExtender>
-                                    <asp:Image ID="Image1" ImageAlign="AbsMiddle" height="22"  width="66" ImageUrl="~/CheckCode.aspx" runat="server" />
+                                    <asp:Image ID="Image1" ImageAlign="AbsMiddle" height="22"  width="66" ImageUrl="~/CheckCode.aspx?sName=LoginCode" runat="server" />
                                <asp:LinkButton ID="lBTNCode" runat="server" 
                             onclick="lBTNCode_Click">刷新</asp:LinkButton>
                             </ContentTemplate>

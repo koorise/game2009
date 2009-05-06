@@ -572,6 +572,13 @@
                         <span class="msg">最多支持2位小数，不低于20元，不高于9999</span></label></td>
                   </tr>
                   <tr>
+                    <td align="right" nowrap="nowrap">加价幅度：</td>
+                    <td>
+                        <asp:DropDownList ID="ddlPriceStep" runat="server">
+                        </asp:DropDownList>
+                            </td>
+                  </tr>
+                  <tr>
                     <td align="right" nowrap="nowrap"><span class="red">* </span>有效时间：<br /></td>
                     <td>
                         <asp:TextBox ID="tbHours" runat="server" MaxLength="2"></asp:TextBox>

@@ -1,4 +1,81 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="AccountAddDone.ascx.cs" Inherits="AccountControl_AccountAddDone" %>
+<asp:Panel ID="Panel1" runat="server">
+<div class="main">
+			<div class="pos"><strong>完善联系信息</strong></div>
+			<p>&nbsp;</p>
+			<table border="0" align="center" cellpadding="6" cellspacing="0" class="formtable">
+			  <tr>
+				<th width="158" height="30" align="right" class="border">QQ号码：</th>
+				<td width="600" nowrap="nowrap" class="border"><label>
+				    <asp:TextBox ID="tbQQ" runat="server"></asp:TextBox>
+                    &nbsp;<asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
+                        ControlToValidate="tbQQ" ErrorMessage="*" ValidationGroup="A"></asp:RequiredFieldValidator>
+                    <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" 
+                        ControlToValidate="tbQQ" ErrorMessage="*" 
+                        ValidationExpression="[1-9][0-9]{4,11}" ValidationGroup="A"></asp:RegularExpressionValidator>
+                    能联系到您的QQ号码
+				</label></td>
+			  </tr>
+			  <tr>
+				<th height="30" align="right">手机或小灵通：</th>
+				<td>
+                    <asp:TextBox ID="tbPhone" runat="server"></asp:TextBox>
+                    &nbsp;<asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" 
+                        ControlToValidate="tbPhone" ErrorMessage="*" ValidationGroup="A"></asp:RequiredFieldValidator>
+                    <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" 
+                        ControlToValidate="tbPhone" ErrorMessage="*" 
+                        ValidationExpression="^[0-9]{8,11}$" ValidationGroup="A"></asp:RegularExpressionValidator>
+                    (小灵通格式如:02188888888),手机格式如:13800138000)</td>
+			  </tr>
+		  </table>
+		    <div align="center">
+		      <p class="red">客服在买家付款后会通过上述联系方式联系您交货或咨询，非常重要	          </p>
+		      <p>&nbsp;</p>
+		      <p>
+		          <asp:Button ID="btnSub1" runat="server" onclick="btnSub1_Click" 
+                      Text="确定以上信息并提交" ValidationGroup="A" />
+&nbsp;</p>
+		      <p>&nbsp;</p>
+		      <p>&nbsp;</p>
+		      <p>&nbsp;</p>
+		      <p>&nbsp;</p>
+		    </div>
+		  
+        </div>
+</asp:Panel>
+<asp:Panel ID="Panel2" runat="server">
+<div class="main">
+			<div class="pos"><strong>选择您的接手客服</strong></div>
+			<p>&nbsp;</p>
+			<table border="0" align="center" cellpadding="0" cellspacing="0">
+			  <tr>
+				<td width="120" height="30" align="right" valign="bottom" nowrap="nowrap"><label><img src="images/svc.gif" width="76" height="113" /></label></td>
+			    <td align="center" nowrap="nowrap">
+				<table width="500" border="0" align="center" cellspacing="0" style="margin:0px auto;">
+                  <tr>
+                    <td height="90" class="box"><div class="orange" style="font-size:14px;">选择您熟悉的接手客服，或者您认为服务比较好的客服，我们的客服在<br />
+                      后台接到您的发布任务后，将会免费为您在各个QQ群里推广您的拍卖。<br />
+                    交易成功后也将由其为您进行移交工作。</div></td>
+                  </tr>
+                </table></td>
+			  </tr>
+			  <tr>
+				<td height="30" colspan="2" valign="top"><img src="images/select_svc_bot.gif" width="658" height="25" /></td>
+		      </tr>
+		  </table>
+		    <div align="center">
+		     
+		     <p class="svc"><asp:LinkButton ID="LinkButton1" CssClass="focus" Text="账号客服01" runat="server"></asp:LinkButton>  </p>
+		      <p>&nbsp;</p>
+		      <p><img src="images/btn_svc_submit.gif" width="82" height="31" /></p>
+		      <p>&nbsp;</p>
+		      <p>&nbsp;</p>
+		      <p>&nbsp;</p>
+		    </div>
+		  
+        </div>
+</asp:Panel>
+<asp:Panel ID="Panel3" runat="server">
 <div class="main">
 			<div class="pos"><strong>恭喜您：您已经发布成功！</strong></div>
 			<p>&nbsp;</p>
@@ -60,3 +137,4 @@
 		  </div>
 		  
         </div>
+        </asp:Panel>
