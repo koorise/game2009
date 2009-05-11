@@ -204,32 +204,29 @@
                   </table>
 				</div>
 				<div id="buyinfo2" >
-				  <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                    <tr>
-                      <td>此交易为中介交易，必须使用交易密码以一口价拍下 请输入交易密码</td>
-                    </tr>
-                    <tr>
-                      <td>交易密码：
-                        <label>
-                            <asp:TextBox ID="tbFastKey" runat="server" TextMode="Password"></asp:TextBox>
-                      </label>
-                          <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" 
-                              ControlToValidate="tbFastKey" Display="Dynamic" ErrorMessage="*" 
-                              ValidationGroup="B"></asp:RequiredFieldValidator>
-                                </td>
-                    </tr>
+                    <asp:Panel ID="PanelZhongJie" runat="server">
+				      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                        <tr>
+                          <td>此交易为中介交易，必须使用交易密码以一口价拍下 请输入交易密码</td>
+                        </tr>
+                        <tr>
+                          <td>交易密码：
+                            <label>
+                                <asp:TextBox ID="tbFastKey" runat="server" TextMode="Password"></asp:TextBox>
+                          </label>
+                              <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" 
+                                  ControlToValidate="tbFastKey" Display="Dynamic" ErrorMessage="*" 
+                                  ValidationGroup="B"></asp:RequiredFieldValidator>
+                                    </td>
+                        </tr>
+                        </table>
+                      </asp:Panel>
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
                     <tr>
                       <td>购买件数：<span class="red"><b><asp:Literal ID="litAccountNums3" runat="server"></asp:Literal>件</b></span></td>
                     </tr>
                     <tr>
                       <td>一口价：<span class="red"><b><asp:Literal ID="litPriceTop2" runat="server"></asp:Literal></b></span>元</td>
-                    </tr>
-                    <tr>
-                      <td>拍卖保证金：<span class="red"><b>10.00</b></span>元</td>
-                    </tr>
-                    <tr>
-                      <td><div class="buy_box">为营造良好的交易环境，保障交易成功率，买家出价将被锁定<span class="red">10</span>元押金，交易正常结束后全部退还，如果成交不买，<br />
-                        保证金将被自动罚没，不予退还。<a href="">详情点此</a></div></td>
                     </tr>
                     <tr>
                       <td>校验码：
@@ -244,7 +241,7 @@
                     <tr>
                       <td><div class="but_center">
                           <asp:ImageButton ID="imgBTNPriceTopSubmit" ImageUrl="~/images/button3.png" 
-                              runat="server" ValidationGroup="B" /></div></td>
+                              runat="server" ValidationGroup="B" onclick="imgBTNPriceTopSubmit_Click" /></div></td>
                     </tr>
                   </table>
 				</div>

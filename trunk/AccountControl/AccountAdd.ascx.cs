@@ -17,7 +17,7 @@ public partial class AccountControl_AccountAdd : System.Web.UI.UserControl
     {
         if(!IsPostBack)
         {
-            lblPNKID.Text = DateTime.Now.ToString("yyyyMMddHHmmss")+Cookies.getCookies("cUID").PadLeft(6,'0');
+            lblPNKID.Text = Tools.CreateNum().ToString();
             Tools.FillDropDownList(ddlGame, "sysGame", "", "请选择游戏");
             
             //加价幅度增加 1-50元

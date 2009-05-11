@@ -46,6 +46,19 @@ public partial class Products_ProductsDetails : System.Web.UI.UserControl
                 litGameName.Text = pDR["gamename"].ToString()+pDR["servername"];
                 litStatus.Text = pDR["productsstatus"].ToString();
                 litSaleMethod.Text = pDR["salemethod"].ToString();
+
+                if(pDR["salemethodID"].ToString()== "3")
+                {
+                    imgBTNSubMit.Enabled = false;
+                    tbMyPrice.Text = "此交易为中介交易";
+                    tbMyPrice.Enabled = false;
+                    PanelZhongJie.Visible = true;
+                }
+                else
+                {
+                    PanelZhongJie.Visible = false;
+                }
+
                 litSaleType.Text = pDR["saletype"].ToString();
                 litTimeLeft2.Text = pDR["ptimeend"].ToString();
                 litProductInTime.Text = pDR["intime"].ToString();
@@ -57,7 +70,7 @@ public partial class Products_ProductsDetails : System.Web.UI.UserControl
                
                 litViewCount.Text = pDR["ishits"].ToString();
                 litProductDetails.Text = pDR["pDetails"].ToString();
-                litPriceTop.Text = decimal.Parse(pDR["pPriceTop"].ToString()).ToString("C");
+                litPriceTop.Text = decimal.Parse(pDR["pPriceTop"].ToString()).ToString("F2");
                 litPriceTop2.Text = litPriceTop.Text;
                 litPriceTop11.Text = pDR["pPriceTop"].ToString();
                 if(pDR["saletypeid"].ToString()=="1")
@@ -88,10 +101,10 @@ public partial class Products_ProductsDetails : System.Web.UI.UserControl
                 {
                     pricenow = pDR["ppricebase"].ToString();
                 }
-                CompareValidator1.ValueToCompare = (double.Parse(pricenow)+10).ToString();
-                litPriceNow4.Text = (double.Parse(pricenow) + double.Parse(litPriceStep.Text)).ToString("C");
+                CompareValidator1.ValueToCompare = (double.Parse(pricenow) + double.Parse(litPriceStep.Text)).ToString();
+                litPriceNow4.Text = (double.Parse(pricenow) + double.Parse(litPriceStep.Text)).ToString("F2");
                 litPriceNow22.Text = decimal.Parse(pricenow).ToString();
-                pricenow = decimal.Parse(pricenow).ToString("C");
+                pricenow = decimal.Parse(pricenow).ToString("F2");
                 litPriceNow1.Text = pricenow;
                 litPriceNow2.Text = pricenow;
                 litPriceNow3.Text = pricenow;
@@ -177,11 +190,13 @@ public partial class Products_ProductsDetails : System.Web.UI.UserControl
                 Response.End();
             }
             //验证商品状态
-            if(GProduct.Query().WHERE("pnkid="+Request["pnkid"]).SetSelectList("StatusID").ExecuteScalar().ToString()!="1")
+            if(GProduct.Query().WHERE("pnkid="+Request["pnkid"]).SetSelectList("StatusID").WHERE("SaleMethodID",Comparison.NotEquals,Dictionary.SaleMethodID[3]).ExecuteScalar().ToString()!="1")
             {
                 string err =
-                    VwProductsBaseDetail.Query().SetSelectList("ProductsStatus").WHERE("pnkID=" + Request["pnkid"]).
-                        ExecuteScalar().ToString();
+                    VwProductsBaseDetail.Query()
+                    .SetSelectList("ProductsStatus")
+                    .WHERE("pnkID=" + Request["pnkid"])
+                    .ExecuteScalar().ToString();
                 LitError.Text = Tools.Error("该商品已经" + err) + Tools.jsRedirect(Request.Url.ToString());
                 Response.End();
             }
@@ -202,37 +217,38 @@ public partial class Products_ProductsDetails : System.Web.UI.UserControl
                 {
                     if(Pricemy>=PriceTop)
                     {
-                        //出价超过一口价
-                        GOrderInfo g = new GOrderInfo();
-                        g.UID = int.Parse(Cookies.getCookies("cUID"));
-                        g.Pnkid = decimal.Parse(Request["pnkID"]);
-                        g.OrderNumber = int.Parse(tbAccountNums.Text);
-                        g.OrderType = 1;
-                        g.OrderStatus = 3;
-                        g.PriceNow = PriceTop;
-                        g.PriceAgent = Pricemy;
-                        g.InTime = DateTime.Now;
-                        g.Save();
-                        
-                        GProduct gProduct=new GProduct("pnkid",Request["pnkID"]);
-                        gProduct.StatusID = 2;
-                        gProduct.Save();
-
-                        LitError.Text = Tools.Error("竞拍成功,等待付款!") + Tools.jsRedirect(Request.UrlReferrer.ToString());
+                        LitError.Text = Tools.Error("您的出价已经超过一口价，请直接以一口价购买!") + Tools.jsRedirect(Request.UrlReferrer.ToString());
                     }
                     else
                     {
+                        decimal myMoney = Money.AccountCPrice(int.Parse(Cookies.getCookies("cUid")),
+                                                              Dictionary.MoneyType[1]);
+                        if(myMoney<Money.YaJin(1))
+                        {
+                            LitError.Text = Tools.Error("账务余额不足，请充值！") + Tools.jsRedirect(Request.UrlReferrer.ToString());
+                            Response.End();
+                        }
+
+                        decimal orderNumber = Tools.CreateNum();
                         GOrderInfo g = new GOrderInfo();
                         g.UID = int.Parse(Cookies.getCookies("cUID"));
                         g.Pnkid = decimal.Parse(Request["pnkID"]);
-                        g.OrderNumber = int.Parse(tbAccountNums.Text);
-                        g.OrderType = 1;
-                        g.OrderStatus = 1;
+                        g.OrderNumber = orderNumber;
+                        g.OrderType = 2; //2-领先
+                        //g.OrderStatus = 2;
                         g.PriceNow = PriceNow;
                         g.PriceAgent = Pricemy;
                         g.InTime = DateTime.Now;
                         g.Save();
-                        LitError.Text = Tools.Error("出价成功!") + Tools.jsRedirect(Request.UrlReferrer.ToString());
+
+                        //押金扣除
+                        Money.AccountRecordOprate(int.Parse(Cookies.getCookies("cUid")), orderNumber,
+                                                  decimal.Parse(Request["pnkid"]), Dictionary.MoneyType[2],
+                                                  Dictionary.PriceType[7], -Money.YaJin(1), "", "", "",
+                                                  Dictionary.AccountRecordStatus[5],DateTime.Now);
+                        LitError.Text = Tools.Error("出价成功!自动扣除押金" + Money.YaJin(1) + "元") +
+                                        Tools.jsRedirect(Request.UrlReferrer.ToString());
+
 
                     }
                 }
@@ -249,12 +265,13 @@ public partial class Products_ProductsDetails : System.Web.UI.UserControl
                 if (Pricemy < priceAgent)
                 {
                     //我的出价小于代理出价
+
                     GOrderInfo g = new GOrderInfo();
                     g.UID = int.Parse(Cookies.getCookies("cUID"));
                     g.Pnkid = decimal.Parse(Request["pnkID"]);
-                    g.OrderNumber = int.Parse(tbAccountNums.Text);
-                    g.OrderType = 1;
-                    g.OrderStatus = 1;
+                    g.OrderNumber = Tools.CreateNum();
+                    g.OrderType = Dictionary.orderType[1]; // 1-出局
+                    g.OrderStatus = Dictionary.orderStatus[0];
                     g.PriceNow = Pricemy;
                     g.PriceAgent = Pricemy;
                     g.InTime = DateTime.Now;
@@ -275,13 +292,22 @@ public partial class Products_ProductsDetails : System.Web.UI.UserControl
                 {
                     if (Pricemy < PriceTop)
                     {
+                        decimal myMoney = Money.AccountCPrice(int.Parse(Cookies.getCookies("cUid")),
+                                                              Dictionary.MoneyType[1]);
+                        if (myMoney < Money.YaJin(1))
+                        {
+                            LitError.Text = Tools.Error("账务余额不足，请充值！") + Tools.jsRedirect(Request.UrlReferrer.ToString());
+                            Response.End();
+                        }
+
                         //我的出价大于代理出价
+                        decimal orderNumber = Tools.CreateNum();
                         GOrderInfo g = new GOrderInfo();
                         g.UID = int.Parse(Cookies.getCookies("cUID"));
                         g.Pnkid = decimal.Parse(Request["pnkID"]);
-                        g.OrderNumber = int.Parse(tbAccountNums.Text);
-                        g.OrderType = 1;
-                        g.OrderStatus = 1;
+                        g.OrderNumber = orderNumber;
+                        g.OrderType = Dictionary.orderType[2]; //2-领先
+                        g.OrderStatus = Dictionary.orderStatus[0];
                         if (Pricemy - priceAgent > PriceStep)
                         {
                             g.PriceNow = priceAgent + PriceStep;
@@ -294,30 +320,38 @@ public partial class Products_ProductsDetails : System.Web.UI.UserControl
                         g.InTime = DateTime.Now;
                         g.Save();
 
+                        //押金扣除
+                        Money.AccountRecordOprate(int.Parse(Cookies.getCookies("cUid")), orderNumber,
+                                                  decimal.Parse(Request["pnkid"]), Dictionary.MoneyType[2],
+                                                  Dictionary.PriceType[7], -Money.YaJin(1), "", "", "",
+                                                  Dictionary.AccountRecordStatus[5], DateTime.Now);
+
+                        //更新之前领先订单为出局
                         GOrderInfo __g = new GOrderInfo("id", dr[1].ToString());
                         __g.PriceNow = __g.PriceAgent.Value;
+                        __g.OrderType = Dictionary.orderType[1]; //1-出局
                         __g.InTime = DateTime.Now.AddSeconds(-1);
                         __g.Save();
+
+                        //返还押金
+                        Query query = new Query(GOrderInfo.Schema);
+                        query.AddWhere("ID", dr[1].ToString());
+                        query.SetSelectList("uID,orderNumber");
+                        IDataReader drQuery = query.ExecuteReader();
+                        if(drQuery.Read())
+                        {
+                            Money.AccountRecordOprate(int.Parse(drQuery[0].ToString()), decimal.Parse(dr[1].ToString()),
+                                                  decimal.Parse(Request["pnkid"]), Dictionary.MoneyType[2],
+                                                  Dictionary.PriceType[8], Money.YaJin(1), "", "", "",
+                                                  Dictionary.AccountRecordStatus[5], DateTime.Now);
+                        }
+                        LitError.Text = Tools.Error("出价成功!自动扣除押金" + Money.YaJin(1) + "元") +
+                                        Tools.jsRedirect(Request.UrlReferrer.ToString());
                     }
                     else
                     {
                         //出价超过一口价
-                        GOrderInfo g = new GOrderInfo();
-                        g.UID = int.Parse(Cookies.getCookies("cUID"));
-                        g.Pnkid = decimal.Parse(Request["pnkID"]);
-                        g.OrderNumber = int.Parse(tbAccountNums.Text);
-                        g.OrderType = 1;
-                        g.OrderStatus = 3;
-                        g.PriceNow = PriceTop;
-                        g.PriceAgent = Pricemy;
-                        g.InTime = DateTime.Now;
-                        g.Save();
-
-                        GProduct gProduct = new GProduct("pnkid", Request["pnkID"]);
-                        gProduct.StatusID = 2;
-                        gProduct.Save();
-
-                        LitError.Text = Tools.Error("竞拍成功,等待付款!") + Tools.jsRedirect(Request.UrlReferrer.ToString());
+                        LitError.Text = Tools.Error("您的出价已经超过一口价，请直接以一口价购买!") + Tools.jsRedirect(Request.UrlReferrer.ToString());
                     }
                 }
             }
@@ -327,6 +361,38 @@ public partial class Products_ProductsDetails : System.Web.UI.UserControl
         else
         {
             LitError.Text = Tools.Error("未登录或验证码错误！");
+        }
+    }
+    protected void imgBTNPriceTopSubmit_Click(object sender, ImageClickEventArgs e)
+    {
+        if(PanelZhongJie.Visible)
+        {
+            Query q = new Query(VwProductsBaseDetail.Schema);
+            q.AddWhere("PNKID", Request["pnkID"]);
+            q.AddWhere("SaleMethodID", Dictionary.SaleMethodID[3]);
+            q.AddWhere("pFastkey", tbFastKey.Text);
+            if(q.GetRecordCount()>0)
+            {
+                Cookies.addCookies("cFastKey",tbFastKey.Text,0);
+
+                decimal PriceNow = decimal.Parse(litPriceNow22.Text);
+                GOrderInfo g = new GOrderInfo();
+                g.UID = int.Parse(Cookies.getCookies("cUID"));
+                g.Pnkid = decimal.Parse(Request["pnkID"]);
+                g.OrderNumber = Tools.CreateNum();
+                g.OrderType = Dictionary.orderType[2]; //3-等待付款
+                //g.OrderStatus = 2;
+                g.PriceNow = PriceNow;
+                g.PriceAgent = PriceNow;
+                g.InTime = DateTime.Now;
+                g.Save();
+                Response.Redirect("~/Payorder.aspx?pnkid="+Request["pnkid"]);
+            }
+        }
+        else
+        {
+
+            Response.Redirect("~/payorder.aspx?pnkid=" + Request["pnkid"]);
         }
     }
 }
