@@ -9,6 +9,7 @@ using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using SubSonic;
+using System.Text;
 using GameDB;
 /// <summary>
 ///Tools
@@ -21,6 +22,9 @@ public class Tools
 		//TODO: 在此处添加构造函数逻辑
 		//
 	}
+
+
+
 
     /// <summary>
     /// 添加Dropdownlist
@@ -109,6 +113,29 @@ public class Tools
         return n + y;
     }
 
+    /// <summary>
+    /// 生成随机编号
+    /// </summary>
+    /// <returns>返回编号</returns>
+    public static  decimal CreateNum()
+    {
+        return decimal.Parse(DateTime.Now.ToString("yyyyMMddHHmmss") + Cookies.getCookies("cUID").PadLeft(6, '0'));
+    }
+
+    public static string jsClipBoard()
+    {
+        StringBuilder str = new StringBuilder();
+        str.Append("<SCRIPT language=javascript>");
+        str.Append("function copyToClipBoard(values)");
+        str.Append("{");
+        str.Append("var clipBoardContent=values; ");
+        str.Append("window.clipboardData.setData('Text',clipBoardContent);");
+        str.Append("alert('复制成功！');");
+        str.Append("}");
+        str.Append("</SCRIPT>");
+        return str.ToString();
+    }
+
     public static string Error(string err)
     {
         return "<script language=javascript>alert('" + err + "');</script>";
@@ -117,7 +144,6 @@ public class Tools
     {
         return "<script lanuage=javascript>this.location.href('"+ url +"');</script>";
     }
-
     /// <summary>
     /// 检查密码提示问题及答案
     /// </summary>

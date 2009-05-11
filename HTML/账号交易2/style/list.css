@@ -1,0 +1,59 @@
+/* CSS Document */
+@import url("header.css");
+
+.leftp{ width:190px; float:left; margin-top:8px;}
+	.gz{ width:190px; background:url(../images/gz_middle.gif) repeat-y;}
+	.gz dt{}
+	.gz dd{ background:url(../images/gz_bottom.gif) no-repeat bottom;}
+	.gz dd ul{ width:168px; margin:0px auto;}
+	.gz dd ul li{ display:block; padding:4px; line-height:18px; border-bottom:1px dashed #BBBBBB;}
+	.gz dd ul li a{ color:#000000;}
+	.gz dd p{ display:block; width:168px; padding:4px; line-height:20px; text-align:right;}
+	
+	.lunit{ width:190px; margin-top:8px;}
+	.lunit dt{ background:url(../images/left_unit_title.gif) no-repeat; width:190px; height:28px; line-height:32px; overflow:hidden; text-indent:16px;}
+	.lunit dt strong{ float:left;}
+	.lunit dt span{ float:right; margin-right:8px;}
+	.lunit dd{ border:1px solid #80C0E8; border-top:none; padding:6px;}
+	.lunit dd ul{ width:168px; margin:0px auto;}
+	.lunit dd ul li{ display:block; padding:4px; line-height:18px; border-bottom:1px dashed #BBBBBB;}
+	
+.rightp{ width:760px; float:right; margin-top:8px;}
+
+	.rsearchtabs{ width:100%; float:left; clear:both;}
+	.rsearchtabs dt{}
+	.rsearchtabs dt select{ float:left; margin-right:4px; margin-top:3px;}
+	.rsearchtabs dt a{ display:block; float:left; background:url(../images/rtab_bg1_left.gif) no-repeat left; height:26px; line-height:30px;_line-height:26px; text-align:center; margin-right:6px;}
+	.rsearchtabs dt a span{display:block; padding-left:16px; padding-right:16px; height:24px;_width:60px; white-space:nowrap; background:url(../images/rtab_bg1_right.gif) right top no-repeat;}
+	
+	.rsearchtabs dt a.focus{ background:url(../images/rtab_bg_left.gif) no-repeat left; color:#FFFFFF;}
+	.rsearchtabs dt a.focus span{background:url(../images/rtab_bg_right.gif) right top no-repeat; font-weight:bold;}
+	
+	
+	
+	.rsearchtabs dd{ clear:both; background:url(../images/right_searcb_dd_bg.gif) repeat-x top; display:none; padding:6px;}
+	.rsearchtabs dd .sel1{ width:120px;}
+	.rsearchtabs dd .sel2{ width:70px;}
+	.input{ border:1px solid #D6D6D6; height:16px; line-height:16px; text-indent:2px;}
+	.rsearchtabs dd .more{ width:700px; margin:0px auto;}
+	.rsearchtabs dd p{ margin:6px;}
+	.rsearchtabs dd .more select{ margin-right:20px;}
+	
+	.hotprod{ border:1px solid #FDA94F; background:#F6F6F6 url(../images/hot.gif) no-repeat 0px 0px; height:194px; margin-top:8px; float:left; clear:both; width:100%;}
+	.hotprod dt{ height:28px; margin:0 10px 0 24px; border-bottom:1px solid #DFDFDF;line-height:28px; }
+	.hotprod dt strong{ float:left; color:#FF4E00; text-indent:10px; font-size:14px;}
+	.hotprod dt span{ float:right; margin-right:10px;_margin-top:8px;}
+	.hotprod dd{ line-height:18px;}
+	.hotprod dd img{ border:1px solid #E0E0E0;}
+	
+	.listtitle{ border:1px solid #80C0E8; background:#FFFFFF; margin-top:8px; width:100%; float:left; clear:both;}
+	.listtitle td{ background:url(../images/tdbg.gif); height:27px;}
+	.listtitle .sel2{ width:70px;}
+
+	.list-content{ border-left:1px solid #D8D8D8; margin-top:1px; float:left; clear:both; }
+	.list-content th{ height:20px; background:#EFEFEF; border-bottom:1px solid #D8D8D8; line-height:20px; padding-top:3px;font-weight:normal; text-align:center;}
+	.list-content th.last{ border-right:1px solid #D8D8D8;}
+	.list-content td{line-height:24px; background:#FFFFFF; border-bottom:1px solid #D8D8D8;border-right:1px solid #D8D8D8; padding:10px;}
+
+.pages a{ width:17px; height:19px; background:#FFFFFF; color:#0044DD; text-decoration:none; font-size:12px; line-height:20px; border:1px solid #000; float:left; text-align:center; margin:2px;}
+	.pages a.focus{ color:#FF6600; background:#EEEEEE;}

@@ -1,0 +1,82 @@
+body,div,p,dl,dt,dd,ul,li,form{ margin:0px; padding:0px;font-size: 12px;text-decoration: none;}
+
+.clear{ clear:both;}
+.orange-text{ color:#FF6000;}
+.blue-text{ color:#0062B3;}
+.red-text{ color:#FF0000;}
+.hui-text{ color:#BEBEBE;}
+.green{ color:#199500;}
+.black_text{ color:#000000;}
+
+a{color:#0062B3;}
+
+.h24{ line-height:24px;}
+
+.wrap{ width:960px; margin:0px auto;}
+/*头部样式*/
+.header{ height:110px; width:960px; overflow:hidden;}
+	.logo{ width:220px; float:left;}
+	.tools{ width:720px; float:right;}
+		.menu{ line-height:30px; height:30px; text-align:right; margin-top:10px; color:#001D71;}
+			.menu a{ text-decoration:none; color:#001D71;}
+		.btns{ text-align:right; line-height:30px; height:30px;}
+			.btns img{ margin-left:4px;}
+		.myinfo{ line-height:24px; text-align:right; color:#001D71;}
+			.myinfo a{ text-decoration:none; color:#001D71;}
+/*当前位置样式*/
+.pos{ clear:both; color:#0062B3;}
+.pos a{ color:#0062B3; text-decoration:none;}
+
+/*通栏广告*/
+.ad001{ height:103px; margin:4px 0 8px 0; background-image:url(../images/top_image.jpg);}
+
+/*左侧栏*/
+.left{ width:190px; float:left; margin-right:8px;}
+	.unit{ border:1px solid #96C2EF; clear:both;}
+	.unit dt{ background:url(../images/left_dt_bg.gif) repeat-x; height:26px; line-height:26px; text-indent:10px; color:#FFFFFF; font-weight:bold;}
+	.unit dd{ padding:8px;}
+		.tabs{ border-bottom:1px solid #FFA129; margin-top:8px; height:19px; margin-bottom:6px;}
+		.tabs a{ display:block; width:40px; height:18px; background:#E7E7E7; border:1px solid #CCCCCC; border-bottom:none; float:left; margin-right:5px; line-height:18px; text-align:center; color:#757575; text-decoration:none;}
+		.tabs a.focus{ background:#FFA129; color:#FFFFFF;border:1px solid #FFA129;border-bottom:none;}
+		
+		.tabs-content{ line-height:20px;}
+
+	
+.right{ float:left; width:760px;}
+	.dpgg{ float:left;}
+	.dpgg .logo{ width:125px; height:125px; float:left;border:1px solid #96C2EF; margin-right:8px;}
+	.dpgg .content{ float:left; width:624px;}
+	.dpgg .content dt{ background:#D4EEFF; border-bottom:1px solid #96C2EF; height:24px; line-height:24px; font-weight:bold; text-indent:10px;color:#0062B3;}
+	.dpgg .content dd{ border:1px dashed #96C2EF; margin-top:8px; padding:12px; height:68px;  line-height:20px;}
+	
+	.zgtj{width:760px; margin-top:8px;}
+	.zgtj dt{ background:#D4EEFF; border-bottom:1px solid #96C2EF; height:24px; line-height:24px; font-weight:bold; text-indent:10px;color:#0062B3;}
+	.zgtj dd{ padding:12px; line-height:20px; }
+	.zgtj dd ul{ list-style:none;}
+	.zgtj dd ul li{line-height:24px; height:24px;}
+	.zgtj dd ul img{ margin-right:6px; }
+
+	
+	.search{ border-top:1px solid #D8D8D8; border-bottom:1px solid #D8D8D8; background:#F3F3F3; width:760px; clear:both;}
+	.s_title{ height:27px; width:760px;}
+	.s_title img{ float:left;}
+	.close{ width:37px; height:18px; background:#D1D1D1; line-height:18px; text-align:center; display:block; float:right;}
+	.close a{ color:#000000; text-decoration:none;}
+	.s_content{ width:680px; margin:6px auto;}
+	.s_content .input{ height:16px;  border:1px solid #CCC; text-align:center; line-height:16px;}
+	.s_content p{ margin:6px; margin-bottom:10px;}
+	
+	
+	.list{width:760px; margin-top:8px;}
+	.list-title{ background:#D4EEFF; border-bottom:1px solid #96C2EF;  font-weight:normal; text-indent:10px;color:#0062B3;}
+	.list-content{ border-left:1px solid #D8D8D8;}
+	.list-content th{ height:24px; background:#EFEFEF; border-bottom:1px solid #D8D8D8; line-height:24px; font-weight:normal; text-align:center;}
+	.list-content th.last{ border-right:1px solid #D8D8D8;}
+	.list-content td{line-height:24px; background:#FFFFFF; border-bottom:1px solid #D8D8D8;border-right:1px solid #D8D8D8; padding:10px;}
+
+.pages a{ width:17px; height:19px; background:#FFFFFF; color:#0044DD; text-decoration:none; font-size:12px; line-height:20px; border:1px solid #000; float:left; text-align:center; margin:2px;}
+	.pages a.focus{ color:#FF6600; background:#EEEEEE;}
+
+
+.bottom{ border-top:2px solid #B0B0B0; text-align:center; line-height:24px; padding-top:5px; color:#333333; margin-top:10px;}
+.bottom a{ color:#004FE0; text-decoration:none;}
