@@ -9,6 +9,7 @@ using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using SubSonic;
+using GameDB;
 /// <summary>
 ///Tools
 /// </summary>
@@ -115,5 +116,24 @@ public class Tools
     public static string jsRedirect(string url)
     {
         return "<script lanuage=javascript>this.location.href('"+ url +"');</script>";
+    }
+
+    /// <summary>
+    /// 检查密码提示问题及答案
+    /// </summary>
+    /// <param name="uid">用户id</param>
+    /// <param name="questiontype">问题typeid</param>
+    /// <param name="answerkey">答案</param>
+    /// <returns>是否通过检查</returns>
+    public static bool CheckQuestion(string uid,string questiontype,string answerkey)
+    {
+        Query q = GUserInfo.Query().WHERE("UserID", uid);
+        string utype = q.SetSelectList("QuestionType").ExecuteScalar().ToString();
+        string ukey = q.SetSelectList("MyKey").ExecuteScalar().ToString();
+        if (utype != questiontype)
+            return false;
+        if (ukey != answerkey)
+            return false;
+        return true;
     }
 }
