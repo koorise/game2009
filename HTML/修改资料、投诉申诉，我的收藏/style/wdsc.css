@@ -1,0 +1,40 @@
+/* CSS Document */
+a{ color:#004BA6; text-decoration:none;}
+a.org{ color:#FF6600;}
+.blue{ color:#004BA6; text-decoration:none;}
+.orange{ color:#E32D03; text-decoration:none;}
+.red{ color:#FF0000; text-decoration:none;}
+.f14{ font-size:14px; font-weight:bold; line-height:30px;}
+
+.header{ border:none;}
+.main { clear:both; margin-top:0px;}
+.pos{ height:28px; line-height:28px; background:url(../images/pos_bg.gif) repeat-x; text-indent:10px; margin-bottom:6px; color:#444444;}
+.pos a{ color:#444444; text-decoration:none;}
+
+.hotsc{ width:188px; float:left;}
+.hotsc *{ padding:0px; margin:0px;}
+.hotsc dt{ height:17px; width:100%; background:url(../images/hotsc_tit.gif) no-repeat; text-indent:10px; padding:5px; color:#FFFFFF; font-weight:bold; line-height:15px;}
+.hotsc dd{ border:1px solid #9DCDEC; padding:10px;}
+.hotsc dd ul{ padding:0px; margin:0px; list-style:none; line-height:18px;}
+.hotsc dd ul li{ padding:2px; border-bottom:1px dashed #309BDF;}
+.hotsc dd ul li.noborder{ border:none;}
+
+.sclist{float:right; width:760px;}
+.sclist dt{ border-bottom:1px solid #C61821; height:26px; padding-left:40px;}
+.sclist dt a{ display:block; width:100px; height:26px; background:url(../images/tabs_sc0.gif); float:left; line-height:30px; text-align:center; margin-right:3px; color:#000000; font-weight:bold; font-size:14px; overflow:hidden;}
+.sclist dt a.focus{ background:url(../images/tabs_sc.gif); color:#FFFFFF;}
+.sclist dd{ border-top:2px solid #E6E6E6;}
+
+.search{ margin-top:4px; margin-bottom:4px; background:#F2FAFF; height:35px; width:100%; float:left;}
+.search .txt{ width:240px; height:16px; line-height:16px;}
+
+.list{ width:100%; float:left; clear:both;}
+.listtable td input{ margin-top:6px;}
+.listtable td { border-bottom:1px solid #D7D7D7; padding:10px; height:60px; vertical-align:top;}
+
+
+.unborder{ border-bottom:1px solid #9DCDEC;}
+
+
+.pages a{ width:17px; height:19px; background:#FFFFFF; color:#0044DD; text-decoration:none; font-size:12px; line-height:20px; border:1px solid #000; float:left; text-align:center; margin:2px;}
+	.pages a.focus{ color:#FF6600; background:#EEEEEE;}

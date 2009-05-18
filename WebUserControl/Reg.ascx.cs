@@ -29,6 +29,7 @@ public partial class WebUserControl_Reg : System.Web.UI.UserControl
             q.AddWhere("username", tbUserName.Text).OR("uMail",tbEmail1.Text);
             if(q.GetRecordCount()==0)
             {
+                //用户数据
                 GUserInfo g = new GUserInfo();
                 g.UserName = tbUserName.Text;
                 g.PassWD = tbPassWD1.Text;
@@ -42,6 +43,21 @@ public partial class WebUserControl_Reg : System.Web.UI.UserControl
                 g.IsSalerPer = 1;
                 g.IsBlock = 0;
                 g.Save();
+                
+                //店铺数据插入
+                int uID =
+                    int.Parse(
+                        GUserInfo.Query().SetTop("1").SetSelectList("uID").ORDER_BY("uid desc").ExecuteScalar().ToString
+                            ());
+                ShopInfo s = new ShopInfo();
+                s.ShopLogo = "~/images/dpgg_logo.gif";
+                s.UserID = uID;
+                s.ShopName = tbUserName.Text;
+                s.ShopPost = "暂无";
+                s.ShopUpdateTime = DateTime.Now;
+                s.Save();
+
+
                 Panel1.Visible = false;
                 Panel2.Visible = true;
                 lbUsername.Text = tbUserName.Text;

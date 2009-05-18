@@ -1,0 +1,21 @@
+/* CSS Document */
+a{ color:#004BA6;}
+
+.cont{ width:770px; float:right;}
+.cont h1{width:770px; line-height:32px; height:32px; background:url(../images/h1_dot.gif) no-repeat left; border-bottom:2px solid #ACD0F1; font-size:14px; text-indent:10px; margin:0px; margin-bottom:6px; clear:both;}
+.f14{ font-size:14px; line-height:30px;}
+.form{ background:#ACD0F1;}
+.form th{ background:#D6EBFF; height:26px; line-height:26px; text-indent:18px;}
+.form td{ background:#FFFFFF;}
+.form td table th{ height:30px; background:#F3F9FF; width:160px; text-align:right; line-height:30px; color:#004BA6; font-weight:normal;}
+.form td table td{ height:30px; }
+.form td table .txt{ width:180px; height:16px; line-height:16px; margin-left:10px;}
+.form td table .sel{ width:182px; margin-left:10px; height:20px;}
+.form td table .lable{ background:#F2F2F2; color:#004BA6; padding:6px; padding-left:10px;}
+
+.passform{ width:614px; margin-top:30px; margin-left:20px;}
+.modyemail{ width:660px; margin-top:30px; margin-left:20px;}
+.changequerytion{ width:690px; margin-top:30px; margin-left:20px;}
+.changequerytionttip{ width:660px; margin-top:30px; margin-left:20px;}
+.modyuserinfo{ width:720px; margin-top:30px; margin-left:20px;}
+.yazheng{ width:600px; margin:30px auto;}

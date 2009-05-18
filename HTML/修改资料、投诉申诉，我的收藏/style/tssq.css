@@ -1,0 +1,19 @@
+/* CSS Document */
+a{ color:#004BA6;}
+
+.cont{ width:770px; float:right;}
+.cont h1{width:770px; line-height:32px; height:32px; background:url(../images/h1_dot.gif) no-repeat left; border-bottom:2px solid #ACD0F1; font-size:14px; text-indent:10px; margin:0px; margin-bottom:6px; clear:both;}
+.green{ color:#33A800;}
+.ddh2{ text-indent:30px;}
+.ddh1{ margin-left:10px;background:url(../images/ddh.gif) left no-repeat; line-height:30px;}
+.bluebox{ border:1px solid #ACD0F1; }
+td.title{ padding:0px 20px 0px 20px;line-height:30px;}
+td.comm{ padding:10px 20px 10px 20px;line-height:20px;}
+
+p.w740{  width:740px; margin:0px auto; line-height:24px;}
+
+.pages a{ width:17px; height:19px; background:#FFFFFF; color:#0044DD; text-decoration:none; font-size:12px; line-height:20px; border:1px solid #000; float:left; text-align:center; margin:2px;}
+.pages a.focus{ color:#FF6600; background:#EEEEEE;}
+
+.spanbtn{ display:block; float:left; color:#1F5800; text-decoration:none;_width:120px; white-space:nowrap;background:url(../images/spanbtn_lefgbg.gif) no-repeat left top;}
+.spanbtn span{ display:block;padding-left:10px; padding-right:10px; height:24px; line-height:24px; text-align:center;background:url(../images/spanbtn_rightbg.gif) no-repeat right top; cursor:pointer; }

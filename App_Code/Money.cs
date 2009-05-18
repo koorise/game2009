@@ -60,7 +60,7 @@ public class Money
         q.ORDER_BY("ID desc");
         return decimal.Parse(q.ExecuteScalar().ToString());
     }
-    public static void AccountRecordOprate(int userID,decimal orderNumber,decimal PNKID,int moneyType, int priceType, decimal opratePrice,string bak,string qNumber,string tNumber,int isStatus,DateTime finishtime)
+    public static void AccountRecordOprate(int userID,decimal orderNumber,decimal PNKID,int moneyType, int priceType, decimal opratePrice,string bak,int isStatus,DateTime finishtime)
     {
         decimal cPrice = AccountCPrice(userID);
         if(cPrice+opratePrice>=0)
@@ -76,8 +76,8 @@ public class Money
             g.OperatePrice = opratePrice;
             g.CPrice = cPrice + opratePrice;
             g.Bak = bak;
-            g.QNumber = qNumber;
-            g.TNumber = tNumber;
+            //g.QNumber = qNumber;
+            //g.TNumber = tNumber;
             g.IsStatus = isStatus;
             g.FinishTime = finishtime;
             g.Save();

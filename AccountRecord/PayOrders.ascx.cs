@@ -24,10 +24,20 @@ public partial class AccountRecord_PayOrders : System.Web.UI.UserControl
 
             Query query = new Query(GProduct.Schema);
             query.AddWhere("pnkid", Request["pnkid"]);
+            query.AddWhere("statusID", Dictionary.ProductsStatus[1]);
             query.SetSelectList("pTitle");
-            litProductBasic1.Text = query.ExecuteScalar().ToString();
-            litProductBasic2.Text = litProductBasic1.Text;
-            litProductBasic3.Text = litProductBasic1.Text;
+            if(query.GetRecordCount()>0)
+            {
+                litProductBasic1.Text = query.ExecuteScalar().ToString();
+                litProductBasic2.Text = litProductBasic1.Text;
+                litProductBasic3.Text = litProductBasic1.Text;
+            }
+            else
+            {
+                litErr.Text = Tools.Error("对不起，该商品已经竞拍已经结束！") + Tools.jsRedirect("default.aspx");
+                Response.End();
+            }
+            
 
             Query q = new Query(GOrderInfo.Schema);
             q.AddWhere("pnkid", Request["pnkid"]);
@@ -116,7 +126,7 @@ public partial class AccountRecord_PayOrders : System.Web.UI.UserControl
                 if( mine >= pay)
                 {
                     //账务 扣款
-                    Money.AccountRecordOprate(int.Parse(Cookies.getCookies("cUID")), orderNumer, decimal.Parse(Request["pnkid"]), Dictionary.MoneyType[1], Dictionary.PriceType[1], -pay, "", tbQQ.Text, tbPhone.Text, Dictionary.AccountRecordStatus[4], DateTime.Now);
+                    Money.AccountRecordOprate(int.Parse(Cookies.getCookies("cUID")), orderNumer, decimal.Parse(Request["pnkid"]), Dictionary.MoneyType[1], Dictionary.PriceType[1], -pay, "", Dictionary.AccountRecordStatus[4], DateTime.Now);
 
                     //更新gPorduct.StatusID 为 2 -成交结束
                     GProduct gProduct = new GProduct("pnkid", Request["Pnkid"]);
@@ -168,7 +178,7 @@ public partial class AccountRecord_PayOrders : System.Web.UI.UserControl
 
 
                     //账务 扣款
-                    Money.AccountRecordOprate(int.Parse(Cookies.getCookies("cUID")),orderNumber,decimal.Parse(Request["pnkid"]),Dictionary.MoneyType[1],Dictionary.PriceType[1],-priceTop,"",tbQQ.Text,tbPhone.Text,Dictionary.AccountRecordStatus[4],DateTime.Now);
+                    Money.AccountRecordOprate(int.Parse(Cookies.getCookies("cUID")),orderNumber,decimal.Parse(Request["pnkid"]),Dictionary.MoneyType[1],Dictionary.PriceType[1],-priceTop,"",Dictionary.AccountRecordStatus[4],DateTime.Now);
                     litErr.Text = Tools.jsClipBoard();
                     litOrderNumber.Text = orderNumber.ToString() + "<a href='#' onclick=copyToClipBoard('" + orderNumber.ToString() + "')>[复制]</a>";
 

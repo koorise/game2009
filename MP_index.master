@@ -1,0 +1,58 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MP_index.master.cs" Inherits="MP_index" %>
+
+<%@ Register src="WebUserControl/headerIndex.ascx" tagname="headerIndex" tagprefix="uc1" %>
+<%@ Register src="WebUserControl/Footer.ascx" tagname="Footer" tagprefix="uc2" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>无标题页</title>
+    <link href="style/product.css" rel="stylesheet" type="text/css" />
+    <link href="style/global.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="scripts/tab.js"></script>
+    <script language="javascript" src="javascript/jquery.js"></script>
+    <script language="javascript">
+	    $(function(){
+		    $("#searchtabs dt a").click(function(){
+			    $("#searchtabs dt a").removeClass("focus");
+			    $("#searchtabs dd").hide();
+			    $(this).addClass("focus");
+			    $("#"+$(this).attr("data")).show();
+		    });
+
+	    });
+    </script>
+    <link href="style/header.css" rel="stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder id="head" runat="server">
+    <link href="style/product.css" rel="stylesheet" type="text/css" />
+    <link href="style/global.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="scripts/tab.js"></script>
+    <script language="javascript" src="javascript/jquery.js"></script>
+    <script language="javascript">
+	    $(function(){
+		    $("#searchtabs dt a").click(function(){
+			    $("#searchtabs dt a").removeClass("focus");
+			    $("#searchtabs dd").hide();
+			    $(this).addClass("focus");
+			    $("#"+$(this).attr("data")).show();
+		    });
+
+	    });
+    </script>
+    <link href="style/header.css" rel="stylesheet" type="text/css" />
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+<div class="wrap">
+    <form id="form1" runat="server">
+    <asp:ScriptManager ID="ScriptManager1" runat="server">
+    </asp:ScriptManager>
+    <uc1:headerIndex ID="headerIndex1" runat="server" />
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+    </asp:ContentPlaceHolder>
+    <uc2:Footer ID="Footer1" runat="server" />
+    </form>
+    </div>
+</body>
+</html>
