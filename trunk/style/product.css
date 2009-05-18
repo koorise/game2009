@@ -1,4 +1,4 @@
-#userinfo{ width:200px; float:left;border:#c8e1f3 1px solid}	
+#userinfo{ width:200px; float:left;border:#c8e1f3 1px solid; margin-top:8px;}	
 	#us_title{background:url(../images/hytitle_bg.gif) repeat-x; height:28px; line-height:26px; color:#FFFFFF; font-weight:bold; text-indent:10px;}
 	#us_info{ padding:10px; width:180px; }	
 		#us_id{height:25px; line-height:25px; color:#005697}
@@ -15,7 +15,7 @@
 
 
 
-#container{width:735px; float:right}
+#container{width:735px; float:right; margin-top:8px;}
 	#pro_info table td{line-height:30px; height:30px;}
 		#pro_name{ font-size:14px; font-weight:bold; text-align:center; height:28px; line-height:28px; border-bottom:#c8e1f3 1px solid}
 		.pad{padding-top:10px;}

@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="ProductDetails.aspx.cs" Inherits="ProductDetails" Title="无标题页" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/MP_index.master" AutoEventWireup="true" CodeFile="ProductDetails.aspx.cs" Inherits="ProductDetails" Title="无标题页" %>
 
 <%@ Register src="Products/ProductsDetails.ascx" tagname="ProductsDetails" tagprefix="uc1" %>
 

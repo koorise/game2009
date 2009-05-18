@@ -171,6 +171,7 @@ public partial class AccountControl_AccountAdd : System.Web.UI.UserControl
         g.PPriceBase = decimal.Parse(tbPriceBase.Text);
         g.PPriceTop = decimal.Parse(tbPriceTop.Text);
         g.PPriceStep = int.Parse(ddlPriceStep.SelectedValue);
+        g.PPriceNow = decimal.Parse(tbPriceBase.Text);
         g.PPromise = bool.Parse(rdBtnChengXin.Text);
         g.PFastKey = tbFastKey1.Text;
         g.CustomerServiceID = 0;

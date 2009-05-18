@@ -20,9 +20,7 @@ public partial class Products_ProductsDetails : System.Web.UI.UserControl
         {
             Query q=new Query("vwProductsBaseDetail");
             q.AddWhere("PNKID", Request["PNKID"]);
-            
             IDataReader pDR = q.ExecuteReader();
-            
             if(pDR.Read())
             {
                 Query _q = new Query(GUserInfo.Schema);
@@ -240,11 +238,15 @@ public partial class Products_ProductsDetails : System.Web.UI.UserControl
                         g.PriceAgent = Pricemy;
                         g.InTime = DateTime.Now;
                         g.Save();
-
+                        
+                        //更新gProducts.pPriceNow
+                        int u =
+                            new Update(GProduct.Schema).Set(GProduct.PPriceNowColumn).EqualTo(PriceNow).Where(
+                                GProduct.PnkidColumn).IsEqualTo(Request["pnkid"]).Execute();
                         //押金扣除
                         Money.AccountRecordOprate(int.Parse(Cookies.getCookies("cUid")), orderNumber,
                                                   decimal.Parse(Request["pnkid"]), Dictionary.MoneyType[2],
-                                                  Dictionary.PriceType[7], -Money.YaJin(1), "", "", "",
+                                                  Dictionary.PriceType[7], -Money.YaJin(1), "", 
                                                   Dictionary.AccountRecordStatus[5],DateTime.Now);
                         LitError.Text = Tools.Error("出价成功!自动扣除押金" + Money.YaJin(1) + "元") +
                                         Tools.jsRedirect(Request.UrlReferrer.ToString());
@@ -265,7 +267,6 @@ public partial class Products_ProductsDetails : System.Web.UI.UserControl
                 if (Pricemy < priceAgent)
                 {
                     //我的出价小于代理出价
-
                     GOrderInfo g = new GOrderInfo();
                     g.UID = int.Parse(Cookies.getCookies("cUID"));
                     g.Pnkid = decimal.Parse(Request["pnkID"]);
@@ -311,10 +312,19 @@ public partial class Products_ProductsDetails : System.Web.UI.UserControl
                         if (Pricemy - priceAgent > PriceStep)
                         {
                             g.PriceNow = priceAgent + PriceStep;
+                            //更新gProducts.pPriceNow
+                            int u =
+                                new Update(GProduct.Schema).Set(GProduct.PPriceNowColumn).EqualTo(priceAgent + PriceStep).Where(
+                                    GProduct.PnkidColumn).IsEqualTo(Request["pnkid"]).Execute();
+
                         }
                         else
                         {
                             g.PriceNow = Pricemy;
+                            //更新gProducts.pPriceNow
+                            int u =
+                                new Update(GProduct.Schema).Set(GProduct.PPriceNowColumn).EqualTo(Pricemy).Where(
+                                    GProduct.PnkidColumn).IsEqualTo(Request["pnkid"]).Execute();
                         }
                         g.PriceAgent = Pricemy;
                         g.InTime = DateTime.Now;
@@ -323,7 +333,7 @@ public partial class Products_ProductsDetails : System.Web.UI.UserControl
                         //押金扣除
                         Money.AccountRecordOprate(int.Parse(Cookies.getCookies("cUid")), orderNumber,
                                                   decimal.Parse(Request["pnkid"]), Dictionary.MoneyType[2],
-                                                  Dictionary.PriceType[7], -Money.YaJin(1), "", "", "",
+                                                  Dictionary.PriceType[7], -Money.YaJin(1), "", 
                                                   Dictionary.AccountRecordStatus[5], DateTime.Now);
 
                         //更新之前领先订单为出局
@@ -342,7 +352,7 @@ public partial class Products_ProductsDetails : System.Web.UI.UserControl
                         {
                             Money.AccountRecordOprate(int.Parse(drQuery[0].ToString()), decimal.Parse(dr[1].ToString()),
                                                   decimal.Parse(Request["pnkid"]), Dictionary.MoneyType[2],
-                                                  Dictionary.PriceType[8], Money.YaJin(1), "", "", "",
+                                                  Dictionary.PriceType[8], Money.YaJin(1), "", 
                                                   Dictionary.AccountRecordStatus[5], DateTime.Now);
                         }
                         LitError.Text = Tools.Error("出价成功!自动扣除押金" + Money.YaJin(1) + "元") +
