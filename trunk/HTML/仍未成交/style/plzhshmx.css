@@ -1,0 +1,12 @@
+/* CSS Document */
+a{ color:#004BA6; text-decoration:none;}
+.mx{ background:#C3E1F2; width:625px; margin:20px auto;}
+.mx caption{ font-size:14px; font-weight:bold; color:#444444; text-align:left; line-height:30px;}
+.mx th{ background:url(../images/mx_tbg.gif) repeat-x top; height:29px; line-height:28px; font-weight:normal; text-align:left; text-indent:16px;}
+.mx td{ background:#FFFFFF;}
+.mx td table th{ background:#FFFFFF; line-height:30px; color:#000000; border-bottom:1px solid #E1E1E1;}
+.mx td table td{ width:25%; border-left:1px solid #E1E1E1; border-bottom:1px solid #E1E1E1; height:30px; text-align:center; background:#F3F3F3;}
+.green{ color:#24A900;}
+.blue{ color:#19A7F0;}
+.red{ color:red;}
+.fenhong{ color:#FF00A2;}

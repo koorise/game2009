@@ -22,10 +22,6 @@ public class Tools
 		//TODO: 在此处添加构造函数逻辑
 		//
 	}
-
-
-
-
     /// <summary>
     /// 添加Dropdownlist
     /// </summary>
@@ -43,8 +39,11 @@ public class Tools
             q.AddWhere(whereStr[0], whereStr[1]);
         }
         IDataReader dr = q.ExecuteReader();
-        ListItem _li=new ListItem(indexOption,"0");
-        ddl.Items.Add(_li);
+        if(indexOption!="")
+        {
+            ListItem _li=new ListItem(indexOption,"0");
+            ddl.Items.Add(_li);
+        }
         while (dr.Read())
         {
             ListItem li = new ListItem(dr[1].ToString(), dr[0].ToString());
@@ -112,7 +111,6 @@ public class Tools
             y = 1;
         return n + y;
     }
-
     /// <summary>
     /// 生成随机编号
     /// </summary>
@@ -121,7 +119,6 @@ public class Tools
     {
         return decimal.Parse(DateTime.Now.ToString("yyyyMMddHHmmss") + Cookies.getCookies("cUID").PadLeft(6, '0'));
     }
-
     public static string jsClipBoard()
     {
         StringBuilder str = new StringBuilder();
@@ -135,7 +132,6 @@ public class Tools
         str.Append("</SCRIPT>");
         return str.ToString();
     }
-
     public static string Error(string err)
     {
         return "<script language=javascript>alert('" + err + "');</script>";
@@ -161,5 +157,33 @@ public class Tools
         if (ukey != answerkey)
             return false;
         return true;
+    }
+    /// <summary>
+    /// 剩余时间计算工具
+    /// </summary>
+    /// <param name="date">结束时间</param>
+    /// <returns></returns>
+    public static string  TimeLeft(string date)
+    {
+        DateTime dt = DateTime.Parse(date);
+        TimeSpan ts = dt - DateTime.Now;
+        return ts.Days.ToString() + "天" + ts.Hours.ToString() + "小时" + ts.Minutes.ToString() + "分";
+    }
+
+    public static string PicShow(bool b,string imgurl)
+    {
+        return b ? imgurl : imgurl.Replace(".","1.");
+    }
+
+    public static DataSet PageDST(string spd, string sql, string page, string recsperpage, string id, string sort)
+    {
+        //店铺商品列表数据绑定Repeater2
+        StoredProcedure sp = new StoredProcedure(spd);
+        sp.Command.AddParameter("@SQL", sql);
+        sp.Command.AddParameter("@Page", page);
+        sp.Command.AddParameter("@RecsPerPage", recsperpage);
+        sp.Command.AddParameter("@ID", id);
+        sp.Command.AddParameter("@Sort", sort);
+        return sp.GetDataSet();
     }
 }

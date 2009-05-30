@@ -23,21 +23,7 @@ public partial class Products_ProductsDetails : System.Web.UI.UserControl
             IDataReader pDR = q.ExecuteReader();
             if(pDR.Read())
             {
-                Query _q = new Query(GUserInfo.Schema);
-                //_q.SetSelectList("username");
-                _q.AddWhere("uID", pDR["UserID"].ToString());
-                IDataReader uDr = _q.ExecuteReader();
-                if(uDr.Read())
-                {
-                    hyLinkUserName.Text = uDr["username"].ToString();
-                    hyLinkUserName.NavigateUrl = "~/" + pDR["UserID"].ToString();
-
-                    litisBuyerPer.Text = string.Format("{0:0.00%}", decimal.Parse(uDr["isBuyerPer"].ToString()));
-                    litisBuyerScores.Text = uDr["isBuyerScores"].ToString();
-                    litisSalerPer.Text = string.Format("{0:0.00%}", decimal.Parse(uDr["isSalerper"].ToString()));
-                    litisSalerScores.Text = uDr["isSalerScores"].ToString();
-                    litInTime.Text = DateTime.Parse(uDr["inTime"].ToString()).ToShortDateString();
-                }
+                UserTips1.uID = int.Parse(pDR["userID"].ToString());
                 litProductTitle.Text = pDR["pTitle"].ToString();
                 
                 litPNKID.Text = Request["pnkid"];
