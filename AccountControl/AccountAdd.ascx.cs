@@ -177,6 +177,9 @@ public partial class AccountControl_AccountAdd : System.Web.UI.UserControl
         g.CustomerServiceID = 0;
         g.IsHits = 0;
         g.ProductsPromise = tbPromise.Text;
+        g.IsMail = bool.Parse(rBTNAccountMail2.SelectedValue);
+        g.IsPassPort = bool.Parse(rBTNAccountPassPort2.SelectedValue);
+        g.IsYellow = bool.Parse(rBTNAccountYellowPage2.SelectedValue);
         switch (saleType)
         {
 

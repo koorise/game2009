@@ -32,16 +32,16 @@
                             onselectedindexchanged="ddlGame_SelectedIndexChanged">
                         </asp:DropDownList>
                         <asp:DropDownList ID="ddlServer" runat="server">
-                            <asp:ListItem>服务器</asp:ListItem>
+                            <asp:ListItem Value="0">服务器</asp:ListItem>
                         </asp:DropDownList>
                         <asp:DropDownList ID="ddlJob" runat="server">
-                            <asp:ListItem>职业</asp:ListItem>
+                            <asp:ListItem Value="0">职业</asp:ListItem>
                         </asp:DropDownList>
                         <asp:DropDownList ID="ddlLevel" runat="server">
-                            <asp:ListItem>等级</asp:ListItem>
+                            <asp:ListItem Value="0">等级</asp:ListItem>
                         </asp:DropDownList>
                         <asp:DropDownList ID="ddlRace" runat="server">
-                            <asp:ListItem>种族</asp:ListItem>
+                            <asp:ListItem Value="0">种族</asp:ListItem>
                         </asp:DropDownList>  
                         </ContentTemplate>
                         <Triggers>

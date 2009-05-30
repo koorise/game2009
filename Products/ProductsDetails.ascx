@@ -1,38 +1,10 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="ProductsDetails.ascx.cs" Inherits="Products_ProductsDetails" %>
-<div class="main">
-		<div id="userinfo">
-			<div id="us_title">
-                <asp:ScriptManagerProxy ID="ScriptManagerProxy1" runat="server">
+<%@ Register src="../WebUserControl/UserTips.ascx" tagname="UserTips" tagprefix="uc1" %>
+<asp:ScriptManagerProxy ID="ScriptManagerProxy1" runat="server">
                 </asp:ScriptManagerProxy>
-                会员信誉档案</div>
-			<div id="us_info">
-				<div id="us_id">
-                    <asp:HyperLink ID="hyLinkUserName" runat="server"></asp:HyperLink></div>
-				<div id="us_tab">
-					<ul>
-						<li><a href="#" class="cur" id="tab1" onclick="changtab(1,3,'tab','info')">全部</a></li>
-						<li><a href="#" id="tab2" onclick="changtab(2,3,'tab','info')">帐号</a></li>
-						<li><a href="#" id="tab3" onclick="changtab(3,3,'tab','info')">金币</a></li>
-					</ul>
-					<div id="info1" style="display:block">
-						<dl>
-							<dd>卖家信用：<span class="num"><asp:Literal ID="litisSalerScores" runat="server"></asp:Literal></span> <img src="images/icon2.gif" width="18" height="16" align="absmiddle" /><img src="images/icon2.gif" width="18" height="16" align="absmiddle" /><img src="images/icon2.gif" width="18" height="16" align="absmiddle" /></dd>
-							<dd>买家信用：<span class="num"><asp:Literal ID="litisBuyerScores" runat="server"></asp:Literal></span> <img src="images/icon2.gif" width="18" height="16" align="absmiddle" /><img src="images/icon2.gif" width="18" height="16" align="absmiddle" /><img src="images/icon2.gif" width="18" height="16" align="absmiddle" /></dd>
-							<dd>卖家好评率： 
-                                <asp:Literal ID="litisSalerPer" runat="server"></asp:Literal></dd>
-							<dt>买家好评率：<asp:Literal ID="litisBuyerPer" runat="server"></asp:Literal></dt>
-							<dd>注册时间： 
-                                <asp:Literal ID="litInTime" runat="server"></asp:Literal></dd>
-						</dl>
-				  </div>
-					<div id="info2">222</div>
-					<div id="info3">333</div>
-					
-				</div>
-				<div class="but_enter" ><asp:HyperLink ID="hyLinkEnter" NavigateUrl="#" ImageUrl="~/images/enter.png" runat="server"></asp:HyperLink></div>
-			</div>
-		</div>
-		<div id="container">
+                <div class="main">
+		<uc1:UserTips ID="UserTips1" runat="server" />
+<div id="container">
 			<div id="pro_info">
 			  <table width="100%" border="0" cellspacing="0" cellpadding="0" >
                 <tr>

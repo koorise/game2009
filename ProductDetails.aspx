@@ -6,6 +6,7 @@
 <link href="style/global.css" rel="stylesheet" type="text/css" />
 <link href="style/product.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="scripts/tab.js"></script>
+
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     <uc1:ProductsDetails ID="ProductsDetails1" runat="server" />
