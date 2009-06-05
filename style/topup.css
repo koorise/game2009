@@ -1,0 +1,24 @@
+/* CSS Document */
+a{ color:#004BA6;}
+
+.cont{ width:770px; float:right;}
+.cont h1{width:770px; line-height:32px; height:32px; background:url(../images/h1_dot.gif) no-repeat left; border-bottom:2px solid #ACD0F1; font-size:14px; text-indent:10px; margin:0px; margin-bottom:6px; clear:both;}
+
+.tabs{ margin:0px; padding:0px; float:left; width:100%; }
+.tabs dt a{ display:block; background:url(../images/tab_blur_left.gif) repeat-x left; height:28px; line-height:28px;  float:left; margin-right:4px; font-weight:bold; color:#000000; text-decoration:none;_width:200px;}
+.tabs dt a span{ display:block; background:url(../images/tab_blur_right.gif) no-repeat right; height:28px;padding-left:20px; padding-right:20px; cursor:pointer;font-size:14px; text-align:center}
+.tabs dt a.focus{ display:block; background:url(../images/tab_focus_left.gif) repeat-x left; height:28px; line-height:28px;  float:left; margin-right:4px;color:#FFFFFF;}
+.tabs dt a.focus span{ display:block; background:url(../images/tab_focus_right.gif) no-repeat right; height:28px;padding-left:20px; padding-right:20px; cursor:pointer;font-size:14px; text-align:center;}
+.tabs dd{ border:1px solid #82B1DD; float:left; clear:both; width:100%;}
+
+.step{ width:100%; }
+.step ul{ padding:0px; margin:20px;_margin:20px 10px; width:730px;background:#F2F2F2; border-bottom:1px solid #D7D7D7; height:32px; line-height:32px; list-style:none; float:left; clear:both;}
+.step ul li{ float:left; width:180px; margin:0px; padding:0px;border-right:1px solid #D7D7D7;_margin-top:6px; }
+.step ul li.focus{ font-weight:bold; color:#FA0000;}
+.input{ height:20px; border:1px solid  #D7D7D7; line-height:20px;}
+.f14{ font-size:14px;}
+.money{ font-size:18px; font-weight:bold; color:#FF0000;}
+.greenbox{ background:#F3FFDF; border:1px solid #C0E880;}
+.bluebox{ background:#D6F3FF; border:1px solid #9CDCF7; padding:20px;}
+.bluebox p{ line-height:28px; background:url(../images/blue_dot.gif) no-repeat 0px 9px; margin:0px; padding:0px; height:28px; text-indent:12px; font-size:14px;}
+.hui{ color:#6C6C6C;}
