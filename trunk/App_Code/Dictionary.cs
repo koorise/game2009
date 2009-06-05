@@ -32,6 +32,10 @@ public class Dictionary
     /// </summary>
     public static int[] AccountRecordStatus = {0, 1, 2, 3, 4, 5};
     /// <summary>
+    /// gAccountForOut.isStatus 1-处理中,2-处理完毕,3-已撤销,4-已填订单
+    /// </summary>
+    public static int[] ChargeCashStatus = { 0, 1, 2, 3, 4};
+    /// <summary>
     /// SaleType 1-单个出售,2-批量出售
     /// </summary>
     public static int[] SaleTypeID = {0, 1, 2};
@@ -47,6 +51,10 @@ public class Dictionary
     /// 1-交易活动，2-押金，3-诚信担保金
     /// </summary>
     public static int[] MoneyType = { 0, 1, 2, 3 };
+    /// <summary>
+    /// 1-支付宝，2-首信易，3-中国工商银行
+    /// </summary>
+    public static int[] PriceChannel = { 0, 1, 2, 3 };
     /// <summary>
     /// gOrderInfo.OrderStatus 未定义
     /// </summary>

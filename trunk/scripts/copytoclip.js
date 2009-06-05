@@ -11,7 +11,9 @@
         else
         {
             aobj = event.srcElement;
-            aobj = aobj.previousSibling.previousSibling;
+            while (aobj != Object)
+                aobj = aobj.previousSibling;
+            
             var txt = aobj.innerText;
             window.clipboardData.clearData();
             window.clipboardData.setData("Text", txt);
