@@ -59,4 +59,47 @@ public class Dictionary
     /// gOrderInfo.OrderStatus 未定义
     /// </summary>
     public static int[] orderStatus = {0, 1, 2, 3, 4};
+    /// <summary>
+    /// 清空密保问题及答案处理状态
+    /// </summary>
+    /// <param name="p"></param>
+    /// <returns></returns>
+    public static string PassPortApplicationStatus(int p)
+    {
+        switch (p)
+        {
+            case 0:
+                return "处理中";
+                break;
+            case 1:
+                return "已处理";
+                break;
+            default:
+                return "未明确状态";
+        }
+    }
+    /// <summary>
+    /// 清空密保问题及答案结果
+    /// </summary>
+    /// <param name="p"></param>
+    /// <returns></returns>
+    public static string PassPortResualt(int p)
+    {
+        switch (p)
+        {
+            case 0:
+                return "未处理";
+                break;
+            case 1:
+                return "同意修改";
+                break;
+            case 2:
+                return "拒绝修改";
+                break;
+            default :
+                return "状态不明确";
+
+        }
+    }
+
 }
