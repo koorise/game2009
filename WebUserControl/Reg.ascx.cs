@@ -57,6 +57,11 @@ public partial class WebUserControl_Reg : System.Web.UI.UserControl
                 s.ShopUpdateTime = DateTime.Now;
                 s.Save();
 
+                //用户银行信息插入
+                UserScrtInfo usi = new UserScrtInfo();
+                usi.UserID = uID;
+                usi.IsUsed = 1;
+                usi.Save();
 
                 Panel1.Visible = false;
                 Panel2.Visible = true;

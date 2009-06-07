@@ -186,4 +186,28 @@ public class Tools
         sp.Command.AddParameter("@Sort", sort);
         return sp.GetDataSet();
     }
+    public static string ApplicationTitle(int i)
+    {
+        switch (i)
+        {
+            case 1:
+                return "修改开户名申请";
+                break;
+            case 2:
+                return "申请修改支付宝账号";
+                break;
+            case 3:
+                return "修改注册邮箱申请";
+                break;
+            case 4 :
+                return "申请清空密保问题答案";
+                break;
+            case 5:
+                return "";
+                break;
+            default:
+                return "未定义";
+                break;
+        }
+    }
 }

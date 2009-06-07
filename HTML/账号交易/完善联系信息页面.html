@@ -1,0 +1,248 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>账号列表</title>
+<link href="style/info.css" rel="stylesheet" type="text/css" />
+<script language="javascript" src="javascript/jquery.js"></script>
+<script language="javascript">
+	$(function(){
+		$("#searchtabs dt a").click(function(){
+			$("#searchtabs dt a").removeClass("focus");
+			$("#searchtabs dd").hide();
+			$(this).addClass("focus");
+			$("#"+$(this).attr("data")).show();
+		});
+		
+
+	});
+</script>
+</head>
+
+<body>
+	<div class="wrap">
+		<!--start header-->
+		<div id="header">
+			<div class="logo"><img src="images/logo02.gif" width="219" height="72" /></div>
+			<div class="favorites"><a href="#">[收藏本站][设为首页]</a></div>
+			<div class="tools">
+				<img src="images/btn_wym.gif" width="66" height="22" align="absmiddle" />
+				<img src="images/btn_wymai.gif" width="66" height="22" align="absmiddle" />
+				<img src="images/btn_wdyxyz.gif" width="103" height="22" align="absmiddle" />
+				<img src="images/dot_help.gif" width="11" height="11" hspace="3" align="absmiddle" /><a href="#">帮助中心</a>			  <img src="images/ico_service.gif" width="16" height="16" hspace="3" align="absmiddle" /><a href="#">客服中心</a>
+			  <p>您好，欢迎来到游戏易站  [免费注册] [登录]	</p>
+			</div>
+		</div>
+		<!--end header-->
+		
+		
+		<!--start searchtabs-->
+		<dl id="searchtabs">
+			<dt> 
+				<a href="#" data="stabs01">首页</a> 
+				<a href="#" data="stabs02" class="focus">账号交易</a>	      
+				<a href="#" data="stabs03">金币交易</a>	      
+				<a href="#" data="stabs04">中介服务</a>  	      
+				<a href="#" data="stabs05">虚拟超市</a>	   
+				<a href="#" data="stabs06">骗子查询</a>	       
+				<a href="#" data="stabs07">数据业务</a>	       
+				<a href="#" data="stabs08">易站论坛</a>
+			</dt>
+			<dd id="stabs01">
+				<table width="100%" height="43" border="0" cellpadding="0" cellspacing="0">
+				  <tr>
+					<td width="130" align="left"><select name="select" class="select">
+					  <option>搜索账号</option>
+					  </select>						</td>
+					<td width="305" align="left"><input name="textfield" type="text" class="input" /></td>
+					<td width="130" align="left"><select name="select2" class="select">
+                         <option>搜索账号</option>
+                       </select></td>
+					<td align="left"><label>
+					  <input type="image" name="imageField" src="images/btn_search_02.gif" />
+					</label></td>
+				  </tr>
+			  </table>
+			</dd>
+			<dd id="stabs02" style="display:block">
+				<table width="100%" height="43" border="0" cellpadding="0" cellspacing="0">
+				  <tr>
+					<td width="130" align="left"><select name="select" class="select">
+					  <option>搜索账号</option>
+					  </select>						</td>
+					<td width="305" align="left"><input name="textfield" type="text" class="input" /></td>
+					<td width="130" align="left"><select name="select2" class="select">
+                         <option>搜索账号</option>
+                       </select></td>
+					<td align="left"><label>
+					  <input type="image" name="imageField" src="images/btn_search_02.gif" />
+					</label></td>
+				  </tr>
+			  </table>
+			</dd>
+			<dd id="stabs03">
+				<table width="100%" height="43" border="0" cellpadding="0" cellspacing="0">
+				  <tr>
+					<td width="130" align="left"><select name="select" class="select">
+					  <option>搜索账号</option>
+					  </select>						</td>
+					<td width="305" align="left"><input name="textfield" type="text" class="input" /></td>
+					<td width="130" align="left"><select name="select2" class="select">
+                         <option>搜索账号</option>
+                       </select></td>
+					<td align="left"><label>
+					  <input type="image" name="imageField" src="images/btn_search_02.gif" />
+					</label></td>
+				  </tr>
+			  </table>
+			</dd>
+			<dd id="stabs04">
+				<table width="100%" height="43" border="0" cellpadding="0" cellspacing="0">
+				  <tr>
+					<td width="130" align="left"><select name="select" class="select">
+					  <option>搜索账号</option>
+					  </select>						</td>
+					<td width="305" align="left"><input name="textfield" type="text" class="input" /></td>
+					<td width="130" align="left"><select name="select2" class="select">
+                         <option>搜索账号</option>
+                       </select></td>
+					<td align="left"><label>
+					  <input type="image" name="imageField" src="images/btn_search_02.gif" />
+					</label></td>
+				  </tr>
+			  </table>
+			</dd>
+			<dd id="stabs05">
+				<table width="100%" height="43" border="0" cellpadding="0" cellspacing="0">
+				  <tr>
+					<td width="130" align="left"><select name="select" class="select">
+					  <option>搜索账号</option>
+					  </select>						</td>
+					<td width="305" align="left"><input name="textfield" type="text" class="input" /></td>
+					<td width="130" align="left"><select name="select2" class="select">
+                         <option>搜索账号</option>
+                       </select></td>
+					<td align="left"><label>
+					  <input type="image" name="imageField" src="images/btn_search_02.gif" />
+					</label></td>
+				  </tr>
+			  </table>
+			</dd>
+			<dd id="stabs06">
+				<table width="100%" height="43" border="0" cellpadding="0" cellspacing="0">
+				  <tr>
+					<td width="130" align="left"><select name="select" class="select">
+					  <option>搜索账号</option>
+					  </select>						</td>
+					<td width="305" align="left"><input name="textfield" type="text" class="input" /></td>
+					<td width="130" align="left"><select name="select2" class="select">
+                         <option>搜索账号</option>
+                       </select></td>
+					<td align="left"><label>
+					  <input type="image" name="imageField" src="images/btn_search_02.gif" />
+					</label></td>
+				  </tr>
+			  </table>
+			</dd>
+			<dd id="stabs07">
+				<table width="100%" height="43" border="0" cellpadding="0" cellspacing="0">
+				  <tr>
+					<td width="130" align="left"><select name="select" class="select">
+					  <option>搜索账号</option>
+					  </select>						</td>
+					<td width="305" align="left"><input name="textfield" type="text" class="input" /></td>
+					<td width="130" align="left"><select name="select2" class="select">
+                         <option>搜索账号</option>
+                       </select></td>
+					<td align="left"><label>
+					  <input type="image" name="imageField" src="images/btn_search_02.gif" />
+					</label></td>
+				  </tr>
+			  </table>
+			</dd>
+			<dd id="stabs08">
+				<table width="100%" height="43" border="0" cellpadding="0" cellspacing="0">
+				  <tr>
+					<td width="130" align="left"><select name="select" class="select">
+					  <option>搜索账号</option>
+					  </select>						</td>
+					<td width="305" align="left"><input name="textfield" type="text" class="input" /></td>
+					<td width="130" align="left"><select name="select2" class="select">
+                         <option>搜索账号</option>
+                       </select></td>
+					<td align="left"><label>
+					  <input type="image" name="imageField" src="images/btn_search_02.gif" />
+					</label></td>
+				  </tr>
+			  </table>
+			</dd>
+		</dl> 
+		<!--end searchtabs-->
+		
+		<!--body start-->
+		<div class="midp">
+		  <table width="674" border="0" align="center" cellpadding="0" cellspacing="1" bgcolor="#ACD0F1" class="info">
+            <tr>
+              <td height="27" align="left" bgcolor="#D6EBFF"><strong>&nbsp;&nbsp;完善联系信息</strong></td>
+            </tr>
+            <tr>
+              <td height="35" align="left" bgcolor="#FFFFFF"><table border="0" align="left" cellpadding="5" cellspacing="1">
+                <tr>
+                  <td width="120" height="35" align="right" bgcolor="#F3F9FF" class="blue-text">QQ号码：</td>
+                  <td width="200" align="center"><input name="textfield2" type="text" class="input" /></td>
+                  <td class="qianhui_text">能联系到您的QQ号码，客服在您成功购买后会通过电话联系您</td>
+                </tr>
+              </table></td>
+            </tr>
+            <tr>
+              <td height="35" bgcolor="#FFFFFF"><table border="0" align="left" cellpadding="5" cellspacing="1">
+                <tr>
+                  <td width="120" height="35" align="right" bgcolor="#F3F9FF" class="blue-text">手机或小灵通：</td>
+                  <td width="200" align="center"><input name="textfield222" type="text" class="input" /></td>
+                  <td class="hui-text"><span class="qianhui_text">(小灵通格式如:02188888888),手机格式如:13800138000</span>)</td>
+                </tr>
+              </table></td>
+            </tr>
+            <tr>
+              <td height="35" bgcolor="#FFFFFF"><table border="0" align="left" cellpadding="5" cellspacing="1">
+                <tr>
+                  <td width="120" height="35" align="right" bgcolor="#F3F9FF" class="blue-text">密码保护问题：</td>
+                  <td width="200" align="center"><select name="select3" class="input">
+                    <option>请选择密保问题</option>
+                  </select>
+                  </td>
+                  <td class="hui-text">&nbsp;</td>
+                </tr>
+              </table></td>
+            </tr>
+            <tr>
+              <td height="35" bgcolor="#FFFFFF"><table border="0" align="left" cellpadding="5" cellspacing="1">
+                <tr>
+                  <td width="120" height="35" align="right" bgcolor="#F3F9FF" class="blue-text">密码保护答案：</td>
+                  <td width="200" align="center"><input name="textfield22" type="text" class="input" /></td>
+                  <td class="hui-text">&nbsp;</td>
+                </tr>
+              </table></td>
+            </tr>
+            <tr>
+              <td height="35" align="center" bgcolor="#FFFFFF" class="orange-text"><strong>您成功竞得物品后，我们的客服会通过上述方式联系您付款或取货，非常重要</strong></td>
+            </tr>
+          </table>
+		  <p>&nbsp;</p>
+		  <p>&nbsp;</p>
+		  <p>
+		    <input type="image" name="imageField2" src="images/qrbtj.gif" />
+		  </p>
+		</div>
+		<!--body end -->
+		<div class="clear"></div>
+		<div class="bottom">
+			<a href="#">此内容系</a> | <a href="#">百度根据</a> | <a href="#">您的指令</a> | <a href="#">自动搜索</a> | <a href="#">的结果不</a> | <a href="#">代表百度</a> | 赞成被搜	
+			<p>Copyright &copy;1996-2009 SINA Corporation, All Rights Reserved</p>	
+			<p>增值电信业务经营许可证B2-20040016号</p>
+		</div>
+	</div> 
+	<!--end warp-->
+
+</body>
+</html>
