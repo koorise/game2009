@@ -1,0 +1,70 @@
+/* CSS Document */
+@import url("header.css");
+.pos,.pos a{ line-height:30px; height:30px; color:#444444; width:100%; clear:both;}
+.midp{ padding:0px; clear:both; float:left; width:100%;}
+
+.leftdl{ width:191px; float:left; margin:0px; padding:0px;}
+.leftdl dt{ background:url(../images/dt_tit.gif) no-repeat; width:191px; height:30px; line-height:30px; text-indent:20px; font-weight:bold; color:#FFFFFF;}
+.leftdl dd{ background:#EDF7FF url(../images/dt_bg.gif) repeat-x top; padding:10px; border:1px solid #B2D7F9;}
+
+.leftdl dd ul{ list-style:none;}
+.leftdl dd ul li{ line-height:30px; font-size:14px; font-weight:bold; background:url(../images/ico_14x14.gif) no-repeat 0px 7px; text-indent:20px;}
+.leftdl dd ul li a{ color:#000000; text-decoration:none; font-size:14px;}
+.leftdl dd ul ul{ }
+.leftdl dd ul ul li{ line-height:28px; font-size:12px; font-weight:normal; background:url(../images/ico_10x10.gif) no-repeat 20px 7px; text-indent:36px;}
+.leftdl dd ul ul li a{ color:#0A4EAE; text-decoration:none; font-size:12px;}
+
+.main{ width:758px; float:right;}
+.helpsearch{ border:1px solid #B2D7F9; background:#DAEDFC; padding:8px; text-indent:20px;}
+.helpsearch strong{ font-size:14px;}
+.helpsearch .input{ height:18px; width:332px; margin-left:20px; margin-right:10px;}
+
+.lc{ width:758px; float:left; margin:0px; padding:0px; margin-top:10px;}
+.lc dt{ height:40px; line-height:40px; font-size:14px; font-weight:bold; color:#C32000; text-indent:10px;}
+.lc dd{ text-align:left; padding-left:50px;}
+.lc dd .and{ margin-left:20px; margin-right:20px;}
+
+.line2{ border-bottom:2px solid #EDEDED; width:100%; clear:both; height:20px;}
+
+.help{ height:40px; line-height:40px; font-size:14px; font-weight:bold; color:#C32000; text-indent:10px; margin-top:10px;}
+
+
+.tabs{ width:100%; clear:both;}
+.tabs dt{ height:29px; padding-left:8px;}
+.tabs dt a{ display:block; background:url(../images/tabs1_bg0_l.gif) no-repeat left top; height:29px; line-height:29px; text-align:center; float:left;margin-right:3px; position:relative; top:1px;_width:40px; white-space:nowrap;}
+.tabs dt a span{ display:block; height:29px; background:url(../images/tabs1_bg0_r.gif) no-repeat right top; padding-left:20px; padding-right:20px; cursor:pointer;}
+.tabs dt a.focus{ background:url(../images/tabs1_bg1_l.gif) no-repeat left top; }
+.tabs dt a.focus span{background:url(../images/tabs1_bg1_r.gif) no-repeat right top; font-weight:bold; color:#FFFFFF;}
+
+.tabs dd{ padding:10px; width:738px; float:left; clear:both; border:1px solid #d1d1d1;}
+.tabs dd ol{ list-style:decimal inside; margin:15px; width:300px; float:left; line-height:28px;}
+.tabs dd ol li ,.tabs dd ol li a{ font-size:14px; color:#000000; text-decoration:none;}
+
+.faq_title{ line-height:30px; font-size:14px; font-weight:bold; text-align:center; margin-top:10px;}
+.faq_cont{ line-height:24px; text-indent:24px; font-size:12px; color:#6D6D6D; margin-top:10px;}
+
+.faq_list{ list-style:none;}
+.faq_list li{ background:url(../images/dot1.gif) no-repeat 10px 10px; height:30px; line-height:30px;border-bottom:1px dashed #B2D7F9;}
+
+.faq_svc{ border:2px solid #C7E4FB;margin:0px auto;}
+.f14{ font-size:14px;}
+
+.faq{ margin:14px 0 14px 0;  text-indent:0px;}
+.faq .title a{ line-height:24px; font-size:14px;}
+.faq .content{ line-height:24px; color:#000000;}
+.faq .link a{ line-height:20px; font-family:Verdana; color:#06A311;}
+.faq .keyword1{ color:#FF0000; font-size:14px;}
+.faq .keyword2{ color:#FF0000; font-size:12px;}
+.pages a{ width:17px; height:19px; background:#FFFFFF; color:#0044DD; text-decoration:none; font-size:12px; line-height:20px; border:1px solid #000; float:left; text-align:center; margin:2px;}
+.pages a.focus{ color:#FF6600; background:#EEEEEE;}
+
+.dlright { border:1px solid #D7DEE4; background:#F3F3F3; padding:4px;}
+.dlright dt{ background:url(../images/slist_right.gif) no-repeat; width:191px; height:28px; line-height:28px; font-weight:bold; text-indent:30px; color:#FFFFFF;}
+.dlright dd { padding:10px; padding-right:4px;}
+.dlright dd ul{ list-style:none; line-height:24px;}
+.dlright dd ul li{ background:url(../images/dot1.gif) no-repeat 0px 7px; text-indent:8px;}
+
+.dlsvc{  border:1px solid #D7DEE4; background:#FFFFFF; margin-top:8px;}
+.dlsvc dt{ background:#F3F3F3; width:100%; height:28px; line-height:28px; text-align:left; font-weight:bold; text-indent:10px;}
+.dlsvc dd{ padding:10px;  line-height:24px; text-align:left;}
+.main1{ width:750px; float:left;}

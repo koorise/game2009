@@ -1,0 +1,589 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>账号列表</title>
+<link href="style/list.css" rel="stylesheet" type="text/css" />
+<script language="javascript" src="javascript/jquery.js"></script>
+<script language="javascript">
+	$(function(){
+		$("#searchtabs dt a").click(function(){
+			$("#searchtabs dt a").removeClass("focus");
+			$("#searchtabs dd").hide();
+			$(this).addClass("focus");
+			$("#"+$(this).attr("data")).show();
+		});
+		
+		$(".rsearchtabs dt a").click(function(){
+			$(".rsearchtabs dt a").removeClass("focus");
+			$(".rsearchtabs dd").hide();
+			$(this).addClass("focus");
+			$("#"+$(this).attr("data")).show();
+		});
+	});
+</script>
+</head>
+
+<body>
+	<div class="wrap">
+		<!--start header-->
+		<div id="header">
+			<div class="logo"><img src="images/logo02.gif" width="219" height="72" /></div>
+			<div class="favorites"><a href="#">[收藏本站][设为首页]</a></div>
+			<div class="tools">
+				<img src="images/btn_wym.gif" width="66" height="22" align="absmiddle" />
+				<img src="images/btn_wymai.gif" width="66" height="22" align="absmiddle" />
+				<img src="images/btn_wdyxyz.gif" width="103" height="22" align="absmiddle" />
+				<img src="images/dot_help.gif" width="11" height="11" hspace="3" align="absmiddle" /><a href="#">帮助中心</a>			  <img src="images/ico_service.gif" width="16" height="16" hspace="3" align="absmiddle" /><a href="#">客服中心</a>
+			  <p>您好，欢迎来到游戏易站  [免费注册] [登录]	</p>
+			</div>
+		</div>
+		<!--end header-->
+		
+		
+		<!--start searchtabs-->
+		<dl id="searchtabs">
+			<dt> 
+				<a href="#" data="stabs01">首页</a> 
+				<a href="#" data="stabs02" class="focus">账号交易</a>	      
+				<a href="#" data="stabs03">金币交易</a>	      
+				<a href="#" data="stabs04">中介服务</a>  	      
+				<a href="#" data="stabs05">虚拟超市</a>	   
+				<a href="#" data="stabs06">骗子查询</a>	       
+				<a href="#" data="stabs07">数据业务</a>	       
+				<a href="#" data="stabs08">易站论坛</a>
+			</dt>
+			<dd id="stabs01">
+				<table width="100%" height="43" border="0" cellpadding="0" cellspacing="0">
+				  <tr>
+					<td width="130" align="left"><select name="select" class="select">
+					  <option>搜索账号</option>
+					  </select>						</td>
+					<td width="305" align="left"><input name="textfield" type="text" class="input" /></td>
+					<td width="130" align="left"><select name="select2" class="select">
+                         <option>搜索账号</option>
+                       </select></td>
+					<td align="left"><label>
+					  <input type="image" name="imageField" src="images/btn_search_02.gif" />
+					</label></td>
+				  </tr>
+			  </table>
+			</dd>
+			<dd id="stabs02" style="display:block">
+				<table width="100%" height="43" border="0" cellpadding="0" cellspacing="0">
+				  <tr>
+					<td width="130" align="left"><select name="select" class="select">
+					  <option>搜索账号</option>
+					  </select>						</td>
+					<td width="305" align="left"><input name="textfield" type="text" class="input" /></td>
+					<td width="130" align="left"><select name="select2" class="select">
+                         <option>搜索账号</option>
+                       </select></td>
+					<td align="left"><label>
+					  <input type="image" name="imageField" src="images/btn_search_02.gif" />
+					</label></td>
+				  </tr>
+			  </table>
+			</dd>
+			<dd id="stabs03">
+				<table width="100%" height="43" border="0" cellpadding="0" cellspacing="0">
+				  <tr>
+					<td width="130" align="left"><select name="select" class="select">
+					  <option>搜索账号</option>
+					  </select>						</td>
+					<td width="305" align="left"><input name="textfield" type="text" class="input" /></td>
+					<td width="130" align="left"><select name="select2" class="select">
+                         <option>搜索账号</option>
+                       </select></td>
+					<td align="left"><label>
+					  <input type="image" name="imageField" src="images/btn_search_02.gif" />
+					</label></td>
+				  </tr>
+			  </table>
+			</dd>
+			<dd id="stabs04">
+				<table width="100%" height="43" border="0" cellpadding="0" cellspacing="0">
+				  <tr>
+					<td width="130" align="left"><select name="select" class="select">
+					  <option>搜索账号</option>
+					  </select>						</td>
+					<td width="305" align="left"><input name="textfield" type="text" class="input" /></td>
+					<td width="130" align="left"><select name="select2" class="select">
+                         <option>搜索账号</option>
+                       </select></td>
+					<td align="left"><label>
+					  <input type="image" name="imageField" src="images/btn_search_02.gif" />
+					</label></td>
+				  </tr>
+			  </table>
+			</dd>
+			<dd id="stabs05">
+				<table width="100%" height="43" border="0" cellpadding="0" cellspacing="0">
+				  <tr>
+					<td width="130" align="left"><select name="select" class="select">
+					  <option>搜索账号</option>
+					  </select>						</td>
+					<td width="305" align="left"><input name="textfield" type="text" class="input" /></td>
+					<td width="130" align="left"><select name="select2" class="select">
+                         <option>搜索账号</option>
+                       </select></td>
+					<td align="left"><label>
+					  <input type="image" name="imageField" src="images/btn_search_02.gif" />
+					</label></td>
+				  </tr>
+			  </table>
+			</dd>
+			<dd id="stabs06">
+				<table width="100%" height="43" border="0" cellpadding="0" cellspacing="0">
+				  <tr>
+					<td width="130" align="left"><select name="select" class="select">
+					  <option>搜索账号</option>
+					  </select>						</td>
+					<td width="305" align="left"><input name="textfield" type="text" class="input" /></td>
+					<td width="130" align="left"><select name="select2" class="select">
+                         <option>搜索账号</option>
+                       </select></td>
+					<td align="left"><label>
+					  <input type="image" name="imageField" src="images/btn_search_02.gif" />
+					</label></td>
+				  </tr>
+			  </table>
+			</dd>
+			<dd id="stabs07">
+				<table width="100%" height="43" border="0" cellpadding="0" cellspacing="0">
+				  <tr>
+					<td width="130" align="left"><select name="select" class="select">
+					  <option>搜索账号</option>
+					  </select>						</td>
+					<td width="305" align="left"><input name="textfield" type="text" class="input" /></td>
+					<td width="130" align="left"><select name="select2" class="select">
+                         <option>搜索账号</option>
+                       </select></td>
+					<td align="left"><label>
+					  <input type="image" name="imageField" src="images/btn_search_02.gif" />
+					</label></td>
+				  </tr>
+			  </table>
+			</dd>
+			<dd id="stabs08">
+				<table width="100%" height="43" border="0" cellpadding="0" cellspacing="0">
+				  <tr>
+					<td width="130" align="left"><select name="select" class="select">
+					  <option>搜索账号</option>
+					  </select>						</td>
+					<td width="305" align="left"><input name="textfield" type="text" class="input" /></td>
+					<td width="130" align="left"><select name="select2" class="select">
+                         <option>搜索账号</option>
+                       </select></td>
+					<td align="left"><label>
+					  <input type="image" name="imageField" src="images/btn_search_02.gif" />
+					</label></td>
+				  </tr>
+			  </table>
+			</dd>
+		</dl> 
+		<!--end searchtabs-->
+		
+		<!--start leftpart-->
+		<div class="leftp">
+		
+			<dl class="gz">
+				<dt><img src="images/gz_title.gif" /></dt>
+			  	<dd>
+					<ul>
+						<li><a href="#">80级凶猛盗贼无敌的很非常超级帅气的男人法师</a>  <span class="money"> 800.00</span>元</li>
+						<li><a href="#">80级凶猛盗贼无敌的很非常超级帅气的男人法师</a>  <span class="money"> 800.00</span>元</li>
+						<li><a href="#">80级凶猛盗贼无敌的很非常超级帅气的男人法师</a>  <span class="money"> 800.00</span>元</li>
+						<li><a href="#">80级凶猛盗贼无敌的很非常超级帅气的男人法师</a>  <span class="money"> 800.00</span>元</li>
+						<li><a href="#">80级凶猛盗贼无敌的很非常超级帅气的男人法师</a>  <span class="money"> 800.00</span>元</li>
+						<li><a href="#">80级凶猛盗贼无敌的很非常超级帅气的男人法师</a>  <span class="money"> 800.00</span>元</li>
+						<li><a href="#">80级凶猛盗贼无敌的很非常超级帅气的男人法师</a>  <span class="money"> 800.00</span>元</li>
+						<li><a href="#">80级凶猛盗贼无敌的很非常超级帅气的男人法师</a>  <span class="money"> 800.00</span>元</li>
+					</ul>				
+					<p><a href="#">我也要出现在这里</a></p>
+				</dd>
+			</dl>
+			
+			
+			<dl class="lunit">
+				<dt><strong>我浏览过的</strong></dt>
+				<dd>
+					<ul>
+						<li><a href="#">80级凶猛盗贼无敌的很非常…</a></li>
+						<li><a href="#">80级凶猛盗贼无敌的很非常…</a></li>
+						<li><a href="#">80级凶猛盗贼无敌的很非常…</a></li>
+						<li><a href="#">80级凶猛盗贼无敌的很非常…</a></li>
+						<li><a href="#">80级凶猛盗贼无敌的很非常…</a></li>
+						<li><a href="#">80级凶猛盗贼无敌的很非常…</a></li>
+						<li><a href="#">80级凶猛盗贼无敌的很非常…</a></li>
+						<li><a href="#">80级凶猛盗贼无敌的很非常…</a></li>
+					</ul>
+				</dd>
+			</dl>
+			
+			<dl class="lunit">
+				<dt><strong>我浏览过的</strong><span><a href="#">[管理]</a></span></dt>
+				<dd>
+					<ul>
+						<li><a href="#">80级凶猛盗贼无敌的很非常…</a></li>
+						<li><a href="#">80级凶猛盗贼无敌的很非常…</a></li>
+						<li><a href="#">80级凶猛盗贼无敌的很非常…</a></li>
+						<li><a href="#">80级凶猛盗贼无敌的很非常…</a></li>
+						<li><a href="#">80级凶猛盗贼无敌的很非常…</a></li>
+						<li><a href="#">80级凶猛盗贼无敌的很非常…</a></li>
+						<li><a href="#">80级凶猛盗贼无敌的很非常…</a></li>
+						<li><a href="#">80级凶猛盗贼无敌的很非常…</a></li>
+					</ul>
+				</dd>
+			</dl>
+		
+		</div>
+		<!--end leftpart-->
+		
+		<!--start rightpart-->
+		<div class="rightp">
+			<dl class="rsearchtabs">
+				<dt>
+					<select><option>全部游戏</option></select>
+					<a href="#" data="rtabs01"><span>全部账号</span></a>     
+					<a href="#" data="rtabs02" class="focus"><span>有注册黄图</span></a>    
+					<a href="#" data="rtabs03"><span>无注册黄图</span></a>     
+					<a href="#" data="rtabs04"><span>批量出售的小号</span></a>	
+					<a href="#" data="rtabs05"><span>中介交易的</span></a>				</dt>
+				<dd id="rtabs01">
+				<p><select name="select3" class="sel1">
+                      <option> 请选择游戏</option>
+                      </select>
+					  <select name="select3" class="sel1">
+                          <option> 请选择服务器</option>
+                      </select>
+					  职业：<select name="select4" class="sel2">
+                          <option> 全部</option>
+                      </select>
+					  等级范围：<input name="text2" type="text" class="input" value="60" size="4" /> 至 <input name="text3" type="text" class="input" value="80" size="4" />
+					  种族：<select name="select5" class="sel2">
+                          <option> 全部</option>
+                      </select>
+				  </p>
+				  <p style="float:left; width:560px; margin:0px auto;">一口价范围：<input name="text" type="text" class="input" value="80" size="4" /> 至 <input name="text" type="text" class="input" value="80" size="4" />
+				  诚信保障计划：<select name="select3"><option> 不限</option></select>
+				  </p>
+					<div id="simp1"  style="float:left;">
+					  <img src="images/btn_search.gif" width="70" height="23" align="absmiddle" /> 
+					  <a href="javascript:void(0);" onclick="$('#more1').show();$('#simp1').hide();">更多搜索选项&gt;&gt;</a>					  
+				  </div>					  
+
+					<div class="more" id="more1" style=" display:none;">
+					<p>关键字：<input type="text" class="input" size="44" value="您可以输入标题关键字、物品编号" /> 出售模式：<select class="sel2">
+					  <option> 全部</option></select></p>
+					<p>密保资料：<select class="sel2">
+					  <option> 不限</option></select>    注册时间： <input type="text" class="input" size="10" value="" /> 至   <input type="text" class="input" size="10" value="" /> </p>
+					<p>邮箱资料：<select class="sel2">
+					  <option> 不限</option></select>    最后登录： <input type="text" class="input" size="10" value="" /> 至   <input type="text" class="input" size="10" value="" /> </p>
+					<p style="float:left">注册黄图：<select class="sel2">
+					  <option> 不限</option></select>   到期时间： <input type="text" class="input" size="10" value="" /> 至   <input type="text" class="input" size="10" value="" /> </p>
+					
+					<p style="float:right"><img src="images/btn_search.gif" width="70" height="23" align="absmiddle" /> <a href="javascript:void(0);" onclick="$('#simp1').show();$('#more1').hide();">&lt;&lt;精简搜索选项</a></p>
+					</div>
+				</dd>
+				<dd id="rtabs02" style="display:block;">
+				<p><select name="select3" class="sel1">
+                      <option> 请选择游戏</option>
+                      </select>
+					  <select name="select3" class="sel1">
+                          <option> 请选择服务器</option>
+                      </select>
+					  职业：<select name="select4" class="sel2">
+                          <option> 全部</option>
+                      </select>
+					  等级范围：<input name="text2" type="text" class="input" value="60" size="4" /> 至 <input name="text3" type="text" class="input" value="80" size="4" />
+					  种族：<select name="select5" class="sel2">
+                          <option> 全部</option>
+                      </select>
+				  </p>
+				  <p style="float:left; width:560px; margin:0px auto;">一口价范围：<input name="text" type="text" class="input" value="80" size="4" /> 至 <input name="text" type="text" class="input" value="80" size="4" />
+				  诚信保障计划：<select name="select3"><option> 不限</option></select>
+				  </p>
+					<div id="simp2"  style="float:left;">
+					  <img src="images/btn_search.gif" width="70" height="23" align="absmiddle" /> 
+					  <a href="javascript:void(0);" onclick="$('#more2').show();$('#simp2').hide();">更多搜索选项&gt;&gt;</a>					  
+				  </div>					  
+
+					<div class="more" id="more2" style=" display:none;">
+					<p>关键字：<input type="text" class="input" size="44" value="您可以输入标题关键字、物品编号" /> 出售模式：<select class="sel2">
+					  <option> 全部</option></select></p>
+					<p>密保资料：<select class="sel2">
+					  <option> 不限</option></select>    注册时间： <input type="text" class="input" size="10" value="" /> 至   <input type="text" class="input" size="10" value="" /> </p>
+					<p>邮箱资料：<select class="sel2">
+					  <option> 不限</option></select>    最后登录： <input type="text" class="input" size="10" value="" /> 至   <input type="text" class="input" size="10" value="" /> </p>
+					<p style="float:left">注册黄图：<select class="sel2">
+					  <option> 不限</option></select>   到期时间： <input type="text" class="input" size="10" value="" /> 至   <input type="text" class="input" size="10" value="" /> </p>
+					
+					<p style="float:right"><img src="images/btn_search.gif" width="70" height="23" align="absmiddle" /> <a href="javascript:void(0);" onclick="$('#simp2').show();$('#more2').hide();">&lt;&lt;精简搜索选项</a></p>
+					</div>
+				</dd>
+				<dd id="rtabs03">
+				<p><select name="select3" class="sel1">
+                      <option> 请选择游戏</option>
+                      </select>
+					  <select name="select3" class="sel1">
+                          <option> 请选择服务器</option>
+                      </select>
+					  职业：<select name="select4" class="sel2">
+                          <option> 全部</option>
+                      </select>
+					  等级范围：<input name="text2" type="text" class="input" value="60" size="4" /> 至 <input name="text3" type="text" class="input" value="80" size="4" />
+					  种族：<select name="select5" class="sel2">
+                          <option> 全部</option>
+                      </select>
+				  </p>
+				  <p style="float:left; width:560px; margin:0px auto;">一口价范围：<input name="text" type="text" class="input" value="80" size="4" /> 至 <input name="text" type="text" class="input" value="80" size="4" />
+				  诚信保障计划：<select name="select3"><option> 不限</option></select>
+				  </p>
+					<div id="simp3"  style="float:left;">
+					  <img src="images/btn_search.gif" width="70" height="23" align="absmiddle" /> 
+					  <a href="javascript:void(0);" onclick="$('#more3').show();$('#simp3').hide();">更多搜索选项&gt;&gt;</a>					  
+				  </div>					  
+
+					<div class="more" id="more3" style=" display:none;">
+					<p>关键字：<input type="text" class="input" size="44" value="您可以输入标题关键字、物品编号" /> 出售模式：<select class="sel2">
+					  <option> 全部</option></select></p>
+					<p>密保资料：<select class="sel2">
+					  <option> 不限</option></select>    注册时间： <input type="text" class="input" size="10" value="" /> 至   <input type="text" class="input" size="10" value="" /> </p>
+					<p>邮箱资料：<select class="sel2">
+					  <option> 不限</option></select>    最后登录： <input type="text" class="input" size="10" value="" /> 至   <input type="text" class="input" size="10" value="" /> </p>
+					<p style="float:left">注册黄图：<select class="sel2">
+					  <option> 不限</option></select>   到期时间： <input type="text" class="input" size="10" value="" /> 至   <input type="text" class="input" size="10" value="" /> </p>
+					
+					<p style="float:right"><img src="images/btn_search.gif" width="70" height="23" align="absmiddle" /> <a href="javascript:void(0);" onclick="$('#simp3').show();$('#more3').hide();">&lt;&lt;精简搜索选项</a></p>
+					</div>
+				</dd>
+				<dd id="rtabs04">
+				<p><select name="select3" class="sel1">
+                      <option> 请选择游戏</option>
+                      </select>
+					  <select name="select3" class="sel1">
+                          <option> 请选择服务器</option>
+                      </select>
+					  职业：<select name="select4" class="sel2">
+                          <option> 全部</option>
+                      </select>
+					  等级范围：<input name="text2" type="text" class="input" value="60" size="4" /> 至 <input name="text3" type="text" class="input" value="80" size="4" />
+					  种族：<select name="select5" class="sel2">
+                          <option> 全部</option>
+                      </select>
+				  </p>
+				  <p style="float:left; width:560px; margin:0px auto;">一口价范围：<input name="text" type="text" class="input" value="80" size="4" /> 至 <input name="text" type="text" class="input" value="80" size="4" />
+				  诚信保障计划：<select name="select3"><option> 不限</option></select>
+				  </p>
+					<div id="simp4"  style="float:left;">
+					  <img src="images/btn_search.gif" width="70" height="23" align="absmiddle" /> 
+					  <a href="javascript:void(0);" onclick="$('#more4').show();$('#simp4').hide();">更多搜索选项&gt;&gt;</a>					  
+				  </div>					  
+
+					<div class="more" id="more4" style=" display:none;">
+					<p>关键字：<input type="text" class="input" size="44" value="您可以输入标题关键字、物品编号" /> 出售模式：<select class="sel2">
+					  <option> 全部</option></select></p>
+					<p>密保资料：<select class="sel2">
+					  <option> 不限</option></select>    注册时间： <input type="text" class="input" size="10" value="" /> 至   <input type="text" class="input" size="10" value="" /> </p>
+					<p>邮箱资料：<select class="sel2">
+					  <option> 不限</option></select>    最后登录： <input type="text" class="input" size="10" value="" /> 至   <input type="text" class="input" size="10" value="" /> </p>
+					<p style="float:left">注册黄图：<select class="sel2">
+					  <option> 不限</option></select>   到期时间： <input type="text" class="input" size="10" value="" /> 至   <input type="text" class="input" size="10" value="" /> </p>
+					
+					<p style="float:right"><img src="images/btn_search.gif" width="70" height="23" align="absmiddle" /> <a href="javascript:void(0);" onclick="$('#simp4').show();$('#more4').hide();">&lt;&lt;精简搜索选项</a></p>
+					</div>
+				</dd>
+				<dd id="rtabs05">
+				<p><select name="select3" class="sel1">
+                      <option> 请选择游戏</option>
+                      </select>
+					  <select name="select3" class="sel1">
+                          <option> 请选择服务器</option>
+                      </select>
+					  职业：<select name="select4" class="sel2">
+                          <option> 全部</option>
+                      </select>
+					  等级范围：<input name="text2" type="text" class="input" value="60" size="4" /> 至 <input name="text3" type="text" class="input" value="80" size="4" />
+					  种族：<select name="select5" class="sel2">
+                          <option> 全部</option>
+                      </select>
+				  </p>
+				  <p style="float:left; width:560px; margin:0px auto;">一口价范围：<input name="text" type="text" class="input" value="80" size="4" /> 至 <input name="text" type="text" class="input" value="80" size="4" />
+				  诚信保障计划：<select name="select3"><option> 不限</option></select>
+				  </p>
+					<div id="simp5"  style="float:left;">
+					  <img src="images/btn_search.gif" width="70" height="23" align="absmiddle" /> 
+					  <a href="javascript:void(0);" onclick="$('#more5').show();$('#simp5').hide();">更多搜索选项&gt;&gt;</a>					  
+				  </div>					  
+
+					<div class="more" id="more5" style=" display:none;">
+					<p>关键字：<input type="text" class="input" size="44" value="您可以输入标题关键字、物品编号" /> 出售模式：<select class="sel2">
+					  <option> 全部</option></select></p>
+					<p>密保资料：<select class="sel2">
+					  <option> 不限</option></select>    注册时间： <input type="text" class="input" size="10" value="" /> 至   <input type="text" class="input" size="10" value="" /> </p>
+					<p>邮箱资料：<select class="sel2">
+					  <option> 不限</option></select>    最后登录： <input type="text" class="input" size="10" value="" /> 至   <input type="text" class="input" size="10" value="" /> </p>
+					<p style="float:left">注册黄图：<select class="sel2">
+					  <option> 不限</option></select>   到期时间： <input type="text" class="input" size="10" value="" /> 至   <input type="text" class="input" size="10" value="" /> </p>
+					
+					<p style="float:right"><img src="images/btn_search.gif" width="70" height="23" align="absmiddle" /> <a href="javascript:void(0);" onclick="$('#simp5').show();$('#more5').hide();">&lt;&lt;精简搜索选项</a></p>
+					</div>
+				</dd>
+			</dl>
+			
+			
+			
+			<dl class="hotprod">
+				<dt><strong>旺铺推荐 </strong> <span><a href="#">我也要出现在这里 </a>&nbsp;<a href="#"> 更多旺铺 <img src="images/dot1.gif" width="4" height="7" border="0" align="absmiddle" /></a></span></dt>
+				<dd>
+				  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+				  <tr>
+				    <td height="8" colspan="5" align="center"></td>
+			      </tr>
+				  <tr>
+					<td width="20%" align="center"><img src="images/pic1.gif" width="104" height="104" /></td>
+					<td width="20%" align="center"><img src="images/pic1.gif" width="104" height="104" /></td>
+					<td width="20%" align="center"><img src="images/pic1.gif" width="104" height="104" /></td>
+					<td width="20%" align="center"><img src="images/pic1.gif" width="104" height="104" /></td>
+					<td width="20%" align="center"><img src="images/pic1.gif" width="104" height="104" /></td>
+				  </tr>
+				  <tr>
+				    <td height="40" align="center" valign="bottom"><a href="#">空荡荡的店铺</a><br />
+			          <span class="money">22</span>个热拍账号 </td>
+				    <td align="center"><a href="#">空荡荡的店铺</a><br />
+                      <span class="money">22</span>个热拍账号 </td>
+				    <td align="center"><a href="#">空荡荡的店铺</a><br />
+                      <span class="money">22</span>个热拍账号 </td>
+				    <td align="center"><a href="#">空荡荡的店铺</a><br />
+                      <span class="money">22</span>个热拍账号 </td>
+				    <td align="center"><a href="#">空荡荡的店铺</a><br />
+                      <span class="money">22</span>个热拍账号 </td>
+			      </tr>
+				</table>
+				</dd>
+			</dl>
+			<table width="100%" border="0" cellspacing="1" cellpadding="0" class="listtitle">
+			  <tr>
+				<td align="center"><table width="96%" height="27" border="0" align="center" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td width="70" align="left" valign="middle"><span class="black_text"><strong>排序方式：</strong></span></td>
+                    <td align="left" valign="middle"><select name="select6" class="sel2">
+                      <option>默认</option>
+                    </select></td>
+                    <td align="right" valign="middle">&nbsp;每页显示数量 <a href="#"><img src="images/btn_20.gif" width="19" height="16" border="0"  align="absmiddle"/></a> <a href="#"><img src="images/btn_40.gif" width="19" height="16" border="0"  align="absmiddle"/></a> <a href="#"><img src="images/btn_80.gif" width="19" height="16" border="0" align="absmiddle" /></a> </td>
+                  </tr>
+                </table></td>
+			  </tr>
+		  </table>
+			
+			
+			<table width="100%" border="0" cellpadding="5" cellspacing="0" class="list-content">
+               <tr>
+                 <th width="270" >标题、卖家信用、游戏/服务器</th>
+                 <th width="80" >属性</th>
+                 <th width="120" >价格	       </th>
+                 <th width="60" >数量</th>
+                 <th width="100" > 安全资料    	 </th>
+                 <th class="last" >剩余时间</th>
+               </tr>
+               <tr>
+                 <td><img src="images/ico_huang.gif" width="20" height="19" align="absmiddle" /> <a href="#">80级凶猛盗贼无敌的很非常超级帅气的男<br />
+  人法师，再不来错8过了</a>.<br />
+                   物品种类：游戏账号<br />
+                 游戏区服：美服魔兽 Ageywn –A</td>
+                 <td align="center" valign="middle"><img src="images/ico_pei.gif" width="18" height="19" /></td>
+                 <td align="center" valign="middle"><span class="green-text"><strong>300.00</strong></span>元 <span class="green-text"><strong>当前</strong></span><br />
+                   <span class="red-text"><strong>50.00</strong></span>元 <span class="red-text"><strong>一口价</strong></span></td>
+                 <td align="center" valign="middle" nowrap="nowrap">1件</td>
+                 <td align="center" valign="middle" nowrap="nowrap"><img src="images/ico_mi.gif" width="20" height="19" hspace="2" /> <img src="images/ico_you.gif" width="20" height="19" /> <img src="images/ico_huang.gif" width="20" height="19"/></td>
+                 <td align="center" valign="middle" nowrap="nowrap">2天2小时11分</td>
+               </tr>
+               <tr>
+                 <td><img src="images/ico_huang.gif" width="20" height="19" align="absmiddle" /> <a href="#">80级凶猛盗贼无敌的很非常超级帅气的男<br />
+                   人法师，再不来错8过了</a>.<br />
+                   物品种类：游戏账号<br />
+                   游戏区服：美服魔兽 Ageywn –A</td>
+                 <td align="center" valign="middle"><img src="images/ico_pei.gif" width="18" height="19" /></td>
+                 <td align="center" valign="middle"><span class="green-text"><strong>300.00</strong></span>元 <span class="green-text"><strong>当前</strong></span><br />
+                     <span class="red-text"><strong>50.00</strong></span>元 <span class="red-text"><strong>一口价</strong></span></td>
+                 <td align="center" valign="middle" nowrap="nowrap">1件</td>
+                 <td align="center" valign="middle" nowrap="nowrap"><img src="images/ico_mi.gif" width="20" height="19" hspace="2" /> <img src="images/ico_you.gif" width="20" height="19" /> <img src="images/ico_huang.gif" width="20" height="19"/></td>
+                 <td align="center" valign="middle" nowrap="nowrap">2天2小时11分</td>
+               </tr>
+               <tr>
+                 <td><img src="images/ico_huang.gif" width="20" height="19" align="absmiddle" /> <a href="#">80级凶猛盗贼无敌的很非常超级帅气的男<br />
+                   人法师，再不来错8过了</a>.<br />
+                   物品种类：游戏账号<br />
+                   游戏区服：美服魔兽 Ageywn –A</td>
+                 <td align="center" valign="middle"><img src="images/ico_pei.gif" width="18" height="19" /></td>
+                 <td align="center" valign="middle"><span class="green-text"><strong>300.00</strong></span>元 <span class="green-text"><strong>当前</strong></span><br />
+                     <span class="red-text"><strong>50.00</strong></span>元 <span class="red-text"><strong>一口价</strong></span></td>
+                 <td align="center" valign="middle" nowrap="nowrap">1件</td>
+                 <td align="center" valign="middle" nowrap="nowrap"><img src="images/ico_mi.gif" width="20" height="19" hspace="2" /> <img src="images/ico_you.gif" width="20" height="19" /> <img src="images/ico_huang.gif" width="20" height="19"/></td>
+                 <td align="center" valign="middle" nowrap="nowrap">2天2小时11分</td>
+               </tr>
+			      <tr>
+                 <td><img src="images/ico_huang.gif" width="20" height="19" align="absmiddle" /> <a href="#">80级凶猛盗贼无敌的很非常超级帅气的男<br />
+  人法师，再不来错8过了</a>.<br />
+                   物品种类：游戏账号<br />
+                 游戏区服：美服魔兽 Ageywn –A</td>
+                 <td align="center" valign="middle"><img src="images/ico_pei.gif" width="18" height="19" /></td>
+                 <td align="center" valign="middle"><span class="green-text"><strong>300.00</strong></span>元 <span class="green-text"><strong>当前</strong></span><br />
+                   <span class="red-text"><strong>50.00</strong></span>元 <span class="red-text"><strong>一口价</strong></span></td>
+                 <td align="center" valign="middle" nowrap="nowrap">1件</td>
+                 <td align="center" valign="middle" nowrap="nowrap"><img src="images/ico_mi.gif" width="20" height="19" hspace="2" /> <img src="images/ico_you.gif" width="20" height="19" /> <img src="images/ico_huang.gif" width="20" height="19"/></td>
+                 <td align="center" valign="middle" nowrap="nowrap">2天2小时11分</td>
+               </tr>
+               <tr>
+                 <td><img src="images/ico_huang.gif" width="20" height="19" align="absmiddle" /> <a href="#">80级凶猛盗贼无敌的很非常超级帅气的男<br />
+                   人法师，再不来错8过了</a>.<br />
+                   物品种类：游戏账号<br />
+                   游戏区服：美服魔兽 Ageywn –A</td>
+                 <td align="center" valign="middle"><img src="images/ico_pei.gif" width="18" height="19" /></td>
+                 <td align="center" valign="middle"><span class="green-text"><strong>300.00</strong></span>元 <span class="green-text"><strong>当前</strong></span><br />
+                     <span class="red-text"><strong>50.00</strong></span>元 <span class="red-text"><strong>一口价</strong></span></td>
+                 <td align="center" valign="middle" nowrap="nowrap">1件</td>
+                 <td align="center" valign="middle" nowrap="nowrap"><img src="images/ico_mi.gif" width="20" height="19" hspace="2" /> <img src="images/ico_you.gif" width="20" height="19" /> <img src="images/ico_huang.gif" width="20" height="19"/></td>
+                 <td align="center" valign="middle" nowrap="nowrap">2天2小时11分</td>
+               </tr>
+               <tr>
+                 <td><img src="images/ico_huang.gif" width="20" height="19" align="absmiddle" /> <a href="#">80级凶猛盗贼无敌的很非常超级帅气的男<br />
+                   人法师，再不来错8过了</a>.<br />
+                   物品种类：游戏账号<br />
+                   游戏区服：美服魔兽 Ageywn –A</td>
+                 <td align="center" valign="middle"><img src="images/ico_pei.gif" width="18" height="19" /></td>
+                 <td align="center" valign="middle"><span class="green-text"><strong>300.00</strong></span>元 <span class="green-text"><strong>当前</strong></span><br />
+                     <span class="red-text"><strong>50.00</strong></span>元 <span class="red-text"><strong>一口价</strong></span></td>
+                 <td align="center" valign="middle" nowrap="nowrap">1件</td>
+                 <td align="center" valign="middle" nowrap="nowrap"><img src="images/ico_mi.gif" width="20" height="19" hspace="2" /> <img src="images/ico_you.gif" width="20" height="19" /> <img src="images/ico_huang.gif" width="20" height="19"/></td>
+                 <td align="center" valign="middle" nowrap="nowrap">2天2小时11分</td>
+               </tr>
+          </table>
+			<table width="100%" border="0" align="left" cellpadding="3" cellspacing="0">
+                  <tr>
+                    <td width="22%" align="center"><div style="line-height:30px; float:left">共190条  显示20条 </div></td>
+                    <td width="78%"><table border="0" align="right" cellpadding="0" cellspacing="3">
+                        <tr>
+                          <td valign="middle"><a href="#"><img src="images/btn_prevpatge.gif" width="19" height="19" border="0" align="absmiddle" /></a> </td>
+                          <td class="pages"><a href="#" class="focus"><span>1</span></a> <a href="#"><span>2</span></a> <a href="#"><span>3</span></a> <a href="#"><span>4</span></a> <a href="#"><span>5</span></a> <a href="#"><span>6</span></a> <a href="#"><span>7</span></a> </td>
+                          <td><a href="#"><img src="images/btn_nextpage.gif" width="55" height="19" border="0" align="absmiddle" /></a> </td>
+                          
+                        </tr>
+                    </table></td>
+                  </tr>
+          </table>
+	  </div>
+		<!--end rightpart-->
+		
+		<div class="clear"></div>
+		<div class="bottom">
+			<a href="#">此内容系</a> | <a href="#">百度根据</a> | <a href="#">您的指令</a> | <a href="#">自动搜索</a> | <a href="#">的结果不</a> | <a href="#">代表百度</a> | 赞成被搜	
+			<p>Copyright &copy;1996-2009 SINA Corporation, All Rights Reserved</p>	
+			<p>增值电信业务经营许可证B2-20040016号</p>
+		</div>
+	</div> 
+	<!--end warp-->
+
+</body>
+</html>

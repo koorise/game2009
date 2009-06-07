@@ -16,6 +16,7 @@ public partial class userInfo_PassPortModify : System.Web.UI.UserControl
         if(!IsPostBack)
         {
             LitNumber.Text = Tools.CreateNum().ToString();
+            Literal1.Text = Tools.ApplicationTitle(int.Parse(Request["aTitle"]));
         }
     }
     protected void Button1_Click(object sender, EventArgs e)
@@ -23,8 +24,11 @@ public partial class userInfo_PassPortModify : System.Web.UI.UserControl
         UserPassportApplication up= new UserPassportApplication();
         up.Nid = Tools.CreateNum();
         up.UserID = int.Parse(Cookies.getCookies("cUID"));
+        
         up.RealName = tbRealName.Text;
         up.TelPhone = tbTEL.Text;
+        up.TypeID = int.Parse(Request["aTitle"]);
+        up.ApplicationType = Literal1.Text;
         up.Qq = tbQQ.Text;
         up.EMail = tbEmail.Text;
         up.Mobile = tbMobile.Text;

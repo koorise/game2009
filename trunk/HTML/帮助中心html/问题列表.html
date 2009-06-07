@@ -1,0 +1,306 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>账号列表</title>
+<link href="style/help.css" rel="stylesheet" type="text/css" />
+<script language="javascript" src="javascript/jquery.js"></script>
+<script language="javascript">
+	$(function(){
+		$("#searchtabs dt a").click(function(){
+			$("#searchtabs dt a").removeClass("focus");
+			$("#searchtabs dd").hide();
+			$(this).addClass("focus");
+			$("#"+$(this).attr("data")).show();
+		});
+	});
+</script>
+</head>
+
+<body>
+	<div class="wrap">
+		<!--start header-->
+		<div id="header">
+			<div class="logo"><img src="images/logo02.gif" width="219" height="72" /></div>
+			<div class="favorites"><a href="#">[收藏本站][设为首页]</a></div>
+			<div class="tools">
+				<img src="images/btn_wym.gif" width="66" height="22" align="absmiddle" />
+				<img src="images/btn_wymai.gif" width="66" height="22" align="absmiddle" />
+				<img src="images/btn_wdyxyz.gif" width="103" height="22" align="absmiddle" />
+				<img src="images/dot_help.gif" width="11" height="11" hspace="3" align="absmiddle" /><a href="#">帮助中心</a>			  <img src="images/ico_service.gif" width="16" height="16" hspace="3" align="absmiddle" /><a href="#">客服中心</a>
+			  <p>您好，欢迎来到游戏易站  [免费注册] [登录]	</p>
+			</div>
+		</div>
+		<!--end header-->
+		
+		
+		<!--start searchtabs-->
+		<dl id="searchtabs">
+			<dt> 
+				<a href="#" data="stabs01">首页</a> 
+				<a href="#" data="stabs02" class="focus">账号交易</a>	      
+				<a href="#" data="stabs03">金币交易</a>	      
+				<a href="#" data="stabs04">中介服务</a>  	      
+				<a href="#" data="stabs05">虚拟超市</a>	   
+				<a href="#" data="stabs06">骗子查询</a>	       
+				<a href="#" data="stabs07">数据业务</a>	       
+				<a href="#" data="stabs08">易站论坛</a>
+			</dt>
+			<dd id="stabs01">
+				<table width="100%" height="43" border="0" cellpadding="0" cellspacing="0">
+				  <tr>
+					<td width="130" align="left"><select name="select" class="select">
+					  <option>搜索账号</option>
+					  </select>						</td>
+					<td width="305" align="left"><input name="textfield" type="text" class="input" /></td>
+					<td width="130" align="left"><select name="select2" class="select">
+                         <option>搜索账号</option>
+                       </select></td>
+					<td align="left"><label>
+					  <input type="image" name="imageField" src="images/btn_search_02.gif" />
+					</label></td>
+				  </tr>
+			  </table>
+			</dd>
+			<dd id="stabs02" style="display:block">
+				<table width="100%" height="43" border="0" cellpadding="0" cellspacing="0">
+				  <tr>
+					<td width="130" align="left"><select name="select" class="select">
+					  <option>搜索账号</option>
+					  </select>						</td>
+					<td width="305" align="left"><input name="textfield" type="text" class="input" /></td>
+					<td width="130" align="left"><select name="select2" class="select">
+                         <option>搜索账号</option>
+                       </select></td>
+					<td align="left"><label>
+					  <input type="image" name="imageField" src="images/btn_search_02.gif" />
+					</label></td>
+				  </tr>
+			  </table>
+			</dd>
+			<dd id="stabs03">
+				<table width="100%" height="43" border="0" cellpadding="0" cellspacing="0">
+				  <tr>
+					<td width="130" align="left"><select name="select" class="select">
+					  <option>搜索账号</option>
+					  </select>						</td>
+					<td width="305" align="left"><input name="textfield" type="text" class="input" /></td>
+					<td width="130" align="left"><select name="select2" class="select">
+                         <option>搜索账号</option>
+                       </select></td>
+					<td align="left"><label>
+					  <input type="image" name="imageField" src="images/btn_search_02.gif" />
+					</label></td>
+				  </tr>
+			  </table>
+			</dd>
+			<dd id="stabs04">
+				<table width="100%" height="43" border="0" cellpadding="0" cellspacing="0">
+				  <tr>
+					<td width="130" align="left"><select name="select" class="select">
+					  <option>搜索账号</option>
+					  </select>						</td>
+					<td width="305" align="left"><input name="textfield" type="text" class="input" /></td>
+					<td width="130" align="left"><select name="select2" class="select">
+                         <option>搜索账号</option>
+                       </select></td>
+					<td align="left"><label>
+					  <input type="image" name="imageField" src="images/btn_search_02.gif" />
+					</label></td>
+				  </tr>
+			  </table>
+			</dd>
+			<dd id="stabs05">
+				<table width="100%" height="43" border="0" cellpadding="0" cellspacing="0">
+				  <tr>
+					<td width="130" align="left"><select name="select" class="select">
+					  <option>搜索账号</option>
+					  </select>						</td>
+					<td width="305" align="left"><input name="textfield" type="text" class="input" /></td>
+					<td width="130" align="left"><select name="select2" class="select">
+                         <option>搜索账号</option>
+                       </select></td>
+					<td align="left"><label>
+					  <input type="image" name="imageField" src="images/btn_search_02.gif" />
+					</label></td>
+				  </tr>
+			  </table>
+			</dd>
+			<dd id="stabs06">
+				<table width="100%" height="43" border="0" cellpadding="0" cellspacing="0">
+				  <tr>
+					<td width="130" align="left"><select name="select" class="select">
+					  <option>搜索账号</option>
+					  </select>						</td>
+					<td width="305" align="left"><input name="textfield" type="text" class="input" /></td>
+					<td width="130" align="left"><select name="select2" class="select">
+                         <option>搜索账号</option>
+                       </select></td>
+					<td align="left"><label>
+					  <input type="image" name="imageField" src="images/btn_search_02.gif" />
+					</label></td>
+				  </tr>
+			  </table>
+			</dd>
+			<dd id="stabs07">
+				<table width="100%" height="43" border="0" cellpadding="0" cellspacing="0">
+				  <tr>
+					<td width="130" align="left"><select name="select" class="select">
+					  <option>搜索账号</option>
+					  </select>						</td>
+					<td width="305" align="left"><input name="textfield" type="text" class="input" /></td>
+					<td width="130" align="left"><select name="select2" class="select">
+                         <option>搜索账号</option>
+                       </select></td>
+					<td align="left"><label>
+					  <input type="image" name="imageField" src="images/btn_search_02.gif" />
+					</label></td>
+				  </tr>
+			  </table>
+			</dd>
+			<dd id="stabs08">
+				<table width="100%" height="43" border="0" cellpadding="0" cellspacing="0">
+				  <tr>
+					<td width="130" align="left"><select name="select" class="select">
+					  <option>搜索账号</option>
+					  </select>						</td>
+					<td width="305" align="left"><input name="textfield" type="text" class="input" /></td>
+					<td width="130" align="left"><select name="select2" class="select">
+                         <option>搜索账号</option>
+                       </select></td>
+					<td align="left"><label>
+					  <input type="image" name="imageField" src="images/btn_search_02.gif" />
+					</label></td>
+				  </tr>
+			  </table>
+			</dd>
+		</dl> 
+		<!--end searchtabs-->
+		
+		<!--body start-->
+		<div class="pos">您的位置：首页 &gt;&gt; 帮助中心 &gt;&gt; 账号交易帮助 &gt;&gt; 交易流程 &gt;&gt; 如果买家拍下来不付款？</div>
+		<div class="midp">
+		<dl class="leftdl">
+			<dt>常见问题列表</dt>
+			<dd>
+				<ul>
+					<li><a href="#">账号交易帮助</a>
+					  <ul>
+							<li><a href="#">交易流程</a></li>
+							<li><a href="#">如何购买</a></li>
+							<li><a href="#">如何出售</a></li>
+							<li><a href="#">常见问题</a></li>
+					  </ul>
+				  </li>
+					<li><a href="#">收货出货帮助
+						</a>
+			    <ul>
+							<li><a href="#">交易流程</a></li>
+							<li><a href="#">如何购买</a></li>
+							<li><a href="#">如何出售</a></li>
+							<li><a href="#">常见问题</a></li>
+						</ul>
+					</li>
+					<li><a href="#">虚拟超市帮助
+						</a>
+			    <ul>
+							<li><a href="#">交易流程</a></li>
+							<li><a href="#">如何购买</a></li>
+							<li><a href="#">如何出售</a></li>
+							<li><a href="#">常见问题</a></li>
+						</ul>
+  					</li>
+					<li><a href="#">充值帮助
+						</a>
+			    <ul>
+							<li><a href="#">如何充值</a></li>
+							<li><a href="#">网上银行充值</a></li>
+						</ul>
+  					</li>
+					<li><a href="#">提现帮助
+						</a>
+			    <ul>
+							<li><a href="#">如何提现</a></li>
+							<li><a href="#">提现到账时间</a></li>
+							<li><a href="#">提现收费标准</a></li>
+							<li><a href="#">账户常见问题</a></li>
+						</ul>
+  					</li>
+				</ul>
+			</dd>
+		</dl>
+		
+		<div class="main">		  
+		  <div class="helpsearch">
+				<strong>帮助搜索</strong>
+			    <input name="textfield2" type="text" class="input" />
+			    <label>
+			    <input name="imageField2" type="image" src="images/btn_hlpsearch.gif" align="absmiddle" />
+			    </label>
+		  </div>
+			
+		  <div class="line2">&nbsp;</div>
+		  <div class="faq_cont">
+		  	<ul class="faq_list">
+				<li><a href="#">买家交易流程</a></li>
+				<li><a href="#">卖家交易流程</a></li>
+				<li><a href="#">交易过程中如果出现问题怎么办？</a></li>
+				<li><a href="#">如果我付款了，卖家不交货，我该怎么办？</a></li>
+				<li><a href="#">如果买家拍下来以后不付款？</a></li>
+				<li><a href="#">如果买到了不应该买到的赃物，怎么处理？</a></li>
+			</ul>
+		  </div>
+		  
+		  
+		  <div>
+		    <p>&nbsp;</p>
+		    <p>&nbsp;</p>
+		    <p>&nbsp;</p>
+		    <p>&nbsp;</p>
+		    <p>&nbsp;</p>
+		    <p>&nbsp;</p>
+		    <p>&nbsp;</p>
+		    <table width="500" height="160" border="0" align="center" cellpadding="0" cellspacing="10" class="faq_svc">
+              <tr>
+                <td align="center" style="line-height:24px;"><span class="money f14">没有我想问的问题？</span> <a href="#"><strong>立刻联系易站客服为您解答</strong></a><br />
+                  <strong>如果客服不在线，请您QQ留言，有问必答。</strong></td>
+                <td width="120" rowspan="2" align="center"><img src="images/faq_svc.gif" width="118" height="143" /></td>
+              </tr>
+              <tr>
+                <td><table width="314" border="0" align="center" cellpadding="0" cellspacing="0" background="images/faq_svc_list_middle.gif">
+                  <tr>
+                    <td height="5" valign="top"><img src="images/faq_svc_list_top.gif" width="314" height="5" /></td>
+                  </tr>
+                  <tr>
+                    <td height="55" background="images/faq_svc_list_center.gif" style="border-left:1px solid #C7E4FB; border-right:1px solid #C7E4FB;"><table width="280" border="0" align="center" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td width="167" height="24">客服名称</td>
+                        <td width="113" height="24">QQ号码</td>
+                      </tr>
+                      <tr>
+                        <td height="24"><strong>游戏易站咨询客服</strong></td>
+                        <td height="24"><strong>22065010</strong><a href="#">[复制]</a></td>
+                      </tr>
+                    </table></td>
+                  </tr>
+                  <tr>
+                    <td height="6" valign="bottom"><img src="images/faq_svc_list_bottom.gif" width="314" height="6" /></td>
+                  </tr>
+                </table></td>
+              </tr>
+            </table>
+		  </div>
+		  </div>
+		</div>
+		<!--body end -->
+		<div class="clear"></div>
+		<div class="bottom">
+			<a href="#">此内容系</a> | <a href="#">百度根据</a> | <a href="#">您的指令</a> | <a href="#">自动搜索</a> | <a href="#">的结果不</a> | <a href="#">代表百度</a> | 赞成被搜	
+			<p>Copyright &copy;1996-2009 SINA Corporation, All Rights Reserved</p>	
+			<p>增值电信业务经营许可证B2-20040016号</p>
+		</div>
+	</div> 
+	<!--end warp-->
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+/* CSS Document */
+*{ margin:0px; padding:0px; font-size:12px;}
+a{ color:#004BA6; text-decoration:none;}
+.wrap{ width:960px; margin:0px auto;}
+#header{ width:100%; height:80px; margin-top:8px;}
+#header .logo{ width:220px; float:left; margin-top:8px;}
+#header .favorites{ width:180px; float:left; padding-top:60px; padding-left:10px; line-height:20px;}
+#header .tools{ float:right; height:64px; padding-top:16px; line-height:24px; color:#001D71;}
+#header .tools p{ text-align:right; line-height:40px;}
+#header .tools a{ color:#001D71;}
+
+#searchtabs{ width:960px; float:left; margin-top:8px;}
+#searchtabs dt { padding-left:40px;}
+#searchtabs dt a{ display:block; width:106px; height:27px; line-height:34px; background:url(../images/tabs_bg1.gif) no-repeat; float:left; text-align:center; color:#5A5A5A; font-weight:normal; margin-right:3px; overflow:hidden;}
+#searchtabs dt a.focus{ background:url(../images/tabs_bg2.gif) no-repeat; font-weight:bold; color:#0079C5;}
+#searchtabs dd{ height:43px; width:920px; padding-left:40px; overflow:hidden; background:url(../images/tabs_dd_bg.gif) repeat-x; float:left; clear:both; display:none;}
+#searchtabs dd .select{ width:120px; height:20px; }
+#searchtabs dd .input{ width:295px; height:20px; border:1px solid #9C9C9C;}
+
+.money{ font-weight:bold; color:#DE010E;}
+
+
+.bottom{ border-top:2px solid #B0B0B0; text-align:center; line-height:24px; padding-top:5px; color:#333333; margin-top:10px;}
+.bottom a{ color:#004FE0; text-decoration:none;}
+
+.clear{ clear:both;}
+.orange-text{ color:#FF6000;}
+.blue-text{ color:#0062B3;}
+.red-text{ color:#FF0000;}
+.hui-text{ color:#BEBEBE;}
+.green-text{ color:#199500;}
+.black_text{ color:#000000;}
+

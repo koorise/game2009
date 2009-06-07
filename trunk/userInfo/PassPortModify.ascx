@@ -1,6 +1,7 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="PassPortModify.ascx.cs" Inherits="userInfo_PassPortModify" %>
 <div class="cont">
-				<h1>申请清空密保问题答案</h1>
+				<h1>
+                    <asp:Literal ID="Literal1" runat="server"></asp:Literal></h1>
 				
 				<p>&nbsp;</p>
 				<table width="740" border="0" align="center" cellpadding="0" cellspacing="1" bgcolor="#FAD181">
@@ -71,7 +72,7 @@
                     <td align="right" bgcolor="#F4F9FF">支付宝账号：</td>
                     <td bgcolor="#FFFFFF"><span class="comm">
                       &nbsp;
-                        <asp:TextBox ID="tbAlipayID" runat="server"></asp:TextBox>>
+                        <asp:TextBox ID="tbAlipayID" runat="server"></asp:TextBox>
                     </span></td>
                   </tr>
                   <tr>
