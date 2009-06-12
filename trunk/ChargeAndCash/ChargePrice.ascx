@@ -4,15 +4,17 @@
 <%@ Register src="Charge_SYT.ascx" tagname="Charge_SYT" tagprefix="uc1" %>
 <%@ Register src="Charge_ICBC.ascx" tagname="Charge_ICBC" tagprefix="uc1" %>
 <link href="style/topup.css" rel="stylesheet" type="text/css" />
-<cc1:ToolkitScriptManager ID="ToolkitScriptManager1" runat="server"></cc1:ToolkitScriptManager>
+<script type="text/javascript">
+function ActiveTabChanged(sender, e) {
+            
+            //
+        }
+</script>
 <div class="cont">
     <h1>
         已买到的</h1>
     <dl class="tabs">
-        <dt><a href="#"><span>网银自动充值</span></a> <a href="#"><span>工行人工充值（推荐）</span></a> <a
-            href="#" class="focus"><span>支付宝自动充值</span></a> </dt>
-        <dd id="wydd">
-        <cc1:TabContainer ID="TabContainer1" runat="server" ActiveTabIndex="0">
+        <cc1:TabContainer ID="Tabs" runat="server" OnClientActiveTabChanged="ActiveTabChanged" OnActiveTabChanged="Tabs_ActiveTabChanged" ActiveTabIndex="0">
             <cc1:TabPanel ID="TabPanel1" runat="server" HeaderText="支付宝自动充值（推荐）"><ContentTemplate>
             <uc1:Charge_Alipay ID="Charge_Alipay1" runat="server" /></ContentTemplate>
             </cc1:TabPanel>
@@ -22,6 +24,6 @@
             <cc1:TabPanel ID="TabPanel3" runat="server" HeaderText="网银自动充值"><ContentTemplate>
             <uc1:Charge_SYT ID="Charge_SYT1" runat="server" /></ContentTemplate>
             </cc1:TabPanel>
-        </cc1:TabContainer></dd>
+        </cc1:TabContainer>
     </dl>
 </div>
