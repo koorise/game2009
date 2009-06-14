@@ -122,7 +122,7 @@ public partial class UserControl_CheckPay : System.Web.UI.UserControl
                     // 提交买家帐户记录更新
                     GAccountRecord.Insert(runningid, int.Parse(uid), decimal.Parse(Request["ordernum"]), decimal.Parse(pnkid.ToString()), int.Parse(moneytype.ToString()), int.Parse(SysPriceType.FetchByParameter("PriceType", "支付")["ID"].ToString()), DateTime.Now, -Convert.ToDecimal(pricenow), Convert.ToDecimal(buyprice) - Convert.ToDecimal(pricenow),"买", 1,DateTime.Now);
                     // 提交卖家帐务记录更新
-                    GAccountRecord.Insert(runningid, int.Parse(usersellsid), decimal.Parse(Request["ordernum"]), decimal.Parse(pnkid.ToString()), int.Parse(moneytype.ToString()), int.Parse(SysPriceType.FetchByParameter("PriceType", "售得")["ID"].ToString()), DateTime.Now, Convert.ToDecimal(pricenow), Convert.ToDecimal(buyprice) + Convert.ToDecimal(pricenow), "卖",  1, DateTime.Now);
+                    //GAccountRecord.Insert(runningid, int.Parse(usersellsid), decimal.Parse(Request["ordernum"]), decimal.Parse(pnkid.ToString()), int.Parse(moneytype.ToString()), int.Parse(SysPriceType.FetchByParameter("PriceType", "售得")["ID"].ToString()), DateTime.Now, Convert.ToDecimal(pricenow), Convert.ToDecimal(buyprice) + Convert.ToDecimal(pricenow), "卖",  1, DateTime.Now);
 
                     // 提交订单的状态变化更新
                     Query q = GOrderInfo.Query().WHERE("OrderNumber", Request["ordernum"]);

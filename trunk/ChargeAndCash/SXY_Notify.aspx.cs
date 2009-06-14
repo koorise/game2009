@@ -190,8 +190,10 @@ public partial class ChargeAndCash_SXY_Notify : System.Web.UI.Page
             // 更新自己数据库的订单语句
             // 向gAccountForOut修改数据的代码 
             // runningnumber不明; oprateprice=实际操作金额 
-            // endtime=now; isstatus=状态="成功"
+            // endtime=now; isstatus="成功"
+            // 实际金额不为0表成功；为0则失败
             Query q = GAccountForOut.Query().WHERE("runningid='" + runningid + "'");
+            q.AddUpdateSetting("runningnum", Request["v_oid"]);
             q.AddUpdateSetting("operateprice=",Request["v_amount"]);
             q.AddUpdateSetting("fintime=",DateTime.Now);
             q.AddUpdateSetting("isstatus", 2).Execute();    //状态更新 -- 完毕
@@ -200,6 +202,7 @@ public partial class ChargeAndCash_SXY_Notify : System.Web.UI.Page
         else if (Request["v_pstatus"] == "3")
         {
             Query q = GAccountForOut.Query().WHERE("runningid='" + runningid + "'");
+            q.AddUpdateSetting("runningnum", Request["v_oid"]);
             q.AddUpdateSetting("fintime=",  DateTime.Now);
             q.AddUpdateSetting("isstatus", 2).Execute();    //状态更新 -- 完毕
             //状态更新完毕

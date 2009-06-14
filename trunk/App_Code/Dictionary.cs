@@ -32,7 +32,7 @@ public class Dictionary
     /// </summary>
     public static int[] AccountRecordStatus = {0, 1, 2, 3, 4, 5};
     /// <summary>
-    /// gAccountForOut.isStatus 1-处理中,2-处理完毕,3-已撤销,4-已填订单
+    /// gAccountForOut.isStatus 1-处理中,2-处理完毕,3-已撤销,4-等待支付
     /// </summary>
     public static int[] ChargeCashStatus = { 0, 1, 2, 3, 4};
     /// <summary>

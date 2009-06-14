@@ -1,11 +1,7 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="CheckPay.ascx.cs" Inherits="UserControl_CheckPay" %>
 <%@ Register Src="CustomerService.ascx" TagName="CustomerService" TagPrefix="uc1" %>
-
 <script type="text/javascript" src="scripts/CheckPay.js"></script>
 <link href="css/pay.css" rel="stylesheet" type="text/css" />
-
-<asp:ScriptManagerProxy ID="ScriptManagerProxy1" runat="server">
-</asp:ScriptManagerProxy>
 <asp:Wizard ID="CheckPayWizard" DisplaySideBar="False" runat="server" OnNextButtonClick="CheckPayWizard_NextButtonClick"
     OnActiveStepChanged="CheckPayWizard_ActiveStepChanged">
     <WizardSteps>

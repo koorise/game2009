@@ -5,8 +5,6 @@
 <div class="cont">
     <h1>
         已买到的</h1>
-    <asp:ScriptManagerProxy ID="ScriptManagerProxy1" runat="server">
-    </asp:ScriptManagerProxy>
     <asp:Wizard ID="GetProductWizard" DisplaySideBar="False" runat="server" OnNextButtonClick="GetProductWizard_NextButtonClick"
         OnActiveStepChanged="GetProductWizard_ActiveStepChanged">
         <WizardSteps>

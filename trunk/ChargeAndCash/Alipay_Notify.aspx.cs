@@ -152,8 +152,9 @@ public partial class ChargeAndCash_Alipay_Notify : System.Web.UI.Page
             {
                 // 更新自己数据库的订单语句
                 // 向gAccountForOut修改数据的代码 
-                // runningnumber=trade_no; oprateprice=实际操作金额 
-                // endtime=now; isstatus=状态="成功"
+                // runningnumber=trade_no(支付宝交易号); oprateprice=实际操作金额 
+                // endtime=now; isstatus="成功"
+                // 实际金额不为0，成功；为0表失败
                 Query q = GAccountForOut.Query().WHERE("runningid='" + Request["out_trade_no"] + "'");
                 q.AddUpdateSetting("runningnum" , Request["trade_no"]);
                 q.AddUpdateSetting("operateprice" , Request["total_fee"]);
