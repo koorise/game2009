@@ -78,12 +78,12 @@ public partial class ChargeAndCash_Charge_ICBC : System.Web.UI.UserControl
         else if (e.CurrentStepIndex == 1)
         {
             Query q = GAccountForOut.Query().WHERE("runningid='" + runningid + "'");
-            //                                                      //状态更新 -- 客服
-            q.AddUpdateSetting("operateprice", txt_price222.Text);  //实际充值（含尾数）
-            q.AddUpdateSetting("isstatus", 1).Execute();            //状态更新 -- 处理中
+            //q.AddUpdateSetting("serviceid", "")                                           //状态更新 -- 客服
+            q.AddUpdateSetting("operateprice", txt_price222.Text);                          //实际充值（含尾数）
+            q.AddUpdateSetting("isstatus", 1).Execute();                                    //状态更新 -- 处理中
             //状态更新完毕
 
-            //向银行提交完毕
+            //向银行提交记录完毕
         }
     }
 

@@ -18,23 +18,42 @@ public partial class Service_CashView : System.Web.UI.UserControl
         if (!IsPostBack)
         {
             //初始化
+            //订单list初始化
             SqlQuery sqdef = new Select(GAccountForOut.IdColumn.ColumnName, "*").From(GAccountForOut.Schema).InnerJoin(GUserInfo.UIDColumn, GAccountForOut.UserIDColumn).InnerJoin(AdminInfo.CustomerServiceIDColumn, GAccountForOut.ServiceIDColumn).InnerJoin(SysPriceType.IdColumn, GAccountForOut.PriceTypeIDColumn).InnerJoin(SysPriceChannel.PriceChannelIDColumn, GAccountForOut.PriceChannelIDColumn).Where("runningid").IsEqualTo(Request["runningid"]);
             MyOrderList1.DataSource = sqdef.ExecuteDataSet().Tables[0].DefaultView;
             MyOrderList1.DataBind();
 
             Query qc = GAccountForOut.Query().WHERE("runningid=" + Request["runningid"]);
 
+            //订单信息初始化
             object pricechannel = qc.SetSelectList("pricechannel").ExecuteScalar();
             txt_pricechannel.Text = SysPriceChannel.Query().SetSelectList("pricechannelname").WHERE("pricechannelid", pricechannel).ExecuteScalar().ToString();
             txt_aprice.Text = string.Format("{0:C}", qc.SetSelectList("applyprice").ExecuteScalar());
             txt_oprice.Text = string.Format("{0:C}", qc.SetSelectList("operateprice").ExecuteScalar());
-            txt_sprice.Text = decimal.Subtract(Convert.ToDecimal(qc.SetSelectList("operateprice").ExecuteScalar()), Convert.ToDecimal(qc.SetSelectList("applyprice").ExecuteScalar())).ToString("0.00");
+            txt_sprice.Text = string.Format("{0:C}", qc.SetSelectList("servicecharge").ExecuteScalar());
             object userid = qc.SetSelectList("userid").ExecuteScalar();
+            Query uq = UserScrtInfo.Query().WHERE("userid=" + userid);
+            if (pricechannel.ToString() == "1")
+            {
+                txt_accountname.Text = uq.SetSelectList("alipayname").ExecuteScalar().ToString();
+                txt_accountnum.Text = uq.SetSelectList("alipayid").ExecuteScalar().ToString();
+            }
+            else if(pricechannel.ToString() == "3")
+            {
+                txt_accountname.Text = uq.SetSelectList("bankmanname").ExecuteScalar().ToString();
+                txt_accountnum.Text = uq.SetSelectList("bankcardid").ExecuteScalar().ToString();
+            }
+
+            //账户信息初始化
             object idx = GAccountRecord.Query().WHERE("UserID", userid).GetMax("id");
             txt_cprice.Text = string.Format("{0:C}", GAccountRecord.Query().SetSelectList("cPrice").WHERE("id", idx).ExecuteScalar());
+            //edit
+
+            //处理结果初始化
             object pricestatus = qc.SetSelectList("isstatus").ExecuteScalar();
             if (pricestatus.ToString() == "1")
             {
+                //未处理的显示
                 MultiView1.ActiveViewIndex = 1;
                 btn_apply.Visible = true;
                 btn_back.Visible = false;
@@ -42,9 +61,14 @@ public partial class Service_CashView : System.Web.UI.UserControl
             }
             else
             {
+                //已处理的显示
                 MultiView1.ActiveViewIndex = 0;
                 btn_apply.Visible = false;
                 btn_back.Visible = true;
+                txt_fstatus.Text = "";
+                txt_fprice.Text = "";
+                txt_frunningnum.Text = "";
+                txt_fbak.Text = "";
             }
         }
     }
@@ -61,7 +85,10 @@ public partial class Service_CashView : System.Web.UI.UserControl
             }
             else if (drv["isstatus"].ToString() == "2")
             {
-                txt_status.Text = "处理完毕";
+                if (Convert.ToDecimal(drv["operateprice"]) > 0)
+                    txt_status.Text = "处理完毕";
+                else
+                    txt_status.Text = "失败";
             }
             else if (drv["isstatus"].ToString() == "3")
             {
@@ -69,11 +96,8 @@ public partial class Service_CashView : System.Web.UI.UserControl
             }
             else
             {
-                txt_status.Text = "已填单";
+                txt_status.Text = "等待支付";
             }
-            HyperLink link_view = (HyperLink)e.Item.FindControl("link_view");
-            link_view.NavigateUrl = "CashView.aspx";
-            link_view.NavigateUrl += "?runningid=" + link_view.Text;
         }
     }
 
@@ -82,7 +106,14 @@ public partial class Service_CashView : System.Web.UI.UserControl
     {
         Query q = GAccountForOut.Query().WHERE("runningid='" + Request["runningid"] + "'");
         q.AddUpdateSetting("runningnum", txt_runningnum.Text);
-        q.AddUpdateSetting("operateprice", txt_operateprice.Text);
+        if (sel_fin.SelectedValue == "success")
+        {
+            q.AddUpdateSetting("operateprice", txt_operateprice.Text);
+        }
+        else
+        {
+            q.AddUpdateSetting("operateprice", 0);
+        }
         q.AddUpdateSetting("fintime", DateTime.Now);
         q.AddUpdateSetting("isstatus", 2).Execute();    //状态更新 -- 完毕
         //状态更新完毕

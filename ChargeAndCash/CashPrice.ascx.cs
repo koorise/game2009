@@ -23,7 +23,6 @@ public partial class ChargeAndCash_CashPrice : System.Web.UI.UserControl
                 Tools.jsRedirect("~/Login.aspx");
             string uid = Cookies.getCookies("cUID");
             //检查个人信息是否完善
-            
             Query uq = UserScrtInfo.Query().WHERE("userid=" + uid);
             string alipayname = uq.SetSelectList("alipayname").ExecuteScalar().ToString();
             string alipayid = uq.SetSelectList("alipayid").ExecuteScalar().ToString();
@@ -109,6 +108,7 @@ public partial class ChargeAndCash_CashPrice : System.Web.UI.UserControl
             //第四步加载
             if (sel_channel.SelectedValue == "icbc")
             {
+                //计算手续费
                 double aprice = Convert.ToDouble(txt_price31.Text);
                 double charge = aprice * 0.009;
                 charge = Math.Min(charge, 45);
@@ -123,6 +123,7 @@ public partial class ChargeAndCash_CashPrice : System.Web.UI.UserControl
             }
             else if (sel_channel.SelectedValue == "alipay")
             {
+                //计算手续费
                 double aprice = Convert.ToDouble(txt_price32.Text);
                 double charge = aprice * 0.008;
                 double oprice = aprice - charge;
@@ -137,6 +138,7 @@ public partial class ChargeAndCash_CashPrice : System.Web.UI.UserControl
         else if (CashWizard.ActiveStepIndex == 4)
         {
             //第五步加载
+            //客服信息
             if (sel_channel.SelectedValue == "icbc")
             {
                 txt_servicename1.Text = "用户资料客服/充值/提现";
@@ -154,6 +156,7 @@ public partial class ChargeAndCash_CashPrice : System.Web.UI.UserControl
     {
         if (e.CurrentStepIndex == 0)
         {
+            //密保校验
             if (!Tools.ChkStatus())
                 Tools.jsRedirect("~/Login.aspx");
             string uid = Cookies.getCookies("cUID");
@@ -184,7 +187,7 @@ public partial class ChargeAndCash_CashPrice : System.Web.UI.UserControl
                 Tools.jsRedirect("~/Login.aspx");
             string uid = Cookies.getCookies("cUID");
             object idx = GAccountRecord.Query().WHERE("UserID", uid).GetMax("id");
-            object cprice = GAccountRecord.Query().SetSelectList("cPrice").WHERE("id", idx).ExecuteScalar();
+            object cprice = GAccountRecord.Query().SetSelectList("cPrice").WHERE("id", idx).ExecuteScalar();    //余额
             if (sel_channel.SelectedValue == "icbc")
             {
                 if (!Tools.CheckQuestion(uid, dropQuestion31.SelectedValue, txtAnswer31.Text))
@@ -192,7 +195,7 @@ public partial class ChargeAndCash_CashPrice : System.Web.UI.UserControl
                     txtAlert31.Text = "密保或答案输入错误";
                     e.Cancel = true;
                 }
-                if (Convert.ToDouble(txt_price31.Text) > Convert.ToDouble(cprice))
+                else if (Convert.ToDouble(txt_price31.Text) > Convert.ToDouble(cprice))
                 {
                     Tools.Error("可用余额不足，请检查您的提现金额重新提交");
                     e.Cancel = true;
@@ -205,7 +208,7 @@ public partial class ChargeAndCash_CashPrice : System.Web.UI.UserControl
                     txtAlert32.Text = "密保或答案输入错误";
                     e.Cancel = true;
                 }
-                if (Convert.ToDouble(txt_price32.Text) > Convert.ToDouble(cprice))
+                else if (Convert.ToDouble(txt_price32.Text) > Convert.ToDouble(cprice))
                 {
                     Tools.Error("可用余额不足，请检查您的提现金额重新提交");
                     e.Cancel = true;
@@ -219,7 +222,7 @@ public partial class ChargeAndCash_CashPrice : System.Web.UI.UserControl
             string uid = Cookies.getCookies("cUID");
             Query uq = UserScrtInfo.Query().WHERE("userid=" + uid);
             object idx = GAccountRecord.Query().WHERE("UserID", uid).GetMax("id");
-            object cprice = GAccountRecord.Query().SetSelectList("cPrice").WHERE("id", idx).ExecuteScalar();
+            object cprice = GAccountRecord.Query().SetSelectList("cPrice").WHERE("id", idx).ExecuteScalar();    //余额
             if (sel_channel.SelectedValue == "icbc")
             {
                 if (Convert.ToDouble(txt_price31.Text) > Convert.ToDouble(cprice))
@@ -227,13 +230,15 @@ public partial class ChargeAndCash_CashPrice : System.Web.UI.UserControl
                     Tools.Error("可用余额不足，请检查您的提现金额重新提交");
                     e.Cancel = true;
                 }
-
-                string bankmanname = uq.SetSelectList("bankmanname").ExecuteScalar().ToString();
-                string bankcardid = uq.SetSelectList("bankcardid").ExecuteScalar().ToString();
-                // 向gAccountForOut存储数据的代码 
-                // runningid=内部流水号;runningnum外部流水号; pricetypeid = 提现; pricechannelid = 工行; price=申请金额=txt_price.text; oprateprice=0 （实际操作金额，以后成功了再改，也是判断状态的依据）;  servicecharge =手续费计算结果;
-                // accountname=用户账户名  num=帐号 （提现使用）; serviceid=客服id; starttime=now  超时的判断依据; endtime以后填结束时间;  isstatus=状态="已下单"
-                GAccountForOut.Insert(int.Parse(uid), Tools.CreateNum(), 0, 4, 3, decimal.Parse(txt_price31.Text), decimal.Parse(txt_oprice51.Text), decimal.Parse(txt_sprice41.Text), bankmanname, bankcardid, null, DateTime.Now, null, 1);
+                else
+                {
+                    string bankmanname = uq.SetSelectList("bankmanname").ExecuteScalar().ToString();
+                    string bankcardid = uq.SetSelectList("bankcardid").ExecuteScalar().ToString();
+                    // 向gAccountForOut存储数据的代码 
+                    // runningid=内部流水号;runningnum外部流水号; pricetypeid = 提现; pricechannelid = 工行; price=申请金额; oprateprice=0 （实际操作金额，以后成功了再改，也是判断状态的依据）;  servicecharge =手续费计算结果;
+                    // accountname=用户账户名  num=帐号 （提现使用）; serviceid=客服id; starttime=now  超时的判断依据; endtime以后填结束时间;  isstatus="处理中"
+                    GAccountForOut.Insert(int.Parse(uid), Tools.CreateNum(), 0, 4, 3, decimal.Parse(txt_price31.Text), decimal.Parse(txt_oprice51.Text), decimal.Parse(txt_sprice41.Text), bankmanname, bankcardid, null, DateTime.Now, null, 1);
+                }
             }
             else if (sel_channel.SelectedValue == "alipay")
             {
@@ -242,19 +247,21 @@ public partial class ChargeAndCash_CashPrice : System.Web.UI.UserControl
                     Tools.Error("可用余额不足，请检查您的提现金额重新提交");
                     e.Cancel = true;
                 }
-
-                string alipayname = uq.SetSelectList("alipayname").ExecuteScalar().ToString();
-                string alipayid = uq.SetSelectList("alipayid").ExecuteScalar().ToString();
-                // 向gAccountForOut存储数据的代码 
-                // runningid=内部流水号;runningnum外部流水号; pricetypeid = 提现; pricechannelid = 支付宝; price=申请金额=txt_price.text; oprateprice=0 （实际操作金额，以后成功了再改，也是判断状态的依据）;  servicecharge =手续费计算结果;
-                // accountname=用户支付宝账户名  num=帐号 （提现使用）; serviceid=客服id; starttime=now  超时的判断依据; endtime以后填结束时间;  isstatus=状态="已下单"
-                GAccountForOut.Insert(int.Parse(uid), Tools.CreateNum(), 0, 4, 1, decimal.Parse(txt_price32.Text), decimal.Parse(txt_oprice52.Text), decimal.Parse(txt_sprice42.Text), alipayname, alipayid, null, DateTime.Now, null, 1);
+                else
+                {
+                    string alipayname = uq.SetSelectList("alipayname").ExecuteScalar().ToString();
+                    string alipayid = uq.SetSelectList("alipayid").ExecuteScalar().ToString();
+                    // 向gAccountForOut存储数据的代码 
+                    // runningid=内部流水号;runningnum外部流水号; pricetypeid = 提现; pricechannelid = 支付宝; price=申请金额; oprateprice=0 （实际操作金额，以后成功了再改，也是判断状态的依据）;  servicecharge =手续费计算结果;
+                    // accountname=用户支付宝账户名  num=帐号 （提现使用）; serviceid=客服id; starttime=now  超时的判断依据; endtime以后填结束时间;  isstatus="处理中"
+                    GAccountForOut.Insert(int.Parse(uid), Tools.CreateNum(), 0, 4, 1, decimal.Parse(txt_price32.Text), decimal.Parse(txt_oprice52.Text), decimal.Parse(txt_sprice42.Text), alipayname, alipayid, null, DateTime.Now, null, 1);
+                }
             }
 
             //提醒客服的代码
             //
 
-            //对用户余额操作，如失败怎以后由客服还款
+            //对用户余额操作，如失败则以后由客服还款
             //提现完毕
         }
     }

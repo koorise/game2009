@@ -106,6 +106,7 @@ v_md5money效验两个参数，拼接字符串的顺序为：v_amount，v_moneyt
             //状态更新完毕
 
             //首信易支付接口
+            //***  首信易不关心用户名和商品名之类的参数，所以随便填
             string v_mid = "";                                                  //商户编号
             string ymd = System.DateTime.Now.ToString("yyyyMMdd");
             string v_oid = ymd + "-" + v_mid + "-" + runningid.ToString();      //订单编号

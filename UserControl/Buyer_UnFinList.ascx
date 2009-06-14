@@ -3,8 +3,6 @@
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
 <link href="style/unclosed.css" rel="stylesheet" type="text/css" />
 <div class="cont">
-    <asp:ScriptManagerProxy ID="ScriptManagerProxy1" runat="server">
-    </asp:ScriptManagerProxy>
     <h1>
         (仍)未成交的</h1>
     <div class="tips">

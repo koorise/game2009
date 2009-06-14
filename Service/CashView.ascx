@@ -3,7 +3,7 @@
 <link href="style/unclosed.css" rel="stylesheet" type="text/css" />
 <div class="cont">
     <h1>
-        后台>>提现充值管理>>待处理的单子</h1>
+        后台>>提现充值管理>>单子详情</h1>
     <div class="list">
         <asp:DataList ID="MyOrderList1" Width="100%" border="0" CellSpacing="0" CellPadding="5"
             runat="server" OnItemDataBound="MyOrderList1_ItemDataBound">
@@ -42,7 +42,7 @@
                 <tr>
                     <td class="btd">
                         <div class="msg">
-                            <asp:HyperLink ID="link_view" runat="server" CssClass="org" Target="_self" Text='<%# DataBinder.Eval(Container.DataItem, "runningid").ToString()%>' /><br />
+                            <a class="org" target="_self" href='CashView.aspx?runningid=<%# DataBinder.Eval(Container.DataItem, "runningid").ToString()%>'><%# DataBinder.Eval(Container.DataItem, "runningid").ToString()%></a><br />
                             <a href='#' target="_blank" class="tip">
                                 <%# DataBinder.Eval(Container.DataItem, "UserName").ToString()%></a>
                         </div>
@@ -156,7 +156,7 @@
                             <td colspan="2" align="right" nowrap="nowrap" class="viewtd1">
                                 账户总额：
                             </td>
-                            <td colspan="4" width="165" class="viewtd1">
+                            <td colspan="2" width="165" class="viewtd1">
                                 <asp:Label ID="txt_totalprice" runat="server" />元
                             </td>
                         </tr>

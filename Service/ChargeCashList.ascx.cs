@@ -40,15 +40,18 @@ public partial class Service_ChargeCashList : System.Web.UI.UserControl
         SqlQuery sqdef = new Select(GAccountForOut.IdColumn.ColumnName, "*").From(GAccountForOut.Schema).InnerJoin(GUserInfo.UIDColumn, GAccountForOut.UserIDColumn).InnerJoin(AdminInfo.CustomerServiceIDColumn, GAccountForOut.ServiceIDColumn).InnerJoin(SysPriceType.IdColumn, GAccountForOut.PriceTypeIDColumn).InnerJoin(SysPriceChannel.PriceChannelIDColumn, GAccountForOut.PriceChannelIDColumn).Where("uID").IsEqualTo(uid);
         if (CommandName == "all")
         {
+            //全部list
             //
         }
         else if (CommandName == "doing")
         {
+            //待处理的list
             object sqtemp = 1;
             sq = sqdef.And("isstatus").IsEqualTo(sqtemp);
         }
         else if (CommandName == "search")
         {
+            //查询结果list
             if (tbStart.Text.Trim() != string.Empty)
             {
                 sqdef = sqdef.And("pTimeStart").IsGreaterThanOrEqualTo(tbStart.Text);
@@ -59,6 +62,7 @@ public partial class Service_ChargeCashList : System.Web.UI.UserControl
             }
             else
             {
+                //edit
                 //
             }
         }
@@ -78,25 +82,6 @@ public partial class Service_ChargeCashList : System.Web.UI.UserControl
         MyOrderList1.DataBind();
     }
 
-    /// <summary>
-    /// 获得物品剩余时间（特定格式）
-    /// </summary>
-    /// <param name="endtime">结束时间</param>
-    /// <returns>计算结果</returns>
-    protected string GetLastTime(object endtime)
-    {
-        string str = string.Empty;
-        DateTime dt = Convert.ToDateTime(endtime);
-        if (DateTime.Now.CompareTo(dt) < 0)
-        {
-            TimeSpan ts = dt - DateTime.Now;
-            str = ts.Days.ToString() + "天" + ts.Hours.ToString() + "小时" + ts.Minutes.ToString() + "分";
-        }
-        else
-            str = "已过期";
-        return str;
-    }
-
     protected void MyOrderList1_ItemDataBound(object sender, DataListItemEventArgs e)
     {
         DataRowView drv = (DataRowView)e.Item.DataItem;
@@ -113,7 +98,10 @@ public partial class Service_ChargeCashList : System.Web.UI.UserControl
             }
             else if (drv["isstatus"].ToString() == "2")
             {
-                txt_status.Text = "处理完毕";
+                if (Convert.ToDecimal(drv["operateprice"]) > 0)
+                    txt_status.Text = "处理完毕";
+                else
+                    txt_status.Text = "失败";
             }
             else if (drv["isstatus"].ToString() == "3")
             {
@@ -121,7 +109,7 @@ public partial class Service_ChargeCashList : System.Web.UI.UserControl
             }
             else
             {
-                txt_status.Text = "已填单";
+                txt_status.Text = "等待支付";
             }
             HyperLink link_view = (HyperLink)e.Item.FindControl("link_view");
             if (drv["pricetype"].ToString() == "3")
