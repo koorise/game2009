@@ -15,8 +15,8 @@
             渠道：<asp:DropDownList ID="sel_channel" runat="server">
             </asp:DropDownList>
             订单号：<asp:TextBox ID="txt_ordernum" runat="server"></asp:TextBox><br />
-            申请人：<asp:TextBox ID="txt_username" runat="server"></asp:TextBox>帐务流水号：<asp:TextBox ID="txt_runningid"
-                runat="server"></asp:TextBox><br />
+            申请人：<asp:TextBox ID="txt_username" runat="server"></asp:TextBox>
+            帐务流水号：<asp:TextBox ID="txt_runningnum" runat="server"></asp:TextBox><br />
             申请时间：<asp:TextBox ID="tbStart" CssClass="input" runat="server" Width="80px"></asp:TextBox>
             <cc1:CalendarExtender ID="CalendarExtender1" runat="server" TargetControlID="tbStart">
             </cc1:CalendarExtender>

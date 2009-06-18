@@ -29,7 +29,7 @@ public partial class ChargeAndCash_ChargePrice : System.Web.UI.UserControl
         else if (Request["step"] == "confirm")
         {
             string uid = Cookies.getCookies("cUID");
-            string pricechannel = GAccountForOut.Query().SetSelectList("pricechannel").WHERE("runningid='" + Request["runningnum"] + "'").WHERE("userid=" + uid).ExecuteScalar().ToString();
+            string pricechannel = GAccountForOut.Query().SetSelectList("pricechannelid").WHERE("runningid='" + Request["runningnum"] + "'").WHERE("userid=" + uid).ExecuteScalar().ToString();
             if (pricechannel == "1")
             {
                 Tabs.ActiveTabIndex = 0;

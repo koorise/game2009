@@ -26,7 +26,7 @@ public partial class Service_CashView : System.Web.UI.UserControl
             Query qc = GAccountForOut.Query().WHERE("runningid=" + Request["runningid"]);
 
             //订单信息初始化
-            object pricechannel = qc.SetSelectList("pricechannel").ExecuteScalar();
+            object pricechannel = qc.SetSelectList("pricechannelid").ExecuteScalar();
             txt_pricechannel.Text = SysPriceChannel.Query().SetSelectList("pricechannelname").WHERE("pricechannelid", pricechannel).ExecuteScalar().ToString();
             txt_aprice.Text = string.Format("{0:C}", qc.SetSelectList("applyprice").ExecuteScalar());
             txt_oprice.Text = string.Format("{0:C}", qc.SetSelectList("operateprice").ExecuteScalar());
