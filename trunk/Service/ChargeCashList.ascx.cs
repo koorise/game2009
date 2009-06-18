@@ -23,7 +23,7 @@ public partial class Service_ChargeCashList : System.Web.UI.UserControl
         {
             Tools.FillDropDownList(sel_type, "syspricetype", "0", "全部");
             Tools.FillDropDownList(sel_channel, "syspricechannel", "0", "全部");
-            //
+            Tools.FillDropDownList(sel_status, "syschargecashstatus", "0", "全部");
 
             BindSource("all");
         }
@@ -36,12 +36,11 @@ public partial class Service_ChargeCashList : System.Web.UI.UserControl
     /// <param name="CommandName">传递的命令参数</param>
     protected void BindSource(string CommandName)
     {
-        string uid = Cookies.getCookies("cUID");
-        SqlQuery sqdef = new Select(GAccountForOut.IdColumn.ColumnName, "*").From(GAccountForOut.Schema).InnerJoin(GUserInfo.UIDColumn, GAccountForOut.UserIDColumn).InnerJoin(AdminInfo.CustomerServiceIDColumn, GAccountForOut.ServiceIDColumn).InnerJoin(SysPriceType.IdColumn, GAccountForOut.PriceTypeIDColumn).InnerJoin(SysPriceChannel.PriceChannelIDColumn, GAccountForOut.PriceChannelIDColumn).Where("uID").IsEqualTo(uid);
+        SqlQuery sqdef = new Select(GAccountForOut.IdColumn.ColumnName, "*").From(GAccountForOut.Schema).InnerJoin(GUserInfo.UIDColumn, GAccountForOut.UserIDColumn).InnerJoin(AdminInfo.CustomerServiceIDColumn, GAccountForOut.ServiceIDColumn).InnerJoin(SysPriceType.IdColumn, GAccountForOut.PriceTypeIDColumn).InnerJoin(SysPriceChannel.PriceChannelIDColumn, GAccountForOut.PriceChannelIDColumn);
         if (CommandName == "all")
         {
             //全部list
-            //
+            sq = sqdef.And("isstatus").In(1,2);
         }
         else if (CommandName == "doing")
         {
@@ -54,17 +53,66 @@ public partial class Service_ChargeCashList : System.Web.UI.UserControl
             //查询结果list
             if (tbStart.Text.Trim() != string.Empty)
             {
-                sqdef = sqdef.And("pTimeStart").IsGreaterThanOrEqualTo(tbStart.Text);
+                sqdef = sqdef.And("starttime").IsGreaterThanOrEqualTo(tbStart.Text);
             }
             if (tbEnd.Text.Trim() != string.Empty)
             {
-                sqdef = sqdef.And("pTimeStart").IsLessThanOrEqualTo(tbEnd.Text);
+                sqdef = sqdef.And("starttime").IsLessThanOrEqualTo(tbEnd.Text);
             }
-            else
+            if (tbStart.Text.Trim() != string.Empty)
             {
-                //edit
-                //
+                sqdef = sqdef.And("fintime").IsGreaterThanOrEqualTo(tcStart.Text);
             }
+            if (tcEnd.Text.Trim() != string.Empty)
+            {
+                sqdef = sqdef.And("fintime").IsLessThanOrEqualTo(tcStart.Text);
+            }
+            if (sel_channel.SelectedIndex > 0)
+            {
+                sqdef = sqdef.And("pricechannelid").IsEqualTo(sel_channel.SelectedValue);
+            }
+            if (sel_status.SelectedIndex > 0)
+            {
+                sqdef = sqdef.And("isstatus").IsEqualTo(sel_status.SelectedValue);
+            }
+            if (sel_type.SelectedIndex > 0)
+            {
+                sqdef = sqdef.And("pricetypeid").IsEqualTo(sel_type.SelectedValue); 
+            }
+            if (txt_ordernum.Text != string.Empty)
+            {
+                sqdef = sqdef.And("runningid").IsEqualTo(txt_ordernum.Text);
+            }
+            if (txt_runningnum.Text != string.Empty)
+            {
+                sqdef = sqdef.And("runningnum").IsEqualTo(txt_runningnum.Text);
+            }
+            if (taLow.Text.Trim() != string.Empty)
+            {
+                sqdef = sqdef.And("applyprice").IsGreaterThanOrEqualTo(taLow.Text);
+            }
+            if (taHigh.Text.Trim() != string.Empty)
+            {
+                sqdef = sqdef.And("applyprice").IsLessThanOrEqualTo(taHigh.Text);
+            }
+            if (tfLow.Text.Trim() != string.Empty)
+            {
+                sqdef = sqdef.And("operateprice").IsGreaterThanOrEqualTo(tfLow.Text);
+            }
+            if (tfHigh.Text.Trim() != string.Empty)
+            {
+                sqdef = sqdef.And("operateprice").IsLessThanOrEqualTo(tfHigh.Text);
+            }
+
+            if (txt_username.Text != string.Empty)
+            {
+                sqdef = sqdef.And("username").IsEqualTo(txt_username.Text);
+            }
+            if (txt_servicename.Text != string.Empty)
+            {
+                sqdef = sqdef.And("username1").IsEqualTo(txt_servicename.Text);
+            }
+            sq = sqdef.And("isstatus").In(1, 2);
         }
 
         sq = sq.OrderDesc(GAccountForOut.StartTimeColumn.QualifiedName);
@@ -112,7 +160,7 @@ public partial class Service_ChargeCashList : System.Web.UI.UserControl
                 txt_status.Text = "等待支付";
             }
             HyperLink link_view = (HyperLink)e.Item.FindControl("link_view");
-            if (drv["pricetype"].ToString() == "3")
+            if (drv["pricetypeid"].ToString() == "3")
                 link_view.NavigateUrl = "ChargeView.aspx";
             else
                 link_view.NavigateUrl = "CashView.aspx";
