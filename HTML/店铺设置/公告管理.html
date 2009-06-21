@@ -1,0 +1,124 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>公告管理</title>
+<link href="style/global.css" rel="stylesheet" type="text/css" />
+<script language="javascript" src="javascript/jquery.js"></script>
+<script language="javascript" src="javascript/jQuery.offset.js"></script>
+<script language="javascript">
+	$(function(){
+		$(".nav>div:has(ul)").mouseover(function(){
+			$(".nav div").removeClass("focus");
+			$(".nav div ul").css("display","none");
+			$(this).addClass("focus");
+			$(this).children("ul").css("display","block");
+			var pos=$(this).offset();
+			var l=pos.left;
+			var t=pos.top+$(this).height();
+			var w=$(this).width()-2;
+			var h=$(this).height();
+			$(this).children("ul").css("left",l+"px").css("top",t+"px").css("width",w+"px");
+		});
+		$(".nav div").mouseout(function(){
+			$(".nav div").removeClass("focus");
+			$(".nav div ul").css("display","none");
+		});
+	});
+</script>
+</head>
+
+<body>
+<div class="wrap">
+		<!--start header-->
+		<div class="header">
+			<div class="logo"><img src="images/logo01.gif" width="219" height="110" /></div>
+			<div class="tools">
+				<div class="menu">
+				  <a href="#">账号交易</a> | 
+				  <a href="#">金币交易</a> | 
+				  <a href="#">中介服务</a> | 
+				  <a href="#">虚拟超市</a> | 
+				  <a href="#">骗子查询</a> | 
+				  <a href="#">数据业务</a> | 
+				  <a href="#">易坛</a> |    
+				  <a href="#"><img src="images/dot_help.gif" width="11" height="11" border="0" /> 帮助中心</a>
+				</div>
+				<div class="btns">
+					<a href="#"><img src="images/btn_buy.gif" width="60" height="21" border="0" /></a>
+					<a href="#"><img src="images/btn_sell.gif" width="62" height="21" border="0" /></a>
+					<a href="#"><img src="images/btn_myinfo.gif" width="91" height="21" border="0" /></a>
+				</div>
+				<div class="myinfo">
+					您好，欢迎来到游戏易站  [<a href="#">免费注册</a>] [<a href="#">登录</a>]				
+				</div>
+			</div>
+		</div>
+		<!--end header-->
+		<div class="nav">
+		<div style="margin:0px; padding:0px;width:7px;"><img width="7" src="images/nav_left.gif" /></div>
+			<div><span>首页</span></div>	        
+			<div>
+				<span>基本设置<em>(3)</em></span>
+				<ul>
+					<li><a href="#">基本设置</a></li>
+					<li><a href="#">基本设置</a></li>
+					<li><a href="#">基本设置</a></li>
+				</ul>
+			</div> 	   
+			<div>
+				<span>账号管理<em>(2)</em></span>
+				<ul>
+					<li><a href="#">账号管理</a></li>
+					<li><a href="#">账号管理</a></li>				
+				</ul>
+			</div>	  	
+			<div>
+				<span>营销推广<em>(5)</em></span>
+				<ul>
+					<li><a href="#">营销推广</a></li>
+					<li><a href="#">营销推广</a></li>
+					<li><a href="#">营销推广</a></li>
+					<li><a href="#">营销推广</a></li>
+					<li><a href="#">营销推广</a></li>
+				</ul>
+			</div>	
+			<div><span>店铺续费</span></div>	
+			<div><span>历史记录</span></div>	
+			<div style="float:right; width:6px; margin:0px; padding:0px;"><img width="6" src="images/nav_right.gif" /></div>
+		</div>
+		<!--start body-->
+		<div class="main">
+			<h1>公告管理</h1>
+			<div class="content">
+				<table width="783" border="0" align="center" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td height="240" colspan="2"><img src="images/editor.gif" width="783" height="246" /></td>
+                  </tr>
+                  <tr>
+                    <td width="49" height="40"><input type="submit" name="Submit" value="保存" /></td>
+                    <td width="734"><table width="100" border="0" cellpadding="0" cellspacing="0" class="greenbox">
+                      <tr>
+                        <td align="left"><img src="images/ico2.gif" width="19" height="20" style="margin:0px;"/></td>
+                        <td nowrap="nowrap">修改成功&nbsp;</td>
+                      </tr>
+                    </table>
+                    </td>
+                  </tr>
+                </table>
+				<br /><br />
+				<br />
+				<br /><br />
+		  </div>
+  </div>
+		<!--end body-->
+		<div class="clear"></div>
+		<div class="bottom">
+			<a href="#">此内容系</a> | <a href="#">百度根据</a> | <a href="#">您的指令</a> | <a href="#">自动搜索</a> | <a href="#">的结果不</a> | <a href="#">代表百度</a> | 赞成被搜	
+			<p>Copyright &copy;1996-2009 SINA Corporation, All Rights Reserved</p>	
+			<p>增值电信业务经营许可证B2-20040016号</p>
+		</div>
+		
+</div>
+</body>
+</html>

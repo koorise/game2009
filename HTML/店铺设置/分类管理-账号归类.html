@@ -1,0 +1,223 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>分类管理-账号归类</title>
+<link href="style/global.css" rel="stylesheet" type="text/css" />
+<script language="javascript" src="javascript/jquery.js"></script>
+<script language="javascript" src="javascript/jQuery.offset.js"></script>
+<script language="javascript">
+	$(function(){
+		$(".nav>div:has(ul)").mouseover(function(){
+			$(".nav div").removeClass("focus");
+			$(".nav div ul").css("display","none");
+			$(this).addClass("focus");
+			$(this).children("ul").css("display","block");
+			var pos=$(this).offset();
+			var l=pos.left;
+			var t=pos.top+$(this).height();
+			var w=$(this).width()-2;
+			var h=$(this).height();
+			$(this).children("ul").css("left",l+"px").css("top",t+"px").css("width",w+"px");
+		});
+		$(".nav div").mouseout(function(){
+			$(".nav div").removeClass("focus");
+			$(".nav div ul").css("display","none");
+		});
+	});
+</script>
+<link href="style/classes.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<div class="wrap">
+		<!--start header-->
+		<div class="header">
+			<div class="logo"><img src="images/logo01.gif" width="219" height="110" /></div>
+			<div class="tools">
+				<div class="menu">
+				  <a href="#">账号交易</a> | 
+				  <a href="#">金币交易</a> | 
+				  <a href="#">中介服务</a> | 
+				  <a href="#">虚拟超市</a> | 
+				  <a href="#">骗子查询</a> | 
+				  <a href="#">数据业务</a> | 
+				  <a href="#">易坛</a> |    
+				  <a href="#"><img src="images/dot_help.gif" width="11" height="11" border="0" /> 帮助中心</a>
+				</div>
+				<div class="btns">
+					<a href="#"><img src="images/btn_buy.gif" width="60" height="21" border="0" /></a>
+					<a href="#"><img src="images/btn_sell.gif" width="62" height="21" border="0" /></a>
+					<a href="#"><img src="images/btn_myinfo.gif" width="91" height="21" border="0" /></a>
+				</div>
+				<div class="myinfo">
+					您好，欢迎来到游戏易站  [<a href="#">免费注册</a>] [<a href="#">登录</a>]				
+				</div>
+			</div>
+		</div>
+		<!--end header-->
+		<div class="nav">
+		<div style="margin:0px; padding:0px;width:7px;"><img width="7" src="images/nav_left.gif" /></div>
+			<div><span>首页</span></div>	        
+			<div class="on">
+				<span>基本设置<em>(3)</em></span>
+				<ul>
+					<li><a href="#">基本设置</a></li>
+					<li><a href="#">基本设置</a></li>
+					<li><a href="#">基本设置</a></li>
+				</ul>
+			</div> 	   
+			<div>
+				<span>账号管理<em>(2)</em></span>
+				<ul>
+					<li><a href="#">账号管理</a></li>
+					<li><a href="#">账号管理</a></li>				
+				</ul>
+			</div>	  	
+			<div>
+				<span>营销推广<em>(5)</em></span>
+				<ul>
+					<li><a href="#">营销推广</a></li>
+					<li><a href="#">营销推广</a></li>
+					<li><a href="#">营销推广</a></li>
+					<li><a href="#">营销推广</a></li>
+					<li><a href="#">营销推广</a></li>
+				</ul>
+			</div>	
+			<div><span>店铺续费</span></div>	
+			<div><span>历史记录</span></div>
+			<div style="float:right; width:6px; margin:0px; padding:0px;"><img width="6" src="images/nav_right.gif" /></div>	
+		</div>
+		<!--start body-->
+		<div class="main">
+			<h1>分类管理</h1>
+			<div class="content">
+				<div class="tab0">
+					<a href="#" class="focus">编辑分类</a>      
+					<a href="#">账号归类</a>
+					<table cellpadding="0" cellspacing="0" class="info">
+				  <tr><td width="20" align="center"><input type="image" name="imageField" src="images/ico3.gif" /></td><td>当前操作需要保存后,您的改动才会生效 </td>
+				  </table>
+			  </div>
+			  
+			    <table width="100%" border="0" cellspacing="10" cellpadding="0">
+                  <tr>
+                    <td>选择分类 
+                      <select name="select">
+                        <option>全部物品</option>
+                      </select>
+                    </td>
+                    <td align="right">账号搜索
+                    <input name="textfield" type="text" class="input" style="height:18px;"/>
+                    <label>
+                    <input type="image" name="imageField2" src="images/btn_search.gif" align="absmiddle" />
+                    </label></td>
+                  </tr>
+                </table>
+			    <table width="100%" border="0" cellpadding="0" cellspacing="0" class="frmlist lh16" >
+                  <tr>
+                    <th width="24">&nbsp;</th>
+                    <th width="402" align="center">物品描述</th>
+                    <th width="111" align="center">管理物品	             </th>
+                    <th width="143" align="left">所属分类	                        </th>
+                    <th width="164" align="center">添加所属分类</th>
+                  </tr>
+                  <tr>
+                    <td align="center" valign="middle" bgcolor="#F6F6F6"><input type="checkbox" name="checkbox" value="checkbox" /></td>
+                    <td align="left" valign="middle"><a href="#">专业制作家电音响类网站3万起</a></td>
+                    <td align="center" valign="middle"><a href="#">管理</a></td>
+                    <td align="left" valign="middle">
+					<div>
+					  <p>一类 <img src="images/ico8.gif" width="10" height="10" align="absmiddle" /></p>
+					  <p> 二类附-&gt;1号 <img src="images/ico8.gif" width="10" height="10" align="absmiddle" /></p>
+					</div>					</td>
+                    <td align="center" valign="middle"><img src="images/btn_addcls.gif" width="110" height="22" /></td>
+                  </tr>
+                  <tr>
+                    <td align="center" valign="middle" bgcolor="#F6F6F6"><input type="checkbox" name="checkbox2" value="checkbox" /></td>
+                    <td align="left" valign="middle"><a href="#">专业制作家电音响类网站3万起</a></td>
+                    <td align="center" valign="middle"><a href="#">管理</a></td>
+                    <td align="left" valign="middle"><div class="lh16">
+                      <p>一类 <img src="images/ico8.gif" width="10" height="10" align="absmiddle" /></p>
+                      <p> 二类附-&gt;1号 <img src="images/ico8.gif" width="10" height="10" align="absmiddle" /></p>
+                    </div></td>
+                    <td align="center" valign="middle"><img src="images/btn_addcls.gif" width="110" height="22" /></td>
+                  </tr>
+                  <tr>
+                    <td align="center" valign="middle" bgcolor="#F6F6F6"><input type="checkbox" name="checkbox3" value="checkbox" /></td>
+                    <td align="left" valign="middle"><a href="#">专业制作家电音响类网站3万起</a></td>
+                    <td align="center" valign="middle"><a href="#">管理</a></td>
+                    <td align="left" valign="middle"><div class="lh16">
+                      <p>一类 <img src="images/ico8.gif" width="10" height="10" align="absmiddle" /></p>
+                      <p> 二类附-&gt;1号 <img src="images/ico8.gif" width="10" height="10" align="absmiddle" /></p>
+                    </div></td>
+                    <td align="center" valign="middle">&nbsp;</td>
+                  </tr>
+                  <tr>
+                    <td align="center" valign="middle" bgcolor="#F6F6F6"><input type="checkbox" name="checkbox4" value="checkbox" /></td>
+                    <td align="left" valign="middle"><a href="#">专业制作家电音响类网站3万起</a></td>
+                    <td align="center" valign="middle"><a href="#">管理</a></td>
+                    <td align="left" valign="middle"><div class="lh16">
+                      <p>一类 <img src="images/ico8.gif" width="10" height="10" align="absmiddle" /></p>
+                      <p> 二类附-&gt;1号 <img src="images/ico8.gif" width="10" height="10" align="absmiddle" /></p>
+                    </div></td>
+                    <td align="center" valign="middle">&nbsp;</td>
+                  </tr>
+                  <tr>
+                    <td align="center" valign="middle" bgcolor="#F6F6F6"><input type="checkbox" name="checkbox5" value="checkbox" /></td>
+                    <td align="left" valign="middle"><a href="#">专业制作家电音响类网站3万起</a></td>
+                    <td align="center" valign="middle"><a href="#">管理</a></td>
+                    <td align="left" valign="middle"><div class="lh16">
+                      <p>一类 <img src="images/ico8.gif" width="10" height="10" align="absmiddle" /></p>
+                      <p> 二类附-&gt;1号 <img src="images/ico8.gif" width="10" height="10" align="absmiddle" /></p>
+                    </div></td>
+                    <td align="center" valign="middle">&nbsp;</td>
+                  </tr>
+                  <tr class="none">
+                    <td align="center" valign="middle" bgcolor="#F6F6F6"><input type="checkbox" name="checkbox6" value="checkbox" /></td>
+                    <td align="left" valign="middle"><a href="#">专业制作家电音响类网站3万起</a></td>
+                    <td align="center" valign="middle"><a href="#">管理</a></td>
+                    <td align="left" valign="middle"><div class="lh16">
+                      <p>一类 <img src="images/ico8.gif" width="10" height="10" align="absmiddle" /></p>
+                      <p> 二类附-&gt;1号 <img src="images/ico8.gif" width="10" height="10" align="absmiddle" /></p>
+                    </div></td>
+                    <td align="center" valign="middle">&nbsp;</td>
+                  </tr>
+				  
+				  <tr>
+                    <th colspan="5" align="left" valign="middle"><table width="100%" border="0" cellpadding="0" cellspacing="0" class="page">
+                      <tr>
+                        <td width="24" height="24" align="center"><input type="checkbox" name="checkbox62" value="checkbox" /></td>
+                        <td width="321" align="left"><select name="select2">
+                          <option>选择分类操作</option>
+                        </select>
+                         物品到
+                         <select name="select3">
+                           <option>选择物品分类</option>
+                                                                           </select> <input type="image" name="imageField3" src="images/btn_qd.gif" align="absmiddle" /></td>
+                        <td width="507" align="right"><a href="#">1</a> <a href="#">2</a> <a href="#">3</a> <a href="#">4</a> <a href="#">5</a> <a href="#">6</a> <a href="#">7</a> ... <a href="#">100</a> <a href="#" class="blue">首页</a> <a href="#" class="blue">尾页</a> 转到
+                          <input name="textfield5" type="text" class="input" size="2" />
+                          <input type="image" name="imageField22" src="images/btn_pgo.gif" align="absmiddle" /></td>
+                        <td width="8" align="center" valign="middle">&nbsp;</td>
+                      </tr>
+                    </table></th>
+                  </tr>
+                </table>
+		      <br />
+			  <input type="submit" name="Submit" value="保存" />
+			  <br />
+				<br />
+				<br /><br />
+		  </div>
+  </div>
+		<!--end body-->
+		<div class="clear"></div>
+		<div class="bottom">
+			<a href="#">此内容系</a> | <a href="#">百度根据</a> | <a href="#">您的指令</a> | <a href="#">自动搜索</a> | <a href="#">的结果不</a> | <a href="#">代表百度</a> | 赞成被搜	
+			<p>Copyright &copy;1996-2009 SINA Corporation, All Rights Reserved</p>	
+			<p>增值电信业务经营许可证B2-20040016号</p>
+		</div>
+		
+</div>
+</body>
+</html>
