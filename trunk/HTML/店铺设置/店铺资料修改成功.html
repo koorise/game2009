@@ -1,0 +1,142 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>店铺基本设置</title>
+<link href="style/global.css" rel="stylesheet" type="text/css" />
+<script language="javascript" src="javascript/jquery.js"></script>
+<script language="javascript" src="javascript/jQuery.offset.js"></script>
+<script language="javascript">
+	$(function(){
+		$(".nav>div:has(ul)").mouseover(function(){
+			$(".nav div").removeClass("focus");
+			$(".nav div ul").css("display","none");
+			$(this).addClass("focus");
+			$(this).children("ul").css("display","block");
+			var pos=$(this).offset();
+			var l=pos.left;
+			var t=pos.top+$(this).height();
+			var w=$(this).width()-2;
+			var h=$(this).height();
+			$(this).children("ul").css("left",l+"px").css("top",t+"px").css("width",w+"px");
+		});
+		$(".nav div").mouseout(function(){
+			$(".nav div").removeClass("focus");
+			$(".nav div ul").css("display","none");
+		});
+	});
+</script>
+</head>
+
+<body>
+<div class="wrap">
+		<!--start header-->
+		<div class="header">
+			<div class="logo"><img src="images/logo01.gif" width="219" height="110" /></div>
+			<div class="tools">
+				<div class="menu">
+				  <a href="#">账号交易</a> | 
+				  <a href="#">金币交易</a> | 
+				  <a href="#">中介服务</a> | 
+				  <a href="#">虚拟超市</a> | 
+				  <a href="#">骗子查询</a> | 
+				  <a href="#">数据业务</a> | 
+				  <a href="#">易坛</a> |    
+				  <a href="#"><img src="images/dot_help.gif" width="11" height="11" border="0" /> 帮助中心</a>
+				</div>
+				<div class="btns">
+					<a href="#"><img src="images/btn_buy.gif" width="60" height="21" border="0" /></a>
+					<a href="#"><img src="images/btn_sell.gif" width="62" height="21" border="0" /></a>
+					<a href="#"><img src="images/btn_myinfo.gif" width="91" height="21" border="0" /></a>
+				</div>
+				<div class="myinfo">
+					您好，欢迎来到游戏易站  [<a href="#">免费注册</a>] [<a href="#">登录</a>]				
+				</div>
+			</div>
+		</div>
+		<!--end header-->
+		<div class="nav">
+			<div style="margin:0px; padding:0px;width:7px;"><img width="7" src="images/nav_left.gif" /></div>
+			<div><span>首页</span></div>	        
+			<div class="on">
+				<span>基本设置<em>(3)</em></span>
+				<ul>
+					<li><a href="#">基本设置</a></li>
+					<li><a href="#">基本设置</a></li>
+					<li><a href="#">基本设置</a></li>
+				</ul>
+		  </div> 	   
+			<div>
+				<span>账号管理<em>(2)</em></span>
+				<ul>
+					<li><a href="#">账号管理</a></li>
+					<li><a href="#">账号管理</a></li>				
+				</ul>
+			</div>	  	
+			<div>
+				<span>营销推广<em>(5)</em></span>
+				<ul>
+					<li><a href="#">营销推广</a></li>
+					<li><a href="#">营销推广</a></li>
+					<li><a href="#">营销推广</a></li>
+					<li><a href="#">营销推广</a></li>
+					<li><a href="#">营销推广</a></li>
+				</ul>
+			</div>	
+			<div><span>店铺续费</span></div>	
+			<div><span>历史记录</span></div>
+			<div style="float:right; width:6px; margin:0px; padding:0px;"><img width="6" src="images/nav_right.gif" /></div>	
+		</div>
+		<!--start body-->
+		<div class="main">
+			<h1>店铺基本设置</h1>
+			<div class="content">
+				<table width="783" border="0" align="center" cellpadding="0" cellspacing="5">
+                  <tr>
+                    <td height="100" colspan="2" align="center"><img src="images/success.gif" width="199" height="71" /></td>
+                  </tr>
+                  <tr>
+                    <td width="319" height="24" align="right">账号销售店铺：<br /></td>
+                    <td width="464"><a href="#" class="big">历史最强账号专柜</a> 资料提交成功！</td>
+                  </tr>
+                  <tr>
+                    <td height="24" align="right">开通时间：</td>
+                    <td class="red-text">2009-4-30 12:21:21 </td>
+                  </tr>
+                  <tr>
+                    <td height="24" align="right"> 到期时间：</td>
+                    <td class="red-text"> 2009-4-30 12:21:21 <img src="images/btn_xf.gif" width="34" height="18" align="absmiddle" /></td>
+                  </tr>
+                  <tr>
+                    <td height="24" align="right"> 续费模式：</td>
+                    <td>自动续费 <img src="images/btn_xg.gif" width="34" height="18" align="absmiddle" /></td>
+                  </tr>
+                  <tr>
+                    <td height="24" align="right"> 店铺状态：</td>
+                    <td class="red-text"><strong>正常</strong></td>
+                  </tr>
+                  <tr>
+                    <td height="24" colspan="2" align="center">
+					<img src="images/btn_jfxf.gif" width="80" height="23" /> &nbsp;
+					<img src="images/btn_tgdp.gif" width="80" height="23" /> &nbsp;
+					<img src="images/btn_cszh.gif" width="80" height="23" /> &nbsp;
+					<img src="images/btn_fhwoyxyz.gif" width="119" height="23" />
+					</td>
+                  </tr>
+                </table>
+				<br /><br />
+				<br />
+				<br /><br />
+		  </div>
+  </div>
+		<!--end body-->
+		<div class="clear"></div>
+		<div class="bottom">
+			<a href="#">此内容系</a> | <a href="#">百度根据</a> | <a href="#">您的指令</a> | <a href="#">自动搜索</a> | <a href="#">的结果不</a> | <a href="#">代表百度</a> | 赞成被搜	
+			<p>Copyright &copy;1996-2009 SINA Corporation, All Rights Reserved</p>	
+			<p>增值电信业务经营许可证B2-20040016号</p>
+		</div>
+		
+</div>
+</body>
+</html>
