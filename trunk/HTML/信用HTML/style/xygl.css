@@ -1,0 +1,63 @@
+/* CSS Document */
+a{ color:#004BA6;}
+.orange-text{ color:#FF6000;}
+.blue-text{ color:#0062B3;}
+.red-text{ color:#FF0000;}
+.hui-text{ color:#BEBEBE;}
+.green{ color:#199500;}
+.black_text{ color:#000000;}
+
+.cont{ width:770px; float:right;}
+.cont h1{width:770px; line-height:32px; height:32px; background:url(../images/h1_dot.gif) no-repeat left; border-bottom:2px solid #ACD0F1; font-size:14px; text-indent:10px; margin:0px; margin-bottom:6px; clear:both;}
+
+.center{ width:570px; float:left; margin-left:8px;}
+
+.xinyong{ width:190px; float:left; line-height:18px;}
+	.unit{ border:1px solid #96C2EF; clear:both;}
+	.unit dt{ background:url(../images/left_dt_bg.gif) repeat-x; height:26px; line-height:26px; text-indent:10px; color:#FFFFFF; font-weight:bold;}
+	.unit dd{ padding:8px;}
+	.unit .tabs{ border-bottom:1px solid #FFA129; margin-top:8px; height:19px; margin-bottom:6px;}
+	.unit .tabs a{ display:block; width:40px; height:18px; background:#E7E7E7; border:1px solid #CCCCCC; border-bottom:none; float:left; margin-right:5px; line-height:18px; text-align:center; color:#757575; text-decoration:none;}
+	.unit .tabs a.focus{ background:#FFA129; color:#FFFFFF;border:1px solid #FFA129;border-bottom:none;}
+		
+	.unit .tabs-content{ line-height:20px;}
+		
+.tabs0{ height:30px; width:100%; float:left; clear:both;}
+.tabs0 a{ display:block; width:155px; height:28px; line-height:28px; text-align:center; float: left; background:url(../images/btabs0.gif) no-repeat; margin-right:3px; font-weight:bold; color:#D48100; text-decoration:none;}
+.tabs0 a.focus{ background:url(../images/btabs1.gif); color:#FFFFFF;}
+
+.bluebox{ border:1px solid #A4CCF0; float:left; width:100%; clear:both;}
+.box1{ border:1px solid #DEDEDE; background:#F2F2F2;}
+.fenpan{ width:306px; margin:0px auto;}
+.fenpos{ display:block; width:26px; height:19px; position:relative; top:0px; background:url(../images/fenbg.gif); text-align:center; line-height:15px; color:#FFFFFF;}
+
+h5{ font-size:12px; width:100%; float:left; clear:both; height:30px; line-height:24px; text-indent:10px; margin:0px; padding:0px; margin-top:8px; _margin-top:16px;}
+
+.xinyong1{ background:#A4CCF0; float:left; width:100%; clear:both;  line-height:24px; margin-top:-5px; _margin-top:-10px;}
+.xinyong1 thead td{ background:#E4F2FF; text-align:center; color:#444444; width:94px;}
+.xinyong1 tbody th{  background:#FFFFFF;text-align:center; color:#444444; font-weight:normal;}
+.xinyong1 tbody td{ background:#FFFFFF; text-align:center; color:#0058CF;}
+.xinyong1 tbody td a{ color:#0058CF; text-decoration:none;}
+
+.ask{ background:#E4F2FF; border:1px solid #96C2EF; padding:5px; list-style:none; margin-top:8px;}
+.ask a { text-decoration:none;}
+.ask li{ margin-left:6px; margin-right:10px; line-height:24px; background:url(../images/li_dot.gif) no-repeat left; text-indent:10px;}
+
+
+.tabs1{ height:28px; width:100%; float:left; clear:both; border-bottom:2px solid #FF8C40; margin-bottom:6px; margin-top:6px;}
+.tabs1 a{ display:block; height:28px; line-height:28px; text-align:center; float: left; background:url(../images/tab1_bgleft.gif) no-repeat; margin-right:3px; font-weight:bold; color:#D48100; text-decoration:none; white-space:nowrap; _width:160px;}
+.tabs1 a span{  background:url(../images/tab1_bgright.gif) no-repeat right top; display:block; height:28px; padding-left:10px; padding-right:10px; cursor:pointer;}
+
+.tabs1 a.focus{ display:block; height:28px; line-height:28px; text-align:center; float: left; background:url(../images/tab1_bgleft1.gif) no-repeat; margin-right:3px; font-weight:bold; color:#D48100; text-decoration:none;}
+.tabs1 a.focus span{  background:url(../images/tab1_bgright1.gif) no-repeat right top; display:block; height:28px; padding-left:10px; padding-right:10px; color:#FFFFFF;}
+
+.caption{ padding:6px; text-align:right;}
+.pjlist thead td{ background:#F2F2F2; border-bottom:1px solid #D6D6D6; height:30px; text-align:center; line-height:30px;}
+.pjlist tbody td{ line-height:22px; padding:10px;border-bottom:1px solid #D6D6D6; color:#444444;}
+.pjlist tfoot td{background:#F2F2F2; padding-right:10px; color:#444444;}
+
+.underdot{ border-bottom:1px dashed  #D6D6D6;}
+
+
+.blue{ color:#006CFF;}
+.blue-tip{ border:1px solid #FFDDAD; background:#FFFFE7; line-height:24px; color:#535353; padding:10px;}
