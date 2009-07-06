@@ -1,5 +1,46 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="List.ascx.cs" Inherits="BianJieTuiGuang_List" %>
-<%@ Register assembly="AjaxControlToolkit" namespace="AjaxControlToolkit" tagprefix="cc1" %>
+    <link rel="stylesheet" href="http://static.jquery.com/ui/css/base2.css" type="text/css" media="all" /><link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/themes/ui-lightness/jquery-ui.css" type="text/css" media="all" /><link rel="stylesheet" href="http://static.jquery.com/ui/css/demo-docs-theme/ui.theme.css" type="text/css" media="all" />
+		<!--js--->	
+			<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js" type="text/javascript"></script>
+			<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/jquery-ui.min.js" type="text/javascript"></script>
+
+ 
+		
+<STYLE type=text/css>
+	#sortable { list-style-type: none; margin: 0; padding: 0; width: 60%; }
+	#sortable li { margin: 0 3px 3px 3px; padding: 0.4em; padding-left: 1.5em; font-size: 1.4em; height: 18px; }
+	#sortable li span { position: absolute; margin-left: -1.3em; }
+	.content{float:right;padding-left:200px;}
+input{margin-right:50px;}
+	</STYLE>
+<SCRIPT type=text/javascript>
+    $(function() {
+        $("#sortable").sortable();
+        $('#sortable').bind('sortstop', function() { send(); });
+
+        $("#sortable").disableSelection();
+        $('#sendout').click(function() {
+            send();
+        });
+        $('#sortable input').click(function() {
+            send();
+        });
+
+    });
+function send()
+{
+ var i = 0;
+            var str = "";
+            $('input:checked').each(function() {
+                i++;
+                str += "NO" + i + ":  ";
+                str += $(this).next().next().html();
+                str += "\r\n";
+
+            });
+            $('#textarea1').val(str);
+}
+	</SCRIPT>
 <div class="main">
     <div class="top" style="margin:0px;">
 	    <table width="100%" height="33" border="0" cellpadding="0" cellspacing="0" background="images/posbar_bg1.gif">
@@ -23,14 +64,12 @@
           </tr>
         </table>
         <p>&nbsp;</p>
-        <cc1:ReorderList ID="ReorderList1" runat="server"
-            PostBackOnReorder="True" 
-            DataKeyField="title" 
-            DragHandleAlignment="Left"
-            SortOrderField="PNKID" AllowReorder="True" 
-                    onitemreorder="ReorderList1_ItemReorder">
-            <ItemTemplate>
-               <table width="100%" height="80" border="0" cellpadding="0" cellspacing="10" class="contab">
+        <!-- 开始 -->
+        <DIV id=demo>
+            <UL id=sortable>
+        <asp:Repeater ID="Repeater1" runat="server">
+        <ItemTemplate>
+            <table width="100%" height="80" border="0" cellpadding="0" cellspacing="10" class="contab">
                   <tr>
                     <td width="20" align="center" valign="top">
                         <asp:CheckBox ID="CheckBox3" runat="server" /></td>
@@ -43,19 +82,15 @@
                       <p><br />
                       </p></th>
                     <td width="552" valign="top"><p class="contdiv">
-                        <asp:Literal ID="Literal3" Text='<%# Eval("copyinfo") %>' runat="server"></asp:Literal></p>            
+                        <span class="content"><asp:Literal ID="Literal3" Text='<%# Eval("copyinfo") %>' runat="server"></asp:Literal></p></span>            
                     <p>&nbsp;</p>
                     <p><img id="Img1" src="~/images/copy.gif" runat="server" width="117" height="24" /></p></td>
                   </tr>
                 </table> 
-            </ItemTemplate>
-            <ReorderTemplate>
-                <asp:Panel ID="Panel2" runat="server"  />
-            </ReorderTemplate>
-            <DragHandleTemplate>
-                <asp:Label ID="Label1" runat="server" Text="拖"></asp:Label>
-            </DragHandleTemplate>
-                </cc1:ReorderList>
+        </ItemTemplate>
+        </asp:Repeater>
+        </UL></DIV>
+<input type="button" id="sendout" value="输出"/>
 &nbsp;<table width="100%" border="0" cellpadding="0" cellspacing="10" class="contab">
           <tr>
             <td width="8%" align="left" valign="top">

@@ -15,10 +15,10 @@
 	.list{ border-top:1px solid #ACD0F1; border-left:1px solid #ACD0F1;}
 	.list thead th{ background:#CBE5FA;font-weight:normal;  border-bottom:1px solid #ACD0F1; border-right:1px solid #ACD0F1; text-align:left; }
 	.list thead th table,.list thead th td{ background:none; border:none; line-height:22px; }
-	.list thead th td .block{ display:block; cursor:pointer; float:left;background:#FFFFFF; border:1px solid #ACD0F1; height:22px;padding:0px 3px 0px 3px; text-indent:0px; color:#464646; text-decoration:none; }
+	.list thead th td a span{ display:block; cursor:pointer; float:left;background:#FFFFFF; border:1px solid #ACD0F1; height:22px;padding:0px 10px 0px 10px; text-indent:0px; color:#464646; text-decoration:none; }
 	.list thead td{ background:#CBE5FA; border-bottom:1px solid #ACD0F1; border-right:1px solid #FFFFFF; border-top:1px solid #FFFFFF; line-height:18px;}
 	.list thead td.lastd{ border-right:1px solid  #ACD0F1;}
-	.list tbody .btd{ background:#FFFFFF; border-bottom:1px solid #ACD0F1; border-right:1px solid #ACD0F1; line-height:24px;}
+	.list tbody td{ background:#FFFFFF; border-bottom:1px solid #ACD0F1; border-right:1px solid #ACD0F1; line-height:24px;}
 	.list tbody .tip{ color:#004BA6; text-decoration:none;}
 	.list tbody .org{ color:#FC7D00; text-decoration:none;}
 	.list tbody .icotype{ width:24px; float:left;}
@@ -26,5 +26,5 @@
 	.list tbody .msg{ float:left;}
 	.list tfoot td{ background:#FFFFFF; border-bottom:1px solid #ACD0F1; border-right:1px solid #ACD0F1; height:30px;}
 	.list tfoot td td{ border:none;}
-	.pages input{ width:17px; height:19px; background:#FFFFFF; color:#0044DD; text-decoration:none; font-size:12px; line-height:20px; border:1px solid #000; float:left; text-align:center; margin:2px;}
-	.pages input.focus{ color:#FF6600; background:#EEEEEE;}
+	.pages a{ width:17px; height:19px; background:#FFFFFF; color:#0044DD; text-decoration:none; font-size:12px; line-height:20px; border:1px solid #000; float:left; text-align:center; margin:2px;}
+	.pages a.focus{ color:#FF6600; background:#EEEEEE;}

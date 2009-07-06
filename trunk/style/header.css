@@ -5,7 +5,7 @@ a{ color:#004BA6; text-decoration:none;}
 #header{ width:100%; height:80px; margin-top:8px;}
 #header .logo{ width:220px; float:left; margin-top:8px;}
 #header .favorites{ width:180px; float:left; padding-top:60px; padding-left:10px; line-height:20px;}
-#header .tools{ float:right; height:64px; padding-top:16px; line-height:24px; color:#001D71;width:550px; text-align:right;}
+#header .tools{ float:right; height:64px; padding-top:16px; line-height:24px; color:#001D71;}
 #header .tools p{ text-align:right; line-height:40px;}
 #header .tools a{ color:#001D71;}
 
