@@ -53,8 +53,8 @@ public partial class WebUserControl_Reg : System.Web.UI.UserControl
                 s.ShopLogo = "~/images/dpgg_logo.gif";
                 s.UserID = uID;
                 s.ShopName = tbUserName.Text;
-                s.ShopPost = "暂无";
-                s.ShopUpdateTime = DateTime.Now;
+                //s.ShopPost = "暂无";
+                //s.ShopUpdateTime = DateTime.Now;
                 s.Save();
 
                 //用户银行信息插入

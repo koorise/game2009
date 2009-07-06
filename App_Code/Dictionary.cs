@@ -23,6 +23,40 @@ public class Dictionary
     /// gOrderInfo.orderType 1-出局,2-领先,3-等待付款,4-等待交货,5-移交中,6-成功,7-失败,8-撤销
     /// </summary>
     public static int[] orderType = {0, 1, 2, 3, 4, 5, 6, 7, 8};
+    public static string orderTypeImage(int o)
+    {
+        switch (o)
+        {
+            case 1:
+                return "~/images/11.gif";
+                break;
+            case 2:
+                return "~/images/22.gif";
+                break;
+            case 3:
+                return "~/images/33.gif";
+                break;
+            case 4:
+                return "~/images/44.gif";
+                break;
+            case 5:
+                return "~/images/55.gif";
+                break;
+
+            case 6:
+                return "~/images/66.gif";
+                break;
+            case 7:
+                return "~/images/77.gif";
+                break;
+            case 8:
+                return "~/images/88.gif";
+                break;
+            default:
+                return "";
+                break;
+        }
+    }
     /// <summary>
     /// gAccountRecord.PriceType 1-支付,2-售得,3-充值,4-提现,5-支付退款,6-提现退款,7-预交押金,8-押金取回,9-提现手续费
     /// </summary>
@@ -47,6 +81,28 @@ public class Dictionary
     /// ProductsStatus 1-出售中,2-成交结束,3-流拍,4-已撤销
     /// </summary>
     public static int[] ProductsStatus = {0, 1, 2, 3, 4};
+
+    public static string ProductsStatusImage(int prdStatus)
+    {
+        switch (prdStatus)
+        {
+            case 1:
+                return "~/images/chushou.gif";
+                break;
+            case 2:
+                return "~/images/jieshu.gif";
+                break;
+            case 3:
+                return "~/images/liupai.gif";
+                break;
+            case 4:
+                return "~/images/ycx.gif";
+                break;
+            default:
+                return "";
+                break;
+        }
+    }
     /// <summary>
     /// 1-交易活动，2-押金，3-诚信担保金
     /// </summary>
