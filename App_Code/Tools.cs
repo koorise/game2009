@@ -2,6 +2,7 @@
 using System.Data;
 using System.Configuration;
 using System.IO;
+using System.Net.Mail;
 using System.Web;
 using System.Web.Security;
 using System.Web.UI;
@@ -22,6 +23,27 @@ public class Tools
 		//TODO: 在此处添加构造函数逻辑
 		//
 	}
+    /// <summary>
+    /// 邮件发送
+    /// </summary>
+    /// <param name="toAddresses"></param>
+    /// <param name="subject"></param>
+    /// <param name="body"></param>
+    public static void SendMail(string toAddresses,  string subject, string body)
+    {
+        MailMessage mail = new MailMessage();
+        mail.From = new MailAddress(ConfigurationSettings.AppSettings["MailAccount"]);
+        mail.To.Add(new MailAddress(toAddresses));
+        mail.Subject = subject;
+        mail.Body = body;
+        mail.IsBodyHtml = true;
+        SmtpClient smtp = new SmtpClient(ConfigurationSettings.AppSettings["MailSMTP"]);
+        //smtp.Port = smtpPort;
+        smtp.Timeout = int.MaxValue;
+        //smtp.EnableSsl = isSSL;
+        smtp.Credentials = new System.Net.NetworkCredential(ConfigurationSettings.AppSettings["MailAccount"], ConfigurationSettings.AppSettings["MailPassWD"]);
+        smtp.Send(mail);
+    }
     /// <summary>
     /// 添加Dropdownlist
     /// </summary>
@@ -83,6 +105,34 @@ public class Tools
             string _filename = DateTime.Now.ToString("yyyyMMddHHmmssfff") + Cookies.getCookies("cUID") + ex;
             string _path = HttpContext.Current.Server.MapPath(path + _filename);
             if(!File.Exists(_path))
+            {
+                Directory.CreateDirectory(_path);
+            }
+            foreach (string s in tp)
+            {
+                if (ex == "." + s)
+                {
+                    f.PostedFile.SaveAs(_path);
+                    return path + _filename;
+                }
+            }
+        }
+        else
+        {
+            return "~/Images/NoPics.jpg";
+        }
+        
+    }
+    public static string UpLoadProductsImg(FileUpload f, string path,int fileR, params string[] tp)
+    {
+        string filename = f.PostedFile.FileName;
+        if (filename != "")
+        {
+            int i = filename.IndexOf('.');
+            string ex = filename.Substring(i, filename.Length - i);
+            string _filename = DateTime.Now.ToString("yyyyMMddHHmmssfff") + fileR + Cookies.getCookies("cUID") + ex;
+            string _path = HttpContext.Current.Server.MapPath(path + _filename);
+            if (!File.Exists(_path))
             {
                 Directory.CreateDirectory(_path);
             }

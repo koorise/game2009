@@ -29,6 +29,7 @@ public partial class AccountControl_AccountAdd : System.Web.UI.UserControl
             }
         }
         PanelShow();
+        
     }
     protected void PanelShow()
     {
@@ -270,6 +271,12 @@ public partial class AccountControl_AccountAdd : System.Web.UI.UserControl
                 break;
         }
         g.Save();
+        GProductsImg.Insert(decimal.Parse(lblPNKID.Text),Tools.UpLoadProductsImg(FileUpload1,"~/Upload",1, "jpg", "gif", "jpeg"),0,DateTime.Now);
+        GProductsImg.Insert(decimal.Parse(lblPNKID.Text),Tools.UpLoadProductsImg(FileUpload3,"~/Upload",2, "jpg", "gif", "jpeg"),0,DateTime.Now);
+        GProductsImg.Insert(decimal.Parse(lblPNKID.Text),Tools.UpLoadProductsImg(FileUpload4,"~/Upload",3, "jpg", "gif", "jpeg"),0,DateTime.Now);
+        GProductsImg.Insert(decimal.Parse(lblPNKID.Text),Tools.UpLoadProductsImg(FileUpload5,"~/Upload",4, "jpg", "gif", "jpeg"),0,DateTime.Now);
+        GProductsImg.Insert(decimal.Parse(lblPNKID.Text),Tools.UpLoadProductsImg(FileUpload6,"~/Upload",5, "jpg", "gif", "jpeg"),0,DateTime.Now);
+        GProductsImg.Insert(decimal.Parse(lblPNKID.Text),Tools.UpLoadProductsImg(FileUpload7, "~/Upload",5,"jpg", "gif", "jpeg"),1, DateTime.Now);
         Response.Redirect("~/AccountAddDone.aspx?pNKID=" + lblPNKID.Text);
     }
 }

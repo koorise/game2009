@@ -96,7 +96,7 @@ function send()
             <td width="8%" align="left" valign="top">
             <p>
                 <asp:CheckBox ID="CheckBox2" Text="全选" runat="server" 
-                    oncheckedchanged="CheckBox2_CheckedChanged" />
+                     />
             </p>              </td>
             <td width="92%" align="left" valign="top">
                 <asp:ImageButton ID="ImageButton2" ImageUrl="~/images/addtotuiguang.gif" runat="server" /></td>
