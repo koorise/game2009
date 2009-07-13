@@ -117,10 +117,8 @@ public class Tools
                 }
             }
         }
-        else
-        {
+        
             return "~/Images/NoPics.jpg";
-        }
         
     }
     public static string UpLoadProductsImg(FileUpload f, string path,int fileR, params string[] tp)
@@ -145,7 +143,7 @@ public class Tools
                 }
             }
         }
-        return "0";
+         return "~/Images/NoPics.jpg";
     }
     /// <summary>
     /// 计算分页页数
