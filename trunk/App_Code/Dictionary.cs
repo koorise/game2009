@@ -160,4 +160,5 @@ public class Dictionary
 
     public static string[] BankName = {"中国工商银行","中国建设银行","中国人民银行"};
 
+    
 }

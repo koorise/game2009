@@ -524,7 +524,46 @@
                     </td>
                   </tr>
                 </table>
-                     
+   <table width="100%" border="0" align="center" cellpadding="6" cellspacing="1" class="bluebox">
+                  <tr>
+                    <td colspan="5" align="left" nowrap="nowrap" bgcolor="#DCEDFC" class="viewtd2"><strong>账号配图
+                  </tr>    
+                  <tr>
+                  <td style="width:20%;">
+                      <asp:Image ID="Image1" runat="server" /></td>
+                  <td style="width:20%;">
+                      <asp:Image ID="Image2" runat="server" /></td>
+                  <td style="width:20%;">
+                      <asp:Image ID="Image3" runat="server" /></td>
+                  <td style="width:20%;">
+                      <asp:Image ID="Image4" runat="server" /></td>
+                  <td style="width:20%;">
+                      <asp:Image ID="Image5" runat="server" /></td> 
+                   </tr> 
+                  <tr>
+                  <td style="width:20%;">
+                      <asp:FileUpload ID="FileUpload1" runat="server" /></td>
+                  <td style="width:20%;">
+                      <asp:FileUpload ID="FileUpload3" runat="server" /></td>
+                  <td style="width:20%;">
+                      <asp:FileUpload ID="FileUpload4" runat="server" /></td>
+                  <td style="width:20%;">
+                      <asp:FileUpload ID="FileUpload5" runat="server" /></td>
+                  <td style="width:20%;">
+                      <asp:FileUpload ID="FileUpload6" runat="server" /></td>
+                   </tr> 
+                   <tr>
+                    <td colspan=5>
+                    默认账号图：点击选取
+（您的账号商品如果不添加图片，则系统将会默认以您的封面图作为账号图片，建议用户选择自己商铺的LOGO，或者含有自己销售名称的信息图片作为默认账号图，像素：70*70）
+<br />
+                        <asp:Image ID="Image6" ToolTip="小贴士：建议您放店铺LOGO等能鲜明代表自己的图片，鲜明的图标也是对您业务的有力宣传" runat="server" />
+                        <br />
+                        <asp:FileUpload ID="FileUpload7" runat="server" />
+                        
+                    </td>
+                   </tr>
+                  </table>      
                             
 				<table width="100%" border="0" align="center" cellpadding="6" cellspacing="1" class="bluebox">
                   <tr>
